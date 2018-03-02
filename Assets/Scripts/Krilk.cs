@@ -1,12 +1,10 @@
-﻿public class Krilk : Goblin
-{
-    // Use this for initialization
-    private void Start()
-    {
-    }
+﻿using UnityEngine;
 
-    // Update is called once per frame
-    private void Update()
+public class Krilk : Goblin
+{
+
+    private void Awake()
     {
+        Rigid = GetComponent<Rigidbody2D>();
     }
 }

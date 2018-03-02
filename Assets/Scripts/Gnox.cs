@@ -1,12 +1,9 @@
-﻿public class Gnox : Goblin
-{
-    // Use this for initialization
-    private void Start()
-    {
-    }
+﻿using UnityEngine;
 
-    // Update is called once per frame
-    private void Update()
+public class Gnox : Goblin
+{
+    private void Awake()
     {
+        Rigid = GetComponent<Rigidbody2D>();
     }
 }

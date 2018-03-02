@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Goblin : MonoBehaviour
 {
+    [HideInInspector]
+    public Rigidbody2D Rigid;
+    
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
     private int _baseArmor;
 

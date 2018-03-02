@@ -6,12 +6,17 @@ public class Player2 : MonoBehaviour
     [HideInInspector]
     public Goblin ControlledGoblin;
 
-    private Rigidbody2D _goblinRigidBody;
-
     private Vector2 _intendedMovement;
-    
-    public void UpdateGoblinReference()
+
+    private void Update()
     {
-        _goblinRigidBody = ControlledGoblin.gameObject.GetComponent<Rigidbody2D>();
+        //get player 1 input and control gobo
+        
+        _intendedMovement = Vector2.right*Input.GetAxis("Player2Horizontal") + Vector2.up*Input.GetAxis("Player2Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        ControlledGoblin.Rigid.velocity = _intendedMovement*ControlledGoblin.Speed;
     }
 }

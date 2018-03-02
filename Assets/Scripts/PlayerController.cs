@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Gnox _gnox;
     [SerializeField] private Krilk _krilk;
 
-    private void Start()
+    private void Awake()
     {
         _player1.ControlledGoblin = _gnox;
         if (_gameMode == GameMode.MultiPlayer)
@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
                 var tempGobo = _player1.ControlledGoblin;
                 _player1.ControlledGoblin = _player2.ControlledGoblin;
                 _player2.ControlledGoblin = tempGobo;
-                _player1.UpdateGoblinReference();
-                _player2.UpdateGoblinReference();
                 Debug.Log("Switched between Goblins");
                 break;
             case GameMode.SinglePlayer:
@@ -61,7 +59,6 @@ public class PlayerController : MonoBehaviour
                 _player1.ControlledGoblin = newGoblin;
                 //disable original goblin
                 currentGoblin.gameObject.SetActive(false);
-                _player1.UpdateGoblinReference();
                 break;
         }
     }
