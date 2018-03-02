@@ -2,6 +2,8 @@
 
 public class Equipment : Item
 {
+    [Space]
+    
     [Tooltip("Armor modifier to creature it is equipped to")]
     public int ArmorMod;
 
