@@ -3,31 +3,32 @@
 
 public class Player1 : MonoBehaviour
 {
-    [SerializeField]private Goblin _controlledGoblin;
+    [HideInInspector]
+    public Goblin ControlledGoblin;
 
     private Rigidbody2D _goblinRigidBody;
 
     private Vector2 _intendedMovement;
-    
+
     private void Start()
     {
-        //just in case someone is lazy,,, please make sure not to release with unassigned references
-        if (_controlledGoblin == null)
-        {
-            _controlledGoblin = FindObjectOfType<Goblin>();
-        }
+        UpdateGoblinReference();
     }
-
 
     private void Update()
     {
         //get player 1 input and control gobo
         
-        _intendedMovement = Vector2.right*Input.GetAxis("Player1Horzontal") + Vector2.up*Input.GetAxis("Player1Horizontal");
+        _intendedMovement = Vector2.right*Input.GetAxis("Player1Horizontal") + Vector2.up*Input.GetAxis("Player1Vertical");
     }
 
     private void FixedUpdate()
     {
-        _goblinRigidBody.AddForce(_intendedMovement*_controlledGoblin.Speed, ForceMode2D.Force);
+        _goblinRigidBody.velocity = _intendedMovement*ControlledGoblin.Speed;
+    }
+
+    public void UpdateGoblinReference()
+    {
+        _goblinRigidBody = ControlledGoblin.gameObject.GetComponent<Rigidbody2D>();
     }
 }
