@@ -7,7 +7,7 @@ public class Player1 : MonoBehaviour
     public Goblin ControlledGoblin;
 
     private Vector2 _intendedMovement;
-
+    
     private void Update()
     {
         //get player 1 input and control gobo

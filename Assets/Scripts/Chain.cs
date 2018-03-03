@@ -1,35 +1,40 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 
 public class Chain : MonoBehaviour
 {
-    private Gnox _gnox;
-    private Krilk _krilk;
+    [SerializeField] private Gnox _gnox;
+    [SerializeField] private Krilk _krilk;
 
-    private Rigidbody2D _gnoxRigid;
-    private Rigidbody2D _krilkRigid;
+    [SerializeField] private TextMeshProUGUI _debug;
 
-    [SerializeField, Tooltip("Max distnce that can seperate Gnox and Krilk")] private int _maxDistance;
+    [SerializeField, Tooltip("Max distnce that can seperate Gnox and Krilk")]
+    private int _maxDistance;
 
-    private void Start()
-    {
-        _gnox = FindObjectOfType<Gnox>();
-        _krilk = FindObjectOfType<Krilk>();
-
-        _gnoxRigid = _gnox.GetComponent<Rigidbody2D>();
-        _krilkRigid = _krilk.GetComponent<Rigidbody2D>();
-    }
-    
     void Update()
     {
+        transform.position = (_krilk.transform.position + _gnox.transform.position) / 2;
         //make sure krilk and gnox are within range
+        Debug.DrawLine(_gnox.Rigid.position, _krilk.Rigid.position, Color.red);
 
-        if (((_gnoxRigid.position + _gnoxRigid.velocity*Time.deltaTime) - (_krilkRigid.position + _krilkRigid.velocity*Time.deltaTime)).magnitude > _maxDistance)
+        
+    }
+
+    private void FixedUpdate()
+    {
+        var temp = Math.Abs(((_gnox.Rigid.position + _gnox.Rigid.velocity * Time.fixedDeltaTime) -
+                             (_krilk.Rigid.position + _krilk.Rigid.velocity * Time.fixedDeltaTime)).magnitude);
+        _debug.text = temp.ToString() + "\n" + _maxDistance.ToString();
+
+
+        if (temp > _maxDistance)
         {
+            Debug.Log("Out of Range");
             //give gnox, krilks velocity and set krilk to zero
-            _gnoxRigid.velocity = _krilkRigid.velocity;
-            _krilkRigid.velocity = Vector2.zero;
+            _gnox.Rigid.velocity = _krilk.Rigid.velocity;
+            _krilk.Rigid.velocity = Vector2.zero;
         }
     }
 }
