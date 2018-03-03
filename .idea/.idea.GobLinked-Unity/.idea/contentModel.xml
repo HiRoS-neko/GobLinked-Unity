@@ -26,6 +26,9 @@
           <e p="Equipment.cs" t="Include" />
           <e p="Gnox.cs" t="Include" />
           <e p="Goblin.cs" t="Include" />
+          <e p="GoblinUI.cs" t="Include" />
+          <e p="HealthManager.cs" t="Include" />
+          <e p="Heart.cs" t="Include" />
           <e p="Item.cs" t="Include" />
           <e p="Krilk.cs" t="Include" />
           <e p="Player1.cs" t="Include" />

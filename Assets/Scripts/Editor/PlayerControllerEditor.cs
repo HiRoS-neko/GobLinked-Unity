@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using UnityEditor;
-
+﻿using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(PlayerController))]
 public class PlayerControllerEditor : Editor
@@ -9,10 +8,7 @@ public class PlayerControllerEditor : Editor
     {
         base.OnInspectorGUI();
 
-        PlayerController playerController = (PlayerController) target;
-        if (GUILayout.Button("Switch Goblins"))
-        {
-            playerController.SwitchPlayers();
-        }
+        var playerController = (PlayerController) target;
+        if (GUILayout.Button("Switch Goblins")) playerController.SwitchPlayers();
     }
 }

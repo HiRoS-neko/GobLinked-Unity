@@ -1,5 +1,4 @@
-﻿using UnityEditor.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,20 +10,22 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameMode _gameMode;
 
+    [SerializeField] private Gnox _gnox;
+    [SerializeField] private GoblinUI _gnoxUI;
+    [SerializeField] private Krilk _krilk;
+
+    [SerializeField] private GoblinUI _krilkUI;
+
 
     [SerializeField] private Player1 _player1;
     [SerializeField] private Player2 _player2;
 
-    [SerializeField] private Gnox _gnox;
-    [SerializeField] private Krilk _krilk;
-
     private void Awake()
     {
         _player1.ControlledGoblin = _gnox;
-        if (_gameMode == GameMode.MultiPlayer)
-        {
-            _player2.ControlledGoblin = _krilk;
-        }
+        if (_gameMode == GameMode.MultiPlayer) _player2.ControlledGoblin = _krilk;
+
+        _krilkUI.HealthManager.SetMaxHealth(_krilk.Health);
     }
 
     public void SwitchPlayers()

@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f298192a0cc105244bcb4af89f6b2bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rigid: {fileID: 0}
   _baseArmor: 0
-  _baseAttack: 0
-  _baseHealth: 0
-  _baseSpeed: 1
+  _baseAttack: 2
+  _baseHealth: 4
+  _baseSpeed: 2
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   Inventory: []
