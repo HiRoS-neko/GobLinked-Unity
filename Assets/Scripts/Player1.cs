@@ -16,6 +16,6 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ControlledGoblin.Rigid.velocity = _intendedMovement * ControlledGoblin.Speed;
+        ControlledGoblin.Rigid.velocity = _intendedMovement.normalized * ControlledGoblin.Speed;
     }
 }
