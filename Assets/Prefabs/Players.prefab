@@ -95,7 +95,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 80
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -143,7 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gnox: {fileID: 0}
   _krilk: {fileID: 0}
-  _debug: {fileID: 0}
   _maxDistance: 1
 --- !u!114 &114255204151330560
 MonoBehaviour:
@@ -157,10 +156,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMode: 1
+  _gnox: {fileID: 0}
+  _gnoxUI: {fileID: 0}
+  _krilk: {fileID: 0}
+  _krilkUI: {fileID: 0}
   _player1: {fileID: 114672966374863224}
   _player2: {fileID: 114032338461240548}
-  _gnox: {fileID: 0}
-  _krilk: {fileID: 0}
 --- !u!114 &114672966374863224
 MonoBehaviour:
   m_ObjectHideFlags: 1
