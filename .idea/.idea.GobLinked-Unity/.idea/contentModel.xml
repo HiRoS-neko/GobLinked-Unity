@@ -16,7 +16,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Accessory.cs" t="Include" />
-          <e p="Chain.cs" t="Include" />
           <e p="Consumable.cs" t="Include" />
           <e p="ConsumableBuff.cs" t="Include" />
           <e p="ConsumableRestore.cs" t="Include" />
