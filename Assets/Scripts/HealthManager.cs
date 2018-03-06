@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] [Range(0, 15)] private int _currentHealth = 5;
+    [SerializeField] [Range(0, 16)] private int _currentHealth = 5;
     [SerializeField] private List<Heart> _hearts;
 
 
-    [SerializeField] [Range(0, 15)] private int _maxHealth = 5;
+    [SerializeField] [Range(0, 16)] private int _maxHealth = 5;
 
     private RectTransform _rect;
 
