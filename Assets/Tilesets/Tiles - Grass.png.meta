@@ -7,6 +7,7 @@ TextureImporter:
     21300000: Tiles - Grass_0
     21300002: Tiles - Grass_1
     21300004: Tiles - Grass_2
+    21300006: Tiles - Grass_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -115,6 +116,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tiles - Grass_3
+      rect:
+        serializedVersion: 2
+        x: 16
         y: 0
         width: 16
         height: 16
