@@ -1155,7 +1155,9 @@ MonoBehaviour:
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   Inventory: []
+  HealthUI: {fileID: 0}
   Rigid: {fileID: 0}
+  CurrentHealth: 0
 --- !u!114 &114166181291739734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1186,6 +1188,7 @@ MonoBehaviour:
   _krilkUI: {fileID: 0}
   _player1: {fileID: 114837273741649056}
   _player2: {fileID: 114394808864332358}
+  _chain: {fileID: 1373592379154776}
 --- !u!114 &114252852990437200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1276,7 +1279,9 @@ MonoBehaviour:
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   Inventory: []
+  HealthUI: {fileID: 0}
   Rigid: {fileID: 0}
+  CurrentHealth: 0
 --- !u!114 &114794334934575154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2052,9 +2057,9 @@ DistanceJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613276119154612}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50654974905333478}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2062,7 +2067,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.96
+  m_Distance: 1.1
   m_MaxDistanceOnly: 1
 --- !u!232 &232465588551889332
 DistanceJoint2D:

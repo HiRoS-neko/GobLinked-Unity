@@ -41,11 +41,9 @@ public class HealthManager : MonoBehaviour
         if (_currentHealth == 0) _currentHealth = _maxHealth;
     }
 
-    public void SetHealth()
+    public void SetHealth(int num)
     {
-    }
-
-    public void ModifyHealth(int modification)
-    {
+        if (num <= _hearts.Count)
+            _currentHealth = num;
     }
 }

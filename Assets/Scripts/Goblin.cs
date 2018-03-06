@@ -21,6 +21,9 @@ public class Goblin : MonoBehaviour
 
     public List<Item> Inventory;
 
+    [HideInInspector] public HealthManager HealthUI;
+
+
     [HideInInspector] public Rigidbody2D Rigid;
 
 
@@ -30,9 +33,62 @@ public class Goblin : MonoBehaviour
     public int Health => _baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.HealthMod : 0);
 
+    public int CurrentHealth;
+
     public int Armor => _baseArmor + (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.ArmorMod : 0);
 
     public int Attack => _baseAttack + (EquippedAccessory != null ? EquippedAccessory.AttackMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.AttackMod : 0);
+
+
+    private int _lastHealth;
+    private int _lastCurrentHealth;
+
+    private void Start()
+    {
+        CurrentHealth = Health;
+    }
+
+
+    private void FixedUpdate()
+    {
+        //Make sure the health is set proportional when items are changed
+        if (_lastHealth < Health)
+        {
+            CurrentHealth += Health - _lastHealth;
+        }
+        else if (_lastHealth > Health)
+        {
+            if (CurrentHealth < Health)
+            {
+                CurrentHealth = Health;
+            }
+        }
+
+        if (CurrentHealth > Health)
+        {
+            CurrentHealth = Health;
+        }
+
+        if (_lastCurrentHealth != CurrentHealth)
+        {
+            HealthUI.SetHealth(CurrentHealth);
+        }
+
+        if (_lastHealth != Health)
+        {
+            HealthUI.SetMaxHealth(Health);
+        }
+
+        _lastHealth = Health;
+        _lastCurrentHealth = CurrentHealth;
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        //TODO do armour calc and apply to health
+        //HealthUI.SetHealth(Health);
+    }
 }

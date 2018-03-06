@@ -20,12 +20,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Player1 _player1;
     [SerializeField] private Player2 _player2;
 
+    [SerializeField] private GameObject _chain;
+
     private void Awake()
     {
-        _player1.ControlledGoblin = _gnox;
-        if (_gameMode == GameMode.MultiPlayer) _player2.ControlledGoblin = _krilk;
+        _player1.ControlledGoblin = _krilk;
+        if (_gameMode == GameMode.MultiPlayer) _player2.ControlledGoblin = _gnox;
+        else _chain.SetActive(false);
 
-        _krilkUI.HealthManager.SetMaxHealth(_krilk.Health);
+        _krilk.HealthUI = _krilkUI.HealthManager;
+        _gnox.HealthUI = _gnoxUI.HealthManager;
     }
 
     public void SwitchPlayers()
