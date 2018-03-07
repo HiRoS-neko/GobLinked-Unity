@@ -433,37 +433,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1940319972100762
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4022247381726218}
-  - component: {fileID: 20111855677008712}
-  - component: {fileID: 124450247888430636}
-  - component: {fileID: 81693607473714588}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4022247381726218
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940319972100762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.51, y: -1.75, z: -5.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4751267387360742}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4029535843661146
 Transform:
   m_ObjectHideFlags: 1
@@ -471,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188355398654372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.118, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4675850067003518}
@@ -484,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300319810789660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08112329, y: -0.04954901, z: 0.08}
+  m_LocalPosition: {x: 0.999, y: -0.04954901, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4352437128751358}
@@ -498,7 +467,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797076027312386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.162, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4136982275432782}
@@ -511,7 +480,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1909642600628652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.155, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4552531096001408}
@@ -524,7 +493,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373592379154776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.629, y: 0.049548984, z: 0}
+  m_LocalPosition: {x: 0.629, y: 0.049548984, z: -0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4136982275432782}
@@ -547,7 +516,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498920309358522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31087673, y: -0.04954901, z: 0.08}
+  m_LocalPosition: {x: 2.184, y: -0.04954901, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4083699446230750}
@@ -561,7 +530,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627151115879402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.174, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4294683932082384}
@@ -574,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318141187949914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.146, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4728796571322946}
@@ -587,7 +556,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542240182964720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11487675, y: -0.04954901, z: 0.08}
+  m_LocalPosition: {x: 1.616, y: -0.04954901, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4158809774645548}
@@ -601,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1508263087621552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.55512327, y: -0.04954901, z: 0.06199999}
+  m_LocalPosition: {x: -0.497, y: -0.04954901, z: 0.06199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4121073623213144}
@@ -614,7 +583,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302762151015636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.181, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4068463254989254}
@@ -627,7 +596,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146257000579160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17912334, y: -0.04954901, z: 0.06199999}
+  m_LocalPosition: {x: 0.663, y: -0.04954901, z: 0.06199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4939980756953206}
@@ -641,7 +610,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552399676207902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.7, y: 1.1, z: 0}
+  m_LocalPosition: {x: -5.38, y: -0.72, z: -0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4751267387360742}
@@ -658,7 +627,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1654109771459826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37012336, y: -0.04954901, z: 0.06199999}
+  m_LocalPosition: {x: 0.069, y: -0.04954901, z: 0.06199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4096312807606230}
@@ -672,7 +641,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019139688246558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45712325, y: -0.04954901, z: 0.08}
+  m_LocalPosition: {x: -0.207, y: -0.04954901, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4666006696389584}
@@ -686,7 +655,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613276119154612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 3.013, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4400509450689864}
@@ -699,7 +668,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841576359618142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048, y: 0, z: 0}
+  m_LocalPosition: {x: -0.164, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4587131330566594}
@@ -712,7 +681,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055348773115230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21287668, y: -0.04954901, z: 0.06199999}
+  m_LocalPosition: {x: 1.893, y: -0.04954901, z: 0.06199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4029535843661146}
@@ -726,7 +695,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1473301490438154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.016876698, y: -0.04954901, z: 0.062}
+  m_LocalPosition: {x: 1.289, y: -0.04954901, z: 0.062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4258946724405136}
@@ -742,8 +711,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 18.058355, y: 1.9723624, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4022247381726218}
+  m_Children: []
   m_Father: {fileID: 4400509450689864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -754,7 +722,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481935046711004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.171, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4829516475417852}
@@ -767,7 +735,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848854201967944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2721233, y: -0.04954901, z: 0.08}
+  m_LocalPosition: {x: 0.369, y: -0.04954901, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4798926409435200}
@@ -781,7 +749,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134808648849072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.048000008, y: 0, z: 0}
+  m_LocalPosition: {x: -0.141, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4398132904508932}
@@ -800,42 +768,6 @@ Transform:
   m_Father: {fileID: 4400509450689864}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20111855677008712
-Camera:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940319972100762}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 1
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!50 &50140209137923118
 Rigidbody2D:
   serializedVersion: 4
@@ -1090,7 +1022,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13
+  m_Radius: 0.5
 --- !u!58 &58481138900448186
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1105,14 +1037,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13
---- !u!81 &81693607473714588
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940319972100762}
-  m_Enabled: 1
+  m_Radius: 0.5
 --- !u!114 &114016561563821616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1318,13 +1243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lookTarget: {fileID: 1481935046711004}
---- !u!124 &124450247888430636
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940319972100762}
-  m_Enabled: 1
 --- !u!212 &212013718131530506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1869,7 +1787,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.33600044
   m_MaxDistanceOnly: 1
 --- !u!232 &232105752463270498
 DistanceJoint2D:
@@ -1887,7 +1805,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800004
+  m_Distance: 0.28999996
   m_MaxDistanceOnly: 1
 --- !u!232 &232113184253860226
 DistanceJoint2D:
@@ -1905,7 +1823,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.07099998
+  m_Distance: 0.20000029
   m_MaxDistanceOnly: 1
 --- !u!232 &232131817058376752
 DistanceJoint2D:
@@ -1923,7 +1841,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.08699989
+  m_Distance: 0.27600002
   m_MaxDistanceOnly: 1
 --- !u!232 &232168058628319740
 DistanceJoint2D:
@@ -1941,7 +1859,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.092999965
+  m_Distance: 0.29399967
   m_MaxDistanceOnly: 1
 --- !u!232 &232171892746006508
 DistanceJoint2D:
@@ -1959,7 +1877,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.2909994
   m_MaxDistanceOnly: 1
 --- !u!232 &232242166351008396
 DistanceJoint2D:
@@ -1977,7 +1895,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09799999
+  m_Distance: 0.28999996
   m_MaxDistanceOnly: 1
 --- !u!232 &232259527507147674
 DistanceJoint2D:
@@ -1995,7 +1913,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.04
+  m_Distance: 0.13199997
   m_MaxDistanceOnly: 1
 --- !u!232 &232336175517300282
 DistanceJoint2D:
@@ -2013,7 +1931,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800004
+  m_Distance: 0.28999996
   m_MaxDistanceOnly: 1
 --- !u!232 &232372949916427596
 DistanceJoint2D:
@@ -2031,7 +1949,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.32699966
   m_MaxDistanceOnly: 1
 --- !u!232 &232394377153436460
 DistanceJoint2D:
@@ -2049,7 +1967,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.32699966
   m_MaxDistanceOnly: 1
 --- !u!232 &232399856010842926
 DistanceJoint2D:
@@ -2067,7 +1985,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 1.1
+  m_Distance: 3.3
   m_MaxDistanceOnly: 1
 --- !u!232 &232465588551889332
 DistanceJoint2D:
@@ -2085,7 +2003,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09799999
+  m_Distance: 0.28999996
   m_MaxDistanceOnly: 1
 --- !u!232 &232625850166461000
 DistanceJoint2D:
@@ -2103,7 +2021,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.33600044
   m_MaxDistanceOnly: 1
 --- !u!232 &232626606096681292
 DistanceJoint2D:
@@ -2121,7 +2039,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.092999965
+  m_Distance: 0.29399967
   m_MaxDistanceOnly: 1
 --- !u!232 &232645355240870566
 DistanceJoint2D:
@@ -2139,7 +2057,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.3000002
   m_MaxDistanceOnly: 1
 --- !u!232 &232711276327792658
 DistanceJoint2D:
@@ -2157,7 +2075,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09799993
+  m_Distance: 0.27700043
   m_MaxDistanceOnly: 1
 --- !u!232 &232722941312219734
 DistanceJoint2D:
@@ -2175,7 +2093,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.2909994
   m_MaxDistanceOnly: 1
 --- !u!232 &232898720766827104
 DistanceJoint2D:
@@ -2193,7 +2111,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09800005
+  m_Distance: 0.3000002
   m_MaxDistanceOnly: 1
 --- !u!232 &232961723148835258
 DistanceJoint2D:
@@ -2211,7 +2129,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.08699989
+  m_Distance: 0.27600002
   m_MaxDistanceOnly: 1
 --- !u!232 &232992252280004678
 DistanceJoint2D:
@@ -2229,5 +2147,5 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 0.09799993
+  m_Distance: 0.27700043
   m_MaxDistanceOnly: 1

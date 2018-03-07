@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Goblin : MonoBehaviour
 {
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
@@ -19,7 +21,7 @@ public class Goblin : MonoBehaviour
 
     public Weapon EquippedWeapon;
 
-    public List<Item> Inventory;
+    public Inventory Items;
 
     [HideInInspector] public HealthManager HealthUI;
 
@@ -90,5 +92,23 @@ public class Goblin : MonoBehaviour
     {
         //TODO do armour calc and apply to health
         //HealthUI.SetHealth(Health);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //check if its an item
+        if (other.gameObject.CompareTag("Item"))
+        {
+            var temp = other.gameObject.GetComponent<Item>();
+            Items.AddItem(temp);
+            temp.transform.position = Vector3.zero;
+            temp.gameObject.SetActive(false);
+        }
+        //or its an enemy
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            //TODO are we doing contact damage?
+        }
     }
 }

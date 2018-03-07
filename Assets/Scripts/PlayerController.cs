@@ -16,11 +16,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GoblinUI _krilkUI;
 
+    [SerializeField] private Inventory _inv;
 
     [SerializeField] private Player1 _player1;
     [SerializeField] private Player2 _player2;
 
     [SerializeField] private GameObject _chain;
+
+    [Range(1, 10)] public static float SpeedMultiplier;
 
     private void Awake()
     {
