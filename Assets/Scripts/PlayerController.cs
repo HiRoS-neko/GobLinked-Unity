@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _chain;
 
-    [Range(1, 10)] public static float SpeedMultiplier;
+    public static float SpeedMultiplier;
+    [SerializeField, Range(1, 10)] private float _speedMultiplier;
 
     private void Awake()
     {
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
         _krilk.HealthUI = _krilkUI.HealthManager;
         _gnox.HealthUI = _gnoxUI.HealthManager;
+
+        SpeedMultiplier = _speedMultiplier;
     }
 
     public void SwitchPlayers()
