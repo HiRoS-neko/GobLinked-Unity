@@ -1,17 +1,21 @@
 fileFormatVersion: 2
-guid: 48d5c0e8eb8bd8d4eb543dbc1aac428f
-timeCreated: 1520432023
+guid: 647ef3f3c8631324c891ac66a7459fae
+timeCreated: 1520545695
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GnoxSpriteSheet_0
-    21300002: GnoxSpriteSheet_1
-    21300004: GnoxSpriteSheet_2
-    21300006: GnoxSpriteSheet_3
-    21300008: GnoxSpriteSheet_4
-    21300010: GnoxSpriteSheet_5
-    21300012: GnoxSpriteSheet_6
-    21300014: GnoxSpriteSheet_7
+    21300000: GnoxSheet_0
+    21300002: GnoxSheet_1
+    21300004: GnoxSheet_2
+    21300006: GnoxSheet_3
+    21300008: GnoxSheet_4
+    21300010: GnoxSheet_5
+    21300012: GnoxSheet_6
+    21300014: GnoxSheet_7
+    21300016: GnoxSheet_8
+    21300018: GnoxSheet_9
+    21300020: GnoxSheet_10
+    21300022: GnoxSheet_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -54,7 +58,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -88,7 +92,63 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GnoxSpriteSheet_0
+      name: GnoxSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -102,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_1
+      name: GnoxSheet_5
       rect:
         serializedVersion: 2
         x: 32
@@ -116,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_2
+      name: GnoxSheet_6
       rect:
         serializedVersion: 2
         x: 64
@@ -130,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_3
+      name: GnoxSheet_7
       rect:
         serializedVersion: 2
         x: 96
@@ -144,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_4
+      name: GnoxSheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -158,7 +218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_5
+      name: GnoxSheet_9
       rect:
         serializedVersion: 2
         x: 32
@@ -172,7 +232,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_6
+      name: GnoxSheet_10
       rect:
         serializedVersion: 2
         x: 64
@@ -186,7 +246,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSpriteSheet_7
+      name: GnoxSheet_11
       rect:
         serializedVersion: 2
         x: 96
