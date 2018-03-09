@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 232399856010842926}
   - component: {fileID: 114646254744420570}
   - component: {fileID: 58481138900448186}
+  - component: {fileID: 95670908489487888}
   m_Layer: 8
   m_Name: Krilk
   m_TagString: Player
@@ -727,6 +728,7 @@ GameObject:
   - component: {fileID: 50654974905333478}
   - component: {fileID: 114117326096128838}
   - component: {fileID: 58412291473731668}
+  - component: {fileID: 95381432819471924}
   m_Layer: 8
   m_Name: Gnox
   m_TagString: Player
@@ -1786,6 +1788,40 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.18}
   serializedVersion: 2
   m_Radius: 0.19
+--- !u!95 &95381432819471924
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884700974948596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 038c3b3768716ad4c90e1cb2e99d5a32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95670908489487888
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613276119154612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f75b487fe08c2354eb7c503c7faf3190, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114016561563821616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1831,6 +1867,7 @@ MonoBehaviour:
   HealthUI: {fileID: 0}
   Rigid: {fileID: 0}
   CurrentHealth: 0
+  Anim: {fileID: 0}
 --- !u!114 &114130963235497428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2053,6 +2090,7 @@ MonoBehaviour:
   HealthUI: {fileID: 0}
   Rigid: {fileID: 0}
   CurrentHealth: 0
+  Anim: {fileID: 0}
 --- !u!114 &114680702213297980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2147,7 +2185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ca28f173a3c4aa4e8ec7b0a84482b70, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 68549a33fb2cfee4b80f648059ae41f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

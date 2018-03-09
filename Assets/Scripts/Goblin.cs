@@ -2,7 +2,7 @@
 using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider2D), typeof(Animator))]
 public class Goblin : MonoBehaviour
 {
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
@@ -47,16 +47,45 @@ public class Goblin : MonoBehaviour
     private int _lastHealth;
     private int _lastCurrentHealth;
 
+    public Animator Anim;
+
     private void Start()
     {
+        Anim = GetComponent<Animator>();
         CurrentHealth = Health;
     }
 
 
-    private void FixedUpdate()
+
+    private void Update()
     {
-        //Make sure the health is set proportional when items are changed
-        if (_lastHealth < Health)
+        var temp = Rigid.velocity;
+       
+            if (temp.y > 0.5 || temp.y < -0.5)
+            {
+                if (temp.y > 0) //up
+                    Anim.SetInteger("dir", 1);
+                else if (temp.y < 0) //down
+                    Anim.SetInteger("dir", 3);
+            }
+        else if ((temp.x > 0.5 || temp.x < -0.5))
+        {
+            if (temp.x > 0) //right
+                Anim.SetInteger("dir", 2);
+            else if (temp.x < 0) //left
+                Anim.SetInteger("dir", 4);
+        }
+
+        else
+        {
+            Anim.SetInteger("dir", 0);
+        }
+    }
+
+    private void FixedUpdate()
+{
+    //Make sure the health is set proportional when items are changed
+    if (_lastHealth < Health)
         {
             CurrentHealth += Health - _lastHealth;
         }
