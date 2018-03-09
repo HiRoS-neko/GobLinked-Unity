@@ -1912,7 +1912,7 @@ MonoBehaviour:
   _player1: {fileID: 114837273741649056}
   _player2: {fileID: 114394808864332358}
   _chain: {fileID: 1373592379154776}
-  _speedMultiplier: 1
+  _speedMultiplier: 3
 --- !u!114 &114178203708317358
 MonoBehaviour:
   m_ObjectHideFlags: 1
