@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 647ef3f3c8631324c891ac66a7459fae
-timeCreated: 1520545695
+guid: 68549a33fb2cfee4b80f648059ae41f2
+timeCreated: 1520621245
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GnoxSheet_0
-    21300002: GnoxSheet_1
-    21300004: GnoxSheet_2
-    21300006: GnoxSheet_3
-    21300008: GnoxSheet_4
-    21300010: GnoxSheet_5
-    21300012: GnoxSheet_6
-    21300014: GnoxSheet_7
-    21300016: GnoxSheet_8
-    21300018: GnoxSheet_9
-    21300020: GnoxSheet_10
-    21300022: GnoxSheet_11
+    21300000: krillkSheet_0
+    21300002: krillkSheet_1
+    21300004: krillkSheet_2
+    21300006: krillkSheet_3
+    21300008: krillkSheet_4
+    21300010: krillkSheet_5
+    21300012: krillkSheet_6
+    21300014: krillkSheet_7
+    21300016: krillkSheet_8
+    21300018: krillkSheet_9
+    21300020: krillkSheet_10
+    21300022: krillkSheet_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,7 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GnoxSheet_0
+      name: krillkSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -106,7 +106,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_1
+      name: krillkSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_2
+      name: krillkSheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -134,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_3
+      name: krillkSheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -148,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_4
+      name: krillkSheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_5
+      name: krillkSheet_5
       rect:
         serializedVersion: 2
         x: 32
@@ -176,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_6
+      name: krillkSheet_6
       rect:
         serializedVersion: 2
         x: 64
@@ -190,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_7
+      name: krillkSheet_7
       rect:
         serializedVersion: 2
         x: 96
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_8
+      name: krillkSheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -218,7 +218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_9
+      name: krillkSheet_9
       rect:
         serializedVersion: 2
         x: 32
@@ -232,7 +232,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_10
+      name: krillkSheet_10
       rect:
         serializedVersion: 2
         x: 64
@@ -246,7 +246,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GnoxSheet_11
+      name: krillkSheet_11
       rect:
         serializedVersion: 2
         x: 96
