@@ -1,36 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPathfinding : MonoBehaviour
 {
-	public GameObject target;
-	private bool[,] movableTiles;
-	public float visibleRange;
-	private IEnumerator goHitArray;
-	private RaycastHit2D[] hitObjects;
-	private bool search = false;
-	void Start()
-	{
-		StartCoroutine(checkHitArray(1f));
-	}
+    private bool[,] movableTiles;                //
+    public float visibleRange;                   //
+    private IEnumerator goHitArray;              //
+    private Collider2D[] hitObjects;             //
+    public bool search = false;                  //
+    public Rigidbody2D body;                     //
+    [Range(0, 100)] public float speed;          //
 
-	void FixedUpdate()
-	{
-		hitObjects = Physics2D.CircleCastAll(transform.position, visibleRange, transform.position, 0f, 8, -5, 5);
-		
+    void Start()
+    {
+        StartCoroutine(checkHitArray(0.01f));
+    }
 
-	}
+    void FixedUpdate()
+    {
+        for (int i = 0; i < hitObjects.Length; i++)
+        {
+            Debug.Log("FOR loop");
+            if (hitObjects[i].tag == "Goblin")
+            {
+                body.velocity = (((Vector2)hitObjects[i].transform.position - body.position)).normalized*speed*Time.fixedDeltaTime;
+            }
+        }
+    }
 
-	private IEnumerator checkHitArray(float waitTime)
-	{
-		while (true)
-		{
-			Debug.Log("Coroutine");
+    private IEnumerator checkHitArray(float waitTime)
+    {
+        Debug.Log("Coroutine");
 
-			yield return new WaitForSeconds(waitTime);
-
-			Debug.Log("And now it's after the wait");
-		}
-	}
+        while (true)
+        {
+            hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange);
+            yield return new WaitForSeconds(waitTime);
+        }
+    }
 }
