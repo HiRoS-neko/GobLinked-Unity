@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Goblin
+  - Item
   layers:
   - Default
   - TransparentFX
