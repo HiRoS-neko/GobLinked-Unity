@@ -176,6 +176,14 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 380793035}
+    - target: {fileID: 1613276119154612, guid: 51b51a7df7a76da43b85c1a504cb41b8, type: 2}
+      propertyPath: m_TagString
+      value: Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884700974948596, guid: 51b51a7df7a76da43b85c1a504cb41b8, type: 2}
+      propertyPath: m_TagString
+      value: Goblin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51b51a7df7a76da43b85c1a504cb41b8, type: 2}
   m_IsPrefabParent: 0
@@ -539,7 +547,8 @@ GameObject:
   - component: {fileID: 1699686824}
   - component: {fileID: 1699686823}
   - component: {fileID: 1699686822}
-  - component: {fileID: 1699686825}
+  - component: {fileID: 1699686826}
+  - component: {fileID: 1699686827}
   m_Layer: 0
   m_Name: SlimeSheet_0
   m_TagString: Untagged
@@ -621,7 +630,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1699686825
+--- !u!114 &1699686826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -632,10 +641,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleRange: 2.71
-  search: 1
-  body: {fileID: 0}
-  speed: 0
+  visibleRange: 399.79
+  search: 0
+  body: {fileID: 1699686827}
+  speed: 11.7
+--- !u!50 &1699686827
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699686821}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1776308536
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +678,7 @@ GameObject:
   - component: {fileID: 1776308541}
   - component: {fileID: 1776308540}
   - component: {fileID: 1776308542}
+  - component: {fileID: 1776308543}
   m_Layer: 0
   m_Name: Human_0
   m_TagString: Untagged
@@ -796,7 +826,22 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1776308543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776308536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visibleRange: 100
+  search: 0
+  body: {fileID: 1776308542}
+  speed: 21.9
 --- !u!1 &1823169329
 GameObject:
   m_ObjectHideFlags: 0
