@@ -56,19 +56,18 @@ public class Goblin : MonoBehaviour
     }
 
 
-
     private void Update()
     {
         var temp = Rigid.velocity;
-       
-            if (temp.y > 0.5 || temp.y < -0.5)
-            {
-                if (temp.y > 0) //up
-                    Anim.SetInteger("dir", 1);
-                else if (temp.y < 0) //down
-                    Anim.SetInteger("dir", 3);
-            }
-        else if ((temp.x > 0.5 || temp.x < -0.5))
+
+        if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y))
+        {
+            if (temp.y > 0) //up
+                Anim.SetInteger("dir", 1);
+            else if (temp.y < 0) //down
+                Anim.SetInteger("dir", 3);
+        }
+        else if (Mathf.Abs(temp.x) > Mathf.Abs(temp.y))
         {
             if (temp.x > 0) //right
                 Anim.SetInteger("dir", 2);
@@ -83,9 +82,9 @@ public class Goblin : MonoBehaviour
     }
 
     private void FixedUpdate()
-{
-    //Make sure the health is set proportional when items are changed
-    if (_lastHealth < Health)
+    {
+        //Make sure the health is set proportional when items are changed
+        if (_lastHealth < Health)
         {
             CurrentHealth += Health - _lastHealth;
         }
