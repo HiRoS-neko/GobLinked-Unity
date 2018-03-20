@@ -40,13 +40,15 @@ public class Goblin : MonoBehaviour
 
     //Cooldowns
     public float CooldownStandard, CooldownRange, CooldownSupport, CooldownUltimate;
-    
-    
+
+
     //Rank in Abilities
     public float RankStandard, RankRange, RankSupport, RankUltimate;
 
-    
-    public Animator Anim;
+
+    public Vector2 Dir;
+
+    [HideInInspector] public Animator Anim;
 
     public int CurrentHealth;
 
@@ -83,6 +85,11 @@ public class Goblin : MonoBehaviour
     {
         var temp = Rigid.velocity;
 
+        if (temp.magnitude > 0.1)
+            Dir = temp.normalized; //last movement direction,,, used for attacks
+
+        Debug.DrawLine(gameObject.transform.position, gameObject.transform.position + (Vector3) Dir);
+
         if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y) && Mathf.Abs(temp.y) > 0.1)
         {
             if (temp.y > 0) //up
@@ -104,10 +111,10 @@ public class Goblin : MonoBehaviour
 
 
         //Cooldowns
-        CooldownStandard -= Time.deltaTime;
-        CooldownRange -= Time.deltaTime;
-        CooldownSupport -= Time.deltaTime;
-        CooldownUltimate -= Time.deltaTime;
+        if (CooldownStandard > 0) CooldownStandard -= Time.deltaTime;
+        if (CooldownRange > 0) CooldownRange -= Time.deltaTime;
+        if (CooldownSupport > 0) CooldownSupport -= Time.deltaTime;
+        if (CooldownUltimate > 0) CooldownUltimate -= Time.deltaTime;
     }
 
     private void FixedUpdate()

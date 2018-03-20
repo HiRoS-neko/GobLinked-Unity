@@ -9,7 +9,8 @@ public class Item : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goblin"))
         {
-            other.gameObject.GetComponent<Goblin>().Items.AddItem(this);
+            var temp = other.gameObject.GetComponent<Goblin>();
+            temp.Items.AddItem(this);
             gameObject.transform.position = Vector3.zero;
             gameObject.SetActive(false);
         }

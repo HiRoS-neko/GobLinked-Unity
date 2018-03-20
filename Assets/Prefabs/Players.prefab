@@ -1065,7 +1065,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552399676207902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.18, y: -1.9079306, z: -1}
+  m_LocalPosition: {x: -10.7, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4121073623213144}
@@ -1936,13 +1936,22 @@ MonoBehaviour:
   _baseAttack: 2
   _baseHealth: 4
   _baseSpeed: 2
+  CooldownStandard: 0
+  CooldownRange: 0
+  CooldownSupport: 0
+  CooldownUltimate: 0
+  RankStandard: 0
+  RankRange: 0
+  RankSupport: 0
+  RankUltimate: 0
+  Dir: {x: 0, y: 0}
+  Anim: {fileID: 0}
+  CurrentHealth: 0
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
-  Items: {fileID: 0}
   HealthUI: {fileID: 0}
+  Items: {fileID: 0}
   Rigid: {fileID: 0}
-  CurrentHealth: 0
-  Anim: {fileID: 0}
 --- !u!114 &114130963235497428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1978,15 +1987,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07aa676d965a4738835823e3f0b3e3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chain: {fileID: 1373592379154776}
   _gameMode: 1
   _gnox: {fileID: 114117326096128838}
   _gnoxUI: {fileID: 0}
+  _inv: {fileID: 114130963235497428}
   _krilk: {fileID: 114646254744420570}
   _krilkUI: {fileID: 0}
-  _inv: {fileID: 114130963235497428}
   _player1: {fileID: 114837273741649056}
   _player2: {fileID: 114394808864332358}
-  _chain: {fileID: 1373592379154776}
   _speedMultiplier: 3
 --- !u!114 &114178203708317358
 MonoBehaviour:
@@ -2159,13 +2168,22 @@ MonoBehaviour:
   _baseAttack: 1
   _baseHealth: 9
   _baseSpeed: 1
+  CooldownStandard: 0
+  CooldownRange: 0
+  CooldownSupport: 0
+  CooldownUltimate: 0
+  RankStandard: 0
+  RankRange: 0
+  RankSupport: 0
+  RankUltimate: 0
+  Dir: {x: 0, y: 0}
+  Anim: {fileID: 0}
+  CurrentHealth: 0
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
-  Items: {fileID: 0}
   HealthUI: {fileID: 0}
+  Items: {fileID: 0}
   Rigid: {fileID: 0}
-  CurrentHealth: 0
-  Anim: {fileID: 0}
 --- !u!114 &114680702213297980
 MonoBehaviour:
   m_ObjectHideFlags: 1
