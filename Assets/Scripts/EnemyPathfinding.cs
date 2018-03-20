@@ -29,39 +29,12 @@ public class EnemyPathfinding : MonoBehaviour
 
     void FixedUpdate()
     {
-        for (int i = 0; i < hitObjects.Length; i++)
+        for (int i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
         {
             Debug.Log("FOR loop");
             if (hitObjects[i].tag == "Goblin")
             {
-                //body.velocity = (((Vector2)hitObjects[i].transform.position - body.position)).normalized*speed*Time.fixedDeltaTime;
-                if (hitObjects[i].Distance(body.GetComponentInParent<Collider2D>()).distance <= visibleRange)
-                {
-                    //Check for Sector 1 (TL). (-x, +y)
-                    if (0 < (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) &&
-                        (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) < 90) 
-                    {
-                        body.transform.position = (Vector2) body.transform.position + new Vector2(-32, 32);
-                    }
-                    //Check for Sector 2 (BL). (-x, -y)
-                    if (90 < (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) &&
-                        (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) < 180) 
-                    {
-                        body.transform.position = (Vector2) body.transform.position + new Vector2(-32, -32);
-                    }
-                    //Check for Sector 3 (BR). (+x, -y)
-                    if (-180 < (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) &&
-                        (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) < -90) 
-                    {
-                        body.transform.position = (Vector2) body.transform.position + new Vector2(32, -32);
-                    }
-                    //Check for Sector 4 (TR). (+x, +y)
-                    if (90 < (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) &&
-                        (Vector2.SignedAngle(body.position, hitObjects[i].transform.position)) < 180) 
-                    {
-                        body.transform.position = (Vector2) body.transform.position + new Vector2(32, 32);
-                    }
-                }
+                body.velocity = (((Vector2)hitObjects[i].transform.position - body.position)).normalized*speed*Time.fixedDeltaTime; //Moves the enemy towards the goal been
             }
         }
     }
@@ -72,8 +45,8 @@ public class EnemyPathfinding : MonoBehaviour
 
         while (true)
         {
-            hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange);
-            yield return new WaitForSeconds(waitTime);
+            hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
+            yield return new WaitForSeconds(waitTime); //Wait for next poll time
         }
     }
 }
