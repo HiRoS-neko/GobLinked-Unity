@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
 
     private int _columns, _rows, _spacing;
 
+    private Goblin _krilkGoblin, _gnoxGoblin;
+
 
     private GameObject[,] _itemGrid;
 
@@ -19,13 +21,52 @@ public class Inventory : MonoBehaviour
         {
             Items = new List<Item>();
         }
-        
+
         //
         //Spawn Item Gird? 
         //
         _itemGrid = new GameObject[_rows, _columns];
     }
 
+
+    public void EquipItem(Item item)
+    {
+        var goblinType = item.goblinType;
+        switch (goblinType)
+        {
+            case Goblin.GoblinType.Krilk:
+                if (item.GetType() == typeof(Weapon))
+                {
+                    _krilkGoblin.EquippedWeapon = (Weapon) item;
+                }
+                else if (item.GetType() == typeof(Accessory))
+                {
+                    _krilkGoblin.EquippedAccessory = (Accessory) item;
+                }
+                else if (item.GetType() == typeof(Consumable))
+                {
+                    _krilkGoblin.useConsumable((Consumable) item);
+                }
+
+                break;
+            case Goblin.GoblinType.Gnox:
+                if (item.GetType() == typeof(Weapon))
+                {
+                    _gnoxGoblin.EquippedWeapon = (Weapon) item;
+                }
+                else if (item.GetType() == typeof(Accessory))
+                {
+                    _gnoxGoblin.EquippedAccessory = (Accessory) item;
+                }
+                else if (item.GetType() == typeof(Consumable))
+                {
+                    _gnoxGoblin.useConsumable((Consumable) item);
+                }
+                break;
+            case Goblin.GoblinType.Both:
+                break;
+        }
+    }
 
     public void AddItem(Item item)
     {

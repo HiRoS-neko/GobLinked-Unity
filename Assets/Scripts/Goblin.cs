@@ -1,10 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
 public class Goblin : MonoBehaviour
 {
+    public enum GoblinType
+    {
+        Krilk,
+        Gnox,
+        Both
+    }
+
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
     private int _baseArmor;
 
@@ -60,21 +68,20 @@ public class Goblin : MonoBehaviour
     {
         var temp = Rigid.velocity;
 
-        if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y))
+        if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y) && Mathf.Abs(temp.y) > 0.1)
         {
             if (temp.y > 0) //up
                 Anim.SetInteger("dir", 1);
             else if (temp.y < 0) //down
                 Anim.SetInteger("dir", 3);
         }
-        else if (Mathf.Abs(temp.x) > Mathf.Abs(temp.y))
+        else if (Mathf.Abs(temp.x) > Mathf.Abs(temp.y) && Mathf.Abs(temp.x) > 0.1)
         {
             if (temp.x > 0) //right
                 Anim.SetInteger("dir", 2);
             else if (temp.x < 0) //left
                 Anim.SetInteger("dir", 4);
         }
-
         else
         {
             Anim.SetInteger("dir", 0);
@@ -138,5 +145,10 @@ public class Goblin : MonoBehaviour
         {
             //TODO are we doing contact damage?
         }
+    }
+
+    public void useConsumable(Consumable item)
+    {
+        throw new NotImplementedException();
     }
 }
