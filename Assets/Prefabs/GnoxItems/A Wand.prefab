@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: A Wand
+  GoblinType: 1
   ArmorMod: 0
   AttackMod: 3
   HealthMod: 5

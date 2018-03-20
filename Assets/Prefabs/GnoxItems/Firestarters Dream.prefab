@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Firestarters Dream
+  GoblinType: 1
   ArmorMod: 0
   AttackMod: 2
   HealthMod: 2

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Dirty Socks
+  GoblinType: 1
   ArmorMod: 0
   AttackMod: 1
   HealthMod: 0

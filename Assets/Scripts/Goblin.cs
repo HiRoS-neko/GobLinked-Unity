@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
 using UnityEngine;
@@ -11,6 +12,14 @@ public class Goblin : MonoBehaviour
         Krilk,
         Gnox,
         Both
+    }
+
+    public enum Stat
+    {
+        Speed,
+        Health,
+        Armor,
+        Attack
     }
 
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
@@ -133,7 +142,7 @@ public class Goblin : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         //check if its an item
-        if (other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item"))    
         {
             var temp = other.gameObject.GetComponent<Item>();
             Items.AddItem(temp);
@@ -150,5 +159,11 @@ public class Goblin : MonoBehaviour
     public void useConsumable(Consumable item)
     {
         throw new NotImplementedException();
+    }
+
+
+    public IEnumerator AddStst(float duration, Stat statType)
+    {
+        return null;
     }
 }

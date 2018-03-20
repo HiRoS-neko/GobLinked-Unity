@@ -12,7 +12,6 @@ public class Inventory : MonoBehaviour
 
     private Goblin _krilkGoblin, _gnoxGoblin;
 
-
     private GameObject[,] _itemGrid;
 
     private void Awake()
@@ -31,7 +30,12 @@ public class Inventory : MonoBehaviour
 
     public void EquipItem(Item item)
     {
-        var goblinType = item.goblinType;
+        var goblinType = item.GoblinType;
+        EquipItem(item, goblinType);
+    }
+
+    public void EquipItem(Item item, Goblin.GoblinType goblinType)
+    {
         switch (goblinType)
         {
             case Goblin.GoblinType.Krilk:
@@ -62,6 +66,7 @@ public class Inventory : MonoBehaviour
                 {
                     _gnoxGoblin.useConsumable((Consumable) item);
                 }
+
                 break;
             case Goblin.GoblinType.Both:
                 break;
@@ -94,8 +99,6 @@ public class Inventory : MonoBehaviour
                     Items[i * _columns + j].transform.position =
                         Vector3.up * _spacing * i + Vector3.right * _spacing * j +
                         gameObject.transform.position.z * Vector3.forward;
-
-
                     ItemGrid(i, j, true);
                 }
                 else
