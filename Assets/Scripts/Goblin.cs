@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
@@ -34,17 +33,32 @@ public class Goblin : MonoBehaviour
     [SerializeField] [Tooltip("Base Speed of the Goblin")]
     private int _baseSpeed;
 
+    private int _lastCurrentHealth;
+
+    private int _lastHealth;
+
+
+    //Cooldowns
+    public float CooldownStandard, CooldownRange, CooldownSupport, CooldownUltimate;
+    
+    
+    //Rank in Abilities
+    public float RankStandard, RankRange, RankSupport, RankUltimate;
+
+    
+    public Animator Anim;
+
+    public int CurrentHealth;
+
     public Accessory EquippedAccessory;
 
     public Weapon EquippedWeapon;
 
-    public Inventory Items;
-
     [HideInInspector] public HealthManager HealthUI;
 
+    public Inventory Items;
 
     [HideInInspector] public Rigidbody2D Rigid;
-
 
     public int Speed => _baseSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.SpeedMod : 0);
@@ -52,19 +66,11 @@ public class Goblin : MonoBehaviour
     public int Health => _baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.HealthMod : 0);
 
-    public int CurrentHealth;
-
     public int Armor => _baseArmor + (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.ArmorMod : 0);
 
     public int Attack => _baseAttack + (EquippedAccessory != null ? EquippedAccessory.AttackMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.AttackMod : 0);
-
-
-    private int _lastHealth;
-    private int _lastCurrentHealth;
-
-    public Animator Anim;
 
     private void Start()
     {
@@ -95,37 +101,29 @@ public class Goblin : MonoBehaviour
         {
             Anim.SetInteger("dir", 0);
         }
+
+
+        //Cooldowns
+        CooldownStandard -= Time.deltaTime;
+        CooldownRange -= Time.deltaTime;
+        CooldownSupport -= Time.deltaTime;
+        CooldownUltimate -= Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
         //Make sure the health is set proportional when items are changed
         if (_lastHealth < Health)
-        {
             CurrentHealth += Health - _lastHealth;
-        }
         else if (_lastHealth > Health)
-        {
             if (CurrentHealth < Health)
-            {
                 CurrentHealth = Health;
-            }
-        }
 
-        if (CurrentHealth > Health)
-        {
-            CurrentHealth = Health;
-        }
+        if (CurrentHealth > Health) CurrentHealth = Health;
 
-        if (_lastCurrentHealth != CurrentHealth)
-        {
-            HealthUI.SetHealth(CurrentHealth);
-        }
+        if (_lastCurrentHealth != CurrentHealth) HealthUI.SetHealth(CurrentHealth);
 
-        if (_lastHealth != Health)
-        {
-            HealthUI.SetMaxHealth(Health);
-        }
+        if (_lastHealth != Health) HealthUI.SetMaxHealth(Health);
 
         _lastHealth = Health;
         _lastCurrentHealth = CurrentHealth;
@@ -136,13 +134,14 @@ public class Goblin : MonoBehaviour
     {
         //TODO do armour calc and apply to health
         //HealthUI.SetHealth(Health);
+        throw new NotImplementedException();
     }
 
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         //check if its an item
-        if (other.gameObject.CompareTag("Item"))    
+        if (other.gameObject.CompareTag("Item"))
         {
             var temp = other.gameObject.GetComponent<Item>();
             Items.AddItem(temp);
@@ -156,14 +155,42 @@ public class Goblin : MonoBehaviour
         }
     }
 
-    public void useConsumable(Consumable item)
+    public void UseConsumable(Consumable item)
     {
-        throw new NotImplementedException();
+        if (item.GetType() == typeof(ConsumableRestore))
+        {
+            throw new NotImplementedException();
+        }
+        else if (item.GetType() == typeof(ConsumableBuff))
+        {
+            var consumable = (ConsumableBuff) item;
+            StartCoroutine(AddStat(consumable.Duration, consumable.Buff, consumable.Amount));
+        }
     }
 
 
-    public IEnumerator AddStst(float duration, Stat statType)
+    public IEnumerator AddStat(float duration, Stat statType, int amount)
     {
-        return null;
+        //add amount to stat
+        throw new NotImplementedException();
+        yield return new WaitForSeconds(duration);
+        //remove amount to stat
+    }
+
+
+    public virtual void AttackStandard()
+    {
+    }
+
+    public virtual void AttackRange()
+    {
+    }
+
+    public virtual void AttackSupport()
+    {
+    }
+
+    public virtual void AttackUltimate()
+    {
     }
 }

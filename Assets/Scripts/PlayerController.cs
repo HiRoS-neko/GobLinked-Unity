@@ -8,23 +8,23 @@ public class PlayerController : MonoBehaviour
         MultiPlayer
     }
 
+    public static float SpeedMultiplier;
+
+    [SerializeField] private GameObject _chain;
+
     [SerializeField] private GameMode _gameMode;
 
     [SerializeField] private Gnox _gnox;
     [SerializeField] private GoblinUI _gnoxUI;
+
+    [SerializeField] private Inventory _inv;
     [SerializeField] private Krilk _krilk;
 
     [SerializeField] private GoblinUI _krilkUI;
 
-    [SerializeField] private Inventory _inv;
-
     [SerializeField] private Player1 _player1;
     [SerializeField] private Player2 _player2;
-
-    [SerializeField] private GameObject _chain;
-
-    public static float SpeedMultiplier;
-    [SerializeField, Range(1, 10)] private float _speedMultiplier;
+    [SerializeField] [Range(1, 10)] private float _speedMultiplier;
 
     private void Awake()
     {
