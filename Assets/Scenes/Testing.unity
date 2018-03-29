@@ -280,7 +280,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-  m_TileRefreshArray: []
 --- !u!1001 &340013736
 Prefab:
   m_ObjectHideFlags: 0
@@ -768,10 +767,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleRange: 399.79
+  visibleRange: 400
   search: 0
+  aiType: 0
   body: {fileID: 1699686827}
-  speed: 11.7
+  speed: 100
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4
@@ -976,6 +976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibleRange: 100
   search: 0
+  aiType: 0
   body: {fileID: 1776308542}
   speed: 21.9
 --- !u!1 &1823169329
