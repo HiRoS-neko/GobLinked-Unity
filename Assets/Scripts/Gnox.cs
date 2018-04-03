@@ -51,7 +51,7 @@ public class Gnox : Goblin
 
 
         //Physics2D.OverlapCircleAll()
-        base.AttackStandard();
+        base.AttackRange();
     }
 
     public override void AttackSupport()
