@@ -172,6 +172,11 @@ Prefab:
       propertyPath: Items
       value: 
       objectReference: {fileID: 1220936937}
+    - target: {fileID: 114646254744420570, guid: 51b51a7df7a76da43b85c1a504cb41b8,
+        type: 2}
+      propertyPath: RankUltimate
+      value: 551.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51b51a7df7a76da43b85c1a504cb41b8, type: 2}
   m_IsPrefabParent: 0
@@ -767,11 +772,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleRange: 400
-  search: 0
-  aiType: 0
+  visibleRange: 132.23523
+  search: 1
+  aiType: 3
   body: {fileID: 1699686827}
-  speed: 100
+  speed: 85.046455
+  health: 23
+  armor: 93
+  attack: 2
+  enemySpeedMultiplier: 1
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4
@@ -782,7 +791,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -979,6 +988,10 @@ MonoBehaviour:
   aiType: 0
   body: {fileID: 1776308542}
   speed: 21.9
+  health: 0
+  armor: 0
+  attack: 0
+  enemySpeedMultiplier: 0
 --- !u!1 &1823169329
 GameObject:
   m_ObjectHideFlags: 0
