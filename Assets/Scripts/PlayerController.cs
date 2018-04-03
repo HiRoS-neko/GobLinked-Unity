@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public static float SpeedMultiplier;
 
     [SerializeField] private GameObject _chain;
+    [SerializeField] private Camera _camera;
 
     [SerializeField] private GameMode _gameMode;
 
@@ -36,6 +37,36 @@ public class PlayerController : MonoBehaviour
         _gnox.HealthUI = _gnoxUI.HealthManager;
 
         SpeedMultiplier = _speedMultiplier;
+    }
+
+    private void Update()
+    {
+        switch (_gameMode)
+        {
+            case GameMode.SinglePlayer:
+                _camera.transform.position = Vector3.Lerp(_camera.transform.position,
+                                                 _player1.ControlledGoblin.transform.position +
+                                                 (Vector3) _player1.ControlledGoblin.Rigid.velocity, 0.05f) +
+                                             Vector3.back;
+                break;
+            case GameMode.MultiPlayer:
+                _camera.transform.position = Vector3.Lerp(_camera.transform.position, (_player1.ControlledGoblin
+                                                                                           .transform.position +
+                                                                                       _player2.ControlledGoblin
+                                                                                           .transform.position) / 2 +
+                                                                                      (Vector3) ((
+                                                                                                     _player1
+                                                                                                         .ControlledGoblin
+                                                                                                         .Rigid
+                                                                                                         .velocity +
+                                                                                                     _player2
+                                                                                                         .ControlledGoblin
+                                                                                                         .Rigid
+                                                                                                         .velocity) /
+                                                                                                 2) + Vector3.back,
+                    0.05f);
+                break;
+        }
     }
 
     public void SwitchPlayers()
