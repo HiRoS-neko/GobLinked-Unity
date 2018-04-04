@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
         _krilk.HealthUI = _krilkUI.HealthManager;
         _gnox.HealthUI = _gnoxUI.HealthManager;
 
+        _krilk.Items = _inv;
+        _gnox.Items = _inv;
+
         SpeedMultiplier = _speedMultiplier;
     }
 
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position,
                                                  _player1.ControlledGoblin.transform.position +
                                                  (Vector3) _player1.ControlledGoblin.Rigid.velocity, 0.05f) +
-                                             Vector3.back;
+                                             3*Vector3.back;
                 break;
             case GameMode.MultiPlayer:
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position, (_player1.ControlledGoblin
@@ -63,7 +66,7 @@ public class PlayerController : MonoBehaviour
                                                                                                          .ControlledGoblin
                                                                                                          .Rigid
                                                                                                          .velocity) /
-                                                                                                 2) + Vector3.back,
+                                                                                                 2) + 3*Vector3.back,
                     0.05f);
                 break;
         }

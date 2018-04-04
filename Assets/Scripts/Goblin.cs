@@ -145,7 +145,7 @@ public class Goblin : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D other)
+   private void OnCollisionEnter2D(Collision2D other)
     {
         //check if its an item
         if (other.gameObject.CompareTag("Item"))

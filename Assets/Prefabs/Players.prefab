@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 114170767015349616}
   - component: {fileID: 114837273741649056}
   - component: {fileID: 114394808864332358}
-  - component: {fileID: 114130963235497428}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -1243,8 +1242,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090702106781536}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.18, y: 2.1119308, z: -9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4400509450689864}
@@ -1952,18 +1951,6 @@ MonoBehaviour:
   HealthUI: {fileID: 0}
   Items: {fileID: 0}
   Rigid: {fileID: 0}
---- !u!114 &114130963235497428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047789317957212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21e9fbc34144b6ca4fefb9ab199d68e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Items: []
 --- !u!114 &114166181291739734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1989,10 +1976,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chain: {fileID: 1373592379154776}
   _camera: {fileID: 20171639515963758}
-  _gameMode: 0
+  _gameMode: 1
   _gnox: {fileID: 114117326096128838}
   _gnoxUI: {fileID: 0}
-  _inv: {fileID: 114130963235497428}
+  _inv: {fileID: 0}
   _krilk: {fileID: 114646254744420570}
   _krilkUI: {fileID: 0}
   _player1: {fileID: 114837273741649056}
