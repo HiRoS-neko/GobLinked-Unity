@@ -46,13 +46,38 @@ public class PlayerController : MonoBehaviour
         GlobalScript.SceneChanged += GlobalScriptOnSceneChanged;
     }
 
+    public void SetMode(GameMode gameMode)
+    {
+        _gameMode = gameMode;
+        switch (_gameMode)
+        {
+            case GameMode.MultiPlayer:
+                _player1.ControlledGoblin = _krilk;
+                _player2.ControlledGoblin = _gnox;
+                _gnox.gameObject.SetActive(true);
+                _krilk.gameObject.SetActive(true);
+                _chain.SetActive(true);
+                break;
+            case GameMode.SinglePlayer:
+                _player1.ControlledGoblin = _krilk;
+                _player2.ControlledGoblin = null;
+                _gnox.gameObject.SetActive(false);
+                _krilk.gameObject.SetActive(true);
+                _chain.SetActive(false);
+                break;
+        }
+    }
+
     private void GlobalScriptOnSceneChanged(Scene prevScene)
     {
         //find object in scene with the name of the previous scene
         var spawn = GameObject.Find(prevScene.name);
         //move both goblins to gameobject
-        _gnox.gameObject.transform.position = spawn.transform.position;
-        _krilk.gameObject.transform.position = spawn.transform.position;
+        if (spawn != null)
+        {
+            _gnox.gameObject.transform.position = spawn.transform.position;
+            _krilk.gameObject.transform.position = spawn.transform.position;
+        }
     }
 
     private void Update()
