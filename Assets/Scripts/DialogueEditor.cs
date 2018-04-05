@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(Dialogue))]
@@ -37,18 +36,12 @@ public class DialogueEditor : Editor
             line.Delay =
                 EditorGUILayout.FloatField(line.Delay, GUILayout.MaxWidth(30), GUILayout.ExpandWidth(false));
 
-            if (GUILayout.Button("-", GUILayout.ExpandWidth(false)))
-            {
-                DeleteLine(line);
-            }
+            if (GUILayout.Button("-", GUILayout.ExpandWidth(false))) DeleteLine(line);
 
             EditorGUILayout.EndHorizontal();
         }
 
-        if (GUILayout.Button("Add Line"))
-        {
-            _dialogueLine.Lines.Add(new DialogueLine());
-        }
+        if (GUILayout.Button("Add Line")) _dialogueLine.Lines.Add(new DialogueLine());
 
         if (GUILayout.Button("Save Dialogue"))
         {

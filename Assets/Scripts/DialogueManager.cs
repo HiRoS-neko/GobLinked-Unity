@@ -1,13 +1,9 @@
-﻿using System.CodeDom.Compiler;
-using System.Collections;
-using UnityEditor;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private Dialogue _dialogue;
-
     public enum Type
     {
         LetterByLetter,
@@ -15,14 +11,15 @@ public class DialogueManager : MonoBehaviour
         LineByLine
     }
 
-    [SerializeField] private Type _dialogueType;
-
-    [SerializeField] private float _spacingDelay = 0;
-
-    [SerializeField] private string _tagTrigger;
-
 
     private Collider2D _collider;
+    [SerializeField] private Dialogue _dialogue;
+
+    [SerializeField] private Type _dialogueType;
+
+    [SerializeField] private float _spacingDelay;
+
+    [SerializeField] private string _tagTrigger;
 
     private void Start()
     {
@@ -99,8 +96,6 @@ public class DialogueManager : MonoBehaviour
 
         if (line < _dialogue.Lines.Count)
         {
-            
-            
             DialogueBox.TextBox.text = "";
             // add context string
 
@@ -126,7 +121,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-            
+
             DialogueBox.TextBox.text = "";
         }
 

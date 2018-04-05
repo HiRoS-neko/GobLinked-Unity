@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +11,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public static float SpeedMultiplier;
+    [SerializeField] private Camera _camera;
 
     [SerializeField] private GameObject _chain;
-    [SerializeField] private Camera _camera;
 
     [SerializeField] private GameMode _gameMode;
 
@@ -40,6 +42,17 @@ public class PlayerController : MonoBehaviour
         _gnox.Items = _inv;
 
         SpeedMultiplier = _speedMultiplier;
+
+        GlobalScript.SceneChanged += GlobalScriptOnSceneChanged;
+    }
+
+    private void GlobalScriptOnSceneChanged(Scene prevScene)
+    {
+        //find object in scene with the name of the previous scene
+        var spawn = GameObject.Find(prevScene.name);
+        //move both goblins to gameobject
+        _gnox.gameObject.transform.position = spawn.transform.position;
+        _krilk.gameObject.transform.position = spawn.transform.position;
     }
 
     private void Update()
@@ -50,7 +63,7 @@ public class PlayerController : MonoBehaviour
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position,
                                                  _player1.ControlledGoblin.transform.position +
                                                  (Vector3) _player1.ControlledGoblin.Rigid.velocity, 0.05f) +
-                                             3*Vector3.back;
+                                             3 * Vector3.back;
                 break;
             case GameMode.MultiPlayer:
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position, (_player1.ControlledGoblin
@@ -66,7 +79,7 @@ public class PlayerController : MonoBehaviour
                                                                                                          .ControlledGoblin
                                                                                                          .Rigid
                                                                                                          .velocity) /
-                                                                                                 2) + 3*Vector3.back,
+                                                                                                 2) + 3 * Vector3.back,
                     0.05f);
                 break;
         }

@@ -1462,7 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthManager: {fileID: 114861109993207172}
-  AbilityManager: {fileID: 0}
+  AbilityManager: {fileID: 114986385460836924}
 --- !u!114 &114260719950857138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthManager: {fileID: 114799361276784132}
-  AbilityManager: {fileID: 0}
+  AbilityManager: {fileID: 114403836291987064}
 --- !u!114 &114492001067353388
 MonoBehaviour:
   m_ObjectHideFlags: 1

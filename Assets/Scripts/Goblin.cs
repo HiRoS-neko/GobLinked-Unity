@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
@@ -37,20 +36,16 @@ public class Goblin : MonoBehaviour
 
     private int _lastHealth;
 
+    [HideInInspector] public Animator Anim;
+
 
     //Cooldowns
     public float CooldownStandard, CooldownRange, CooldownSupport, CooldownUltimate;
 
-
-    //Rank in Abilities
-    public float RankStandard, RankRange, RankSupport, RankUltimate;
+    public int CurrentHealth;
 
 
     public Vector2 Dir;
-
-    [HideInInspector] public Animator Anim;
-
-    public int CurrentHealth;
 
     public Accessory EquippedAccessory;
 
@@ -59,6 +54,10 @@ public class Goblin : MonoBehaviour
     [HideInInspector] public HealthManager HealthUI;
 
     public Inventory Items;
+
+
+    //Rank in Abilities
+    public float RankStandard, RankRange, RankSupport, RankUltimate;
 
     [HideInInspector] public Rigidbody2D Rigid;
 
@@ -145,7 +144,7 @@ public class Goblin : MonoBehaviour
     }
 
 
-   private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         //check if its an item
         if (other.gameObject.CompareTag("Item"))
@@ -168,7 +167,8 @@ public class Goblin : MonoBehaviour
         {
             throw new NotImplementedException();
         }
-        else if (item.GetType() == typeof(ConsumableBuff))
+
+        if (item.GetType() == typeof(ConsumableBuff))
         {
             var consumable = (ConsumableBuff) item;
             StartCoroutine(AddStat(consumable.Duration, consumable.Buff, consumable.Amount));

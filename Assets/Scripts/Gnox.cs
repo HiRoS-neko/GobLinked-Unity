@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Gnox : Goblin
 {
@@ -47,7 +46,7 @@ public class Gnox : Goblin
         if (CooldownRange > 0)
             return;
 
-        CooldownRange = 10 - (0.5f * RankRange);
+        CooldownRange = 10 - 0.5f * RankRange;
 
 
         //Physics2D.OverlapCircleAll()
