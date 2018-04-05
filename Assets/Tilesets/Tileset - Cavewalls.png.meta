@@ -8,6 +8,8 @@ TextureImporter:
     21300002: Tileset - Cavewalls_1
     21300004: Tileset - Cavewalls_2
     21300006: Tileset - Cavewalls_3
+    21300008: Tileset - Cavewalls_4
+    21300010: Tileset - Cavewalls_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -116,8 +118,8 @@ TextureImporter:
       name: Tileset - Cavewalls_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -130,7 +132,35 @@ TextureImporter:
       name: Tileset - Cavewalls_3
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tileset - Cavewalls_4
+      rect:
+        serializedVersion: 2
         x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tileset - Cavewalls_5
+      rect:
+        serializedVersion: 2
+        x: 64
         y: 0
         width: 32
         height: 32
