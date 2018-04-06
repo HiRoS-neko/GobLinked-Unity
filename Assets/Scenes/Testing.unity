@@ -386,7 +386,7 @@ Prefab:
         type: 2}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1427033614}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eab7eb0d6fc124043a9da93d66cdae45, type: 2}
   m_IsPrefabParent: 0
@@ -479,7 +479,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892375107
 GameObject:
@@ -539,87 +539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
---- !u!1 &1427033611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1427033615}
-  - component: {fileID: 1427033614}
-  - component: {fileID: 1427033613}
-  - component: {fileID: 1427033612}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1427033612
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427033611}
-  m_Enabled: 1
---- !u!124 &1427033613
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427033611}
-  m_Enabled: 1
---- !u!20 &1427033614
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427033611}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1427033615
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427033611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.37, y: 1.18, z: -7.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1437691516 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114459005008280784, guid: eab7eb0d6fc124043a9da93d66cdae45,
@@ -759,7 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1699686826
 MonoBehaviour:
@@ -772,15 +691,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleRange: 132.23523
-  search: 1
   aiType: 3
-  body: {fileID: 1699686827}
-  speed: 85.046455
-  health: 23
   armor: 93
   attack: 2
-  enemySpeedMultiplier: 1
+  experienceDrop: 0
+  body: {fileID: 1699686827}
+  enemySpeedMultiplier: 7
+  health: 23
+  search: 1
+  speed: 85.046455
+  visibleRange: 132.23523
+  checkDelay: 0.01
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4
@@ -894,7 +815,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1776308540
 MonoBehaviour:
@@ -911,21 +832,21 @@ MonoBehaviour:
   _baseAttack: 0
   _baseHealth: 0
   _baseSpeed: 2
+  Anim: {fileID: 1776308537}
   CooldownStandard: 0
   CooldownRange: 0
   CooldownSupport: 0
   CooldownUltimate: 0
-  RankStandard: 0
-  RankRange: 0
-  RankSupport: 0
-  RankUltimate: 0
-  Dir: {x: 0, y: 0}
-  Anim: {fileID: 1776308537}
   CurrentHealth: 0
+  Dir: {x: 0, y: 0}
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   HealthUI: {fileID: 0}
   Items: {fileID: 0}
+  RankStandard: 0
+  RankRange: 0
+  RankSupport: 0
+  RankUltimate: 0
   Rigid: {fileID: 0}
 --- !u!61 &1776308541
 BoxCollider2D:
@@ -983,15 +904,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383fd089446ae1a45907ddccb36ccca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleRange: 100
-  search: 0
   aiType: 0
-  body: {fileID: 1776308542}
-  speed: 21.9
-  health: 0
   armor: 0
   attack: 0
+  experienceDrop: 0
+  body: {fileID: 1776308542}
   enemySpeedMultiplier: 0
+  health: 0
+  search: 0
+  speed: 21.9
+  visibleRange: 100
+  checkDelay: 0
 --- !u!1 &1823169329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077065039
 GameObject:
