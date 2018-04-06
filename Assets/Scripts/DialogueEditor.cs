@@ -36,6 +36,8 @@ public class DialogueEditor : Editor
             line.Delay =
                 EditorGUILayout.FloatField(line.Delay, GUILayout.MaxWidth(30), GUILayout.ExpandWidth(false));
 
+            line.Audio = (AudioClip) EditorGUILayout.ObjectField(line.Audio, typeof(AudioClip), false);
+
             if (GUILayout.Button("-", GUILayout.ExpandWidth(false))) DeleteLine(line);
 
             EditorGUILayout.EndHorizontal();
