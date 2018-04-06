@@ -78,6 +78,8 @@ public class Goblin : MonoBehaviour
 
     public Inventory Items;
 
+    [HideInInspector]public AbilityManager AbilityManager;
+
 
     //Rank in Abilities
     public float RankStandard, RankRange, RankSupport, RankUltimate;
@@ -140,6 +142,7 @@ public class Goblin : MonoBehaviour
         if (CooldownRange > 0) CooldownRange -= Time.deltaTime;
         if (CooldownSupport > 0) CooldownSupport -= Time.deltaTime;
         if (CooldownUltimate > 0) CooldownUltimate -= Time.deltaTime;
+        
     }
 
     private void FixedUpdate()
@@ -159,6 +162,13 @@ public class Goblin : MonoBehaviour
 
         _lastHealth = Health;
         _lastCurrentHealth = CurrentHealth;
+        
+        
+        AbilityManager.SetCooldownAttackRange((int)CooldownRange);
+        AbilityManager.SetCooldownAttackStandard((int)CooldownStandard);
+        AbilityManager.SetCooldownAttackSupport((int)CooldownSupport);
+        AbilityManager.SetCooldownAttackUltimate((int)CooldownUltimate);
+        
     }
 
 

@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GoblinUI _gnoxUI;
 
     [SerializeField] private Inventory _inv;
+
+    [SerializeField] private AbilityManager _gnoxAbilityManager;
+    [SerializeField] private AbilityManager _krilkAbilityManager;
+
+
     [SerializeField] private Krilk _krilk;
 
     [SerializeField] private GoblinUI _krilkUI;
@@ -36,7 +41,12 @@ public class PlayerController : MonoBehaviour
 
         _krilk.HealthUI = _krilkUI.HealthManager;
         _gnox.HealthUI = _gnoxUI.HealthManager;
+        
+        _krilk.AbilityManager = _krilkAbilityManager;
+        _gnox.AbilityManager = _gnoxAbilityManager;
 
+        
+        
         _krilk.Items = _inv;
         _gnox.Items = _inv;
 
