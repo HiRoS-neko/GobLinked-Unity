@@ -1,5 +1,7 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
@@ -18,6 +20,27 @@ public class Goblin : MonoBehaviour
         Health,
         Armor,
         Attack
+    }
+
+    public static int Exp = 12000;
+
+    public static int Level
+    {
+        get
+        {
+            var temp = Exp;
+            int level = 0;
+            do
+            {
+                level++;
+                temp -= (int) (10 * (level - Mathf.Pow(level, 0.25f)));
+                Debug.Log((12000 - temp) + " - " + (level - 1));
+            } while (temp > 0);
+
+            level--;
+
+            return level;
+        }
     }
 
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
@@ -108,6 +131,9 @@ public class Goblin : MonoBehaviour
             Anim.SetInteger("dir", 0);
         }
 
+        //if (Input.GetKey("z"))
+        //    Exp += 1;
+
 
         //Cooldowns
         if (CooldownStandard > 0) CooldownStandard -= Time.deltaTime;
@@ -163,10 +189,7 @@ public class Goblin : MonoBehaviour
 
     public void UseConsumable(Consumable item)
     {
-        if (item.GetType() == typeof(ConsumableRestore))
-        {
-            throw new NotImplementedException();
-        }
+        if (item.GetType() == typeof(ConsumableRestore)) throw new NotImplementedException();
 
         if (item.GetType() == typeof(ConsumableBuff))
         {
@@ -201,3 +224,4 @@ public class Goblin : MonoBehaviour
     {
     }
 }
+

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider2D), typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour
 {
     public enum Type
@@ -13,6 +14,7 @@ public class DialogueManager : MonoBehaviour
 
 
     private Collider2D _collider;
+    private AudioSource _audioSource;
     [SerializeField] private Dialogue _dialogue;
 
     [SerializeField] private Type _dialogueType;
@@ -24,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<Collider2D>();
+        _audioSource = GetComponent<AudioSource>();
         if (_collider == null)
         {
             Debug.LogError("No Collider2D found on Dialogue Manager");
@@ -73,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         {
             current += _dialogue.Lines[line].Line[letter];
             letter++;
-        } while (!(_dialogue.Lines[line].Line[letter] == ' ' || _dialogue.Lines[line].Line.Length == letter + 1));
+        } while (!(current.Last() == ' ' || _dialogue.Lines[line].Line.Length == letter));
 
         DialogueBox.TextBox.text += current;
 
@@ -98,7 +101,8 @@ public class DialogueManager : MonoBehaviour
         {
             DialogueBox.TextBox.text = "";
             // add context string
-
+            if (_dialogue.Lines[line].Audio != null)
+                _audioSource.PlayOneShot(_dialogue.Lines[line].Audio);
             DialogueBox.TextBox.text += _dialogue.Lines[line].Context + "\n";
 
             switch (_dialogueType)
