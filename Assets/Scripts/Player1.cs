@@ -12,8 +12,8 @@ public class Player1 : MonoBehaviour
 
         _intendedMovement = Vector2.right * Input.GetAxis("Player1Horizontal") +
                             Vector2.up * Input.GetAxis("Player1Vertical");
-        
-        
+
+
         if (Input.GetButtonDown("Player1AttackStandard"))
             ControlledGoblin.AttackStandard();
         if (Input.GetButtonDown("Player1AttackRange"))
@@ -22,6 +22,9 @@ public class Player1 : MonoBehaviour
             ControlledGoblin.AttackSupport();
         if (Input.GetButtonDown("Player1AttackUltimate"))
             ControlledGoblin.AttackUltimate();
+
+        ControlledGoblin.RightStick = Vector2.right * Input.GetAxis("Player1RightStickHor") +
+                                      Vector2.down * Input.GetAxis("Player1RightStickVert");
     }
 
     private void FixedUpdate()

@@ -3713,6 +3713,7 @@ MonoBehaviour:
   CooldownUltimate: 0
   CurrentHealth: 0
   Dir: {x: 0, y: 0}
+  RightStick: {x: 0, y: 0}
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   HealthUI: {fileID: 0}
@@ -4710,7 +4711,7 @@ MonoBehaviour:
   _krilkUI: {fileID: 114217100192744412}
   _player1: {fileID: 114883119464130396}
   _player2: {fileID: 114215378107229448}
-  _speedMultiplier: 3
+  _speedMultiplier: 2
 --- !u!114 &114613167995142140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5277,6 +5278,7 @@ MonoBehaviour:
   CooldownUltimate: 0
   CurrentHealth: 0
   Dir: {x: 0, y: 0}
+  RightStick: {x: 0, y: 0}
   EquippedAccessory: {fileID: 0}
   EquippedWeapon: {fileID: 0}
   HealthUI: {fileID: 0}
@@ -5287,6 +5289,7 @@ MonoBehaviour:
   RankSupport: 0
   RankUltimate: 0
   Rigid: {fileID: 0}
+  _fireball: {fileID: 1122742872019744, guid: 19900b4a3f7f7ca4686dc015ee9c038d, type: 2}
 --- !u!114 &114866855951390386
 MonoBehaviour:
   m_ObjectHideFlags: 1

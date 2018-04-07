@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameMode _gameMode;
 
-    [SerializeField] private Gnox _gnox;
+    [SerializeField] public Gnox _gnox;
     [SerializeField] private GoblinUI _gnoxUI;
 
     [SerializeField] private Inventory _inv;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AbilityManager _krilkAbilityManager;
 
 
-    [SerializeField] private Krilk _krilk;
+    [SerializeField] public Krilk _krilk;
 
     [SerializeField] private GoblinUI _krilkUI;
 

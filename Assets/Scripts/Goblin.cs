@@ -68,7 +68,8 @@ public class Goblin : MonoBehaviour
     public int CurrentHealth;
 
 
-    public Vector2 Dir;
+    public Vector2 Dir; // direction used for attacks
+    public Vector2 RightStick; // direction used for attacks
 
     public Accessory EquippedAccessory;
 
@@ -82,7 +83,7 @@ public class Goblin : MonoBehaviour
 
 
     //Rank in Abilities
-    public float RankStandard, RankRange, RankSupport, RankUltimate;
+    public int RankStandard, RankRange, RankSupport, RankUltimate;
 
     [HideInInspector] public Rigidbody2D Rigid;
 
@@ -112,6 +113,9 @@ public class Goblin : MonoBehaviour
         if (temp.magnitude > 0.1)
             Dir = temp.normalized; //last movement direction,,, used for attacks
 
+        if (RightStick.magnitude > 0.1f)
+            Dir = RightStick.normalized;
+         
         Debug.DrawLine(gameObject.transform.position, gameObject.transform.position + (Vector3) Dir);
 
         if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y) && Mathf.Abs(temp.y) > 0.1)

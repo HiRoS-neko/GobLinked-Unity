@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GlobalScript : MonoBehaviour
@@ -15,10 +16,15 @@ public class GlobalScript : MonoBehaviour
     public static event TheSceneChanged SceneChanged;
 
 
+    public static Krilk Krilk;
+    public static Gnox Gnox;
+    
+    
     private void Awake()
     {
         PlayerController = FindObjectOfType<PlayerController>();
-
+        Krilk = PlayerController._krilk;
+        Gnox = PlayerController._gnox;
         Level = SceneManager.GetActiveScene();
         if (Level.buildIndex == 0) //first scene in build index... should be zero
         {

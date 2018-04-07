@@ -2,6 +2,9 @@
 
 public class Gnox : Goblin
 {
+
+    [SerializeField] private GameObject _fireball;
+    
     private void Awake()
     {
         Rigid = GetComponent<Rigidbody2D>();
@@ -25,7 +28,7 @@ public class Gnox : Goblin
 
         CooldownStandard = 0.2f;
 
-
+        Instantiate(_fireball, transform.position, Quaternion.identity);
         base.AttackStandard();
     }
 
