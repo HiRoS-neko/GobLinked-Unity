@@ -4,6 +4,7 @@ public class Gnox : Goblin
 {
 
     [SerializeField] private GameObject _fireball;
+    [SerializeField] private GameObject _backwave;
     
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class Gnox : Goblin
             return;
 
         CooldownRange = 10 - 0.5f * RankRange;
-
+        Instantiate(_backwave, transform.position, Quaternion.identity);
 
         //Physics2D.OverlapCircleAll()
         base.AttackRange();

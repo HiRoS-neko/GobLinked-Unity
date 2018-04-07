@@ -14,6 +14,8 @@ public class Firebolt : MonoBehaviour
     private Vector2 _dir;
     private float _distance;
 
+    private float _damage;
+
     /// <summary>
     /// Distance 1-2 (3) 3-4 (4) 5-6 (5) + AOE
     /// </summary>
@@ -27,12 +29,14 @@ public class Firebolt : MonoBehaviour
         _distance = Mathf.FloorToInt((_rank - 1) / 2) + 3;
         //get current position
         _pos = transform.position;
-        
+
         var rot_z = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
-        
-        
+
+
         _rgd.velocity = _velocity * transform.right;
+
+        _damage = GlobalScript.Gnox.Attack * (1 + (GlobalScript.Gnox.RankStandard / 10));
     }
 
     private void FixedUpdate()

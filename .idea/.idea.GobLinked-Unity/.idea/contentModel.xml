@@ -16,16 +16,11 @@
               <e p="Unity3DRider.cs" t="Include" />
             </e>
           </e>
-          <e p="GitHub" t="Include">
-            <e p="Editor" t="Include">
-              <e p="CREDITS.txt" t="Include" />
-              <e p="EULA.txt" t="Include" />
-            </e>
-          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="AbilityManager.cs" t="Include" />
           <e p="Accessory.cs" t="Include" />
+          <e p="BackWave.cs" t="Include" />
           <e p="Consumable.cs" t="Include" />
           <e p="ConsumableBuff.cs" t="Include" />
           <e p="ConsumableRestore.cs" t="Include" />

@@ -5290,6 +5290,7 @@ MonoBehaviour:
   RankUltimate: 0
   Rigid: {fileID: 0}
   _fireball: {fileID: 1122742872019744, guid: 19900b4a3f7f7ca4686dc015ee9c038d, type: 2}
+  _backwave: {fileID: 1424516388495192, guid: 04bdae86c38aa3a408121754d5339c71, type: 2}
 --- !u!114 &114866855951390386
 MonoBehaviour:
   m_ObjectHideFlags: 1
