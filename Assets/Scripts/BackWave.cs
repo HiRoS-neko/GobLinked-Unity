@@ -29,6 +29,11 @@ public class BackWave : MonoBehaviour
         _damage = GlobalScript.Gnox.Attack * (0.25f + (GlobalScript.Gnox.RankRange));
     }
 
+    private void Update()
+    {
+        var ratio = _curr / _range;
+        transform.localScale = Vector3.one * ratio * _range;
+    }
 
     private void FixedUpdate()
     {

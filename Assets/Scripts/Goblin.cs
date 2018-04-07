@@ -90,7 +90,7 @@ public class Goblin : MonoBehaviour
     public int Speed => _baseSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.SpeedMod : 0);
 
-    public int Health => _baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
+    public int Health =>_baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.HealthMod : 0);
 
     public int Armor => _baseArmor + (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +

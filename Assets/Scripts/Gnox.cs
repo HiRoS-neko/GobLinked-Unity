@@ -2,10 +2,10 @@
 
 public class Gnox : Goblin
 {
-
-    [SerializeField] private GameObject _fireball;
+    [SerializeField] private GameObject _firebolt;
     [SerializeField] private GameObject _backwave;
-    
+    [SerializeField] private GameObject _fireball;
+
     private void Awake()
     {
         Rigid = GetComponent<Rigidbody2D>();
@@ -29,7 +29,7 @@ public class Gnox : Goblin
 
         CooldownStandard = 0.2f;
 
-        Instantiate(_fireball, transform.position, Quaternion.identity);
+        Instantiate(_firebolt, transform.position, Quaternion.identity);
         base.AttackStandard();
     }
 
@@ -72,6 +72,10 @@ public class Gnox : Goblin
 
         CooldownSupport = 20 - 1 * RankSupport;
 
+        GlobalScript.Gnox.CurrentHealth += RankSupport;
+
+        GlobalScript.Krilk.CurrentHealth += RankSupport;
+
 
         base.AttackSupport();
     }
@@ -94,6 +98,8 @@ public class Gnox : Goblin
             return;
 
         CooldownUltimate = 120 - 10 * RankUltimate;
+
+        Instantiate(_fireball, transform.position, Quaternion.identity);
 
         base.AttackUltimate();
     }

@@ -17,7 +17,7 @@ public class Firebolt : MonoBehaviour
     private float _damage;
 
     /// <summary>
-    /// Distance 1-2 (3) 3-4 (4) 5-6 (5) + AOE
+    /// Distance 1-2 (3) 3-4 (4) 5-6 (5)
     /// </summary>
     private void Start()
     {
@@ -26,17 +26,17 @@ public class Firebolt : MonoBehaviour
         _rank = GlobalScript.Gnox.RankStandard;
         _dir = GlobalScript.Gnox.Dir;
 
-        _distance = Mathf.FloorToInt((_rank - 1) / 2) + 3;
+        _distance = Mathf.FloorToInt(((float)_rank - 1) / 2) + 3;
         //get current position
         _pos = transform.position;
 
-        var rot_z = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+        var rotZ = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
 
         _rgd.velocity = _velocity * transform.right;
 
-        _damage = GlobalScript.Gnox.Attack * (1 + (GlobalScript.Gnox.RankStandard / 10));
+        _damage = GlobalScript.Gnox.Attack * (1 + (_rank / 10));
     }
 
     private void FixedUpdate()
