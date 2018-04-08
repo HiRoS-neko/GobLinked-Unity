@@ -59,6 +59,8 @@ public class Goblin : MonoBehaviour
 
     private int _lastHealth;
 
+    [HideInInspector] public int BlockHits;
+
     [HideInInspector] public Animator Anim;
 
 
@@ -79,7 +81,7 @@ public class Goblin : MonoBehaviour
 
     public Inventory Items;
 
-    [HideInInspector]public AbilityManager AbilityManager;
+    [HideInInspector] public AbilityManager AbilityManager;
 
 
     //Rank in Abilities
@@ -90,10 +92,11 @@ public class Goblin : MonoBehaviour
     public int Speed => _baseSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.SpeedMod : 0);
 
-    public int Health =>_baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
+    public int Health => _baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.HealthMod : 0);
 
-    public int Armor => _baseArmor + (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +
+    public int Armor => _baseArmor + (BlockHits > 0 ? 50 : 0) +
+                        (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.ArmorMod : 0);
 
     public int Attack => _baseAttack + (EquippedAccessory != null ? EquippedAccessory.AttackMod : 0) +
@@ -115,7 +118,7 @@ public class Goblin : MonoBehaviour
 
         if (RightStick.magnitude > 0.1f)
             Dir = RightStick.normalized;
-         
+
         Debug.DrawLine(gameObject.transform.position, gameObject.transform.position + (Vector3) Dir);
 
         if (Mathf.Abs(temp.x) <= Mathf.Abs(temp.y) && Mathf.Abs(temp.y) > 0.1)
@@ -146,7 +149,6 @@ public class Goblin : MonoBehaviour
         if (CooldownRange > 0) CooldownRange -= Time.deltaTime;
         if (CooldownSupport > 0) CooldownSupport -= Time.deltaTime;
         if (CooldownUltimate > 0) CooldownUltimate -= Time.deltaTime;
-        
     }
 
     private void FixedUpdate()
@@ -166,13 +168,12 @@ public class Goblin : MonoBehaviour
 
         _lastHealth = Health;
         _lastCurrentHealth = CurrentHealth;
-        
-        
-        AbilityManager.SetCooldownAttackRange((int)CooldownRange);
-        AbilityManager.SetCooldownAttackStandard((int)CooldownStandard);
-        AbilityManager.SetCooldownAttackSupport((int)CooldownSupport);
-        AbilityManager.SetCooldownAttackUltimate((int)CooldownUltimate);
-        
+
+
+        AbilityManager.SetCooldownAttackRange((int) CooldownRange);
+        AbilityManager.SetCooldownAttackStandard((int) CooldownStandard);
+        AbilityManager.SetCooldownAttackSupport((int) CooldownSupport);
+        AbilityManager.SetCooldownAttackUltimate((int) CooldownUltimate);
     }
 
 
@@ -238,4 +239,3 @@ public class Goblin : MonoBehaviour
     {
     }
 }
-
