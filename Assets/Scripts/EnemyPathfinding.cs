@@ -46,6 +46,12 @@ public class EnemyPathfinding : MonoBehaviour
     [Tooltip("The amount of experience for the mob to reward.")]
     public int experienceDrop; //Enemy experience reward value
     
+    [Range(0, 100), Tooltip("The speed at which the enemy tracks the player. Can be randomized in right-click menu.")]
+    public float speed; //Speed to chase the goblin
+    
+    [Range(0.01f, float.MaxValue), Tooltip("The time to wait between updating the list of things the enemy could chase. Don't use the slider, it's bad. Just enter a value.")]
+    public float checkDelay; //Speed of updating enemies list i of chase targets
+    
     [Tooltip("Rigidbody for the enemy, should be the one on this prefab.")]
     public Rigidbody2D body; //The enemy rigidBody
     
@@ -63,14 +69,12 @@ public class EnemyPathfinding : MonoBehaviour
     [Tooltip("Whether or not to be actively searching for the player")]
     public bool isSearching = true; //Whether or not the enemy is currently looking for a player
     
-    [Range(0, 100), Tooltip("The speed at which the enemy tracks the player. Can be randomized in right-click menu.")]
-    public float speed; //Speed to chase the goblin
+
     
     [Tooltip("Range at which the enemy will detect goblins, in metres. Can be set randomly in right-click menu.")]
     public float visibleRange; //The range the enemy can see you out to
 
-    [Range(0.01f, float.MaxValue), Tooltip("The time to wait between updating the list of things the enemy could chase. Don't use the slider, it's bad. Just enter a value.")]
-    public float checkDelay; //Speed of updating enemies list i of chase targets
+
     
     [ContextMenu("Choose Random Values")]
     private void ChooseRandomValues() //Assigns random values to the enemies attributes. For testing.
@@ -201,11 +205,21 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// The handler for the coroutine to update targetable players.
+    /// </summary>
+    /// <param name="waitTime"></param> waitTime is the time between scans.
+    /// <returns></returns>
     private IEnumerator checkHitArray(float waitTime) //Updates the array of objects hit by the enemy checkzone
     {
         while (true)
         {
             hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
+
+
+
+
+
             yield return new WaitForSeconds(waitTime); //Wait for next poll time
         }
     }
@@ -216,7 +230,9 @@ public class EnemyPathfinding : MonoBehaviour
     
     
     
-    
+    /// <summary>
+    /// The behavior the slime enemy will take.
+    /// </summary>
     private void slimeBehaviour()    //The behaviour method for the Slime, including spit.
     {
         for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
@@ -231,15 +247,34 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Behaviour the rogue enemy will take.
+    /// </summary>
     private void rogueBehaviour()    //The behaviour method for Rogues. Includes attempts to stay behind the Goblins.
+    {
+        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        {
+            if (isSearching) //Behaviour for beelining to the goblins
+            {
+                if (hitObjects[i].tag == "Goblin" && (Vector3.Distance(body.transform.position, hitObjects[i].GetComponentInChildren<Rigidbody2D>().transform.position) > 10)) //Check if the goblins are outside near range but inside visible range
+                {
+                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed  * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Behaviour the archer enemy will take.
+    /// </summary>
+    private void archerBehaviour()    //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
         
     }
 
-    private void archerBehaviour()    //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
-    {
-    }
-
+    /// <summary>
+    /// Behaviour the eyeball enemy will take.
+    /// </summary>
     private void eyeballBehaviour()    //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
     {
         for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
@@ -254,6 +289,9 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Behaviour the fighter enemy will take.
+    /// </summary>
     private void fighterBehaviour()    //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
     {
         for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
@@ -268,20 +306,42 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Behaviour the farmer enemy will take.
+    /// </summary>
     private void farmerBehaviour()    //The behaviour for the peasant humans. Gets in melee and uses hit and run tactics.
     {
     }
 
+    /// <summary>
+    /// Behaviour the farmer woman will take.
+    /// </summary>
     private void farmerWomanBehaviour()    //The behaviour for the Farmer's Wife. Will try to  stay close to the farmer, healing him for a small amount while she's close.
     {
+        TakeDamage(8);
     }
 
+    /// <summary>
+    /// Behaviour of the larg fighter
+    /// </summary>
     private void biggerFighterBehaviour()
     {
     }
 
+    /// <summary>
+    /// behaviour of the rat.
+    /// </summary>
     private void ratBehaviour()
     {
+    }
+
+ 
+    /// <summary>
+    /// Applies damage to the enemy.
+    /// </summary>
+    public void TakeDamage(int dam)
+    {
+        health -= dam;
     }
 
 }

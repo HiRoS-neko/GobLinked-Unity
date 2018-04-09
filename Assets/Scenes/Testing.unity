@@ -818,13 +818,13 @@ MonoBehaviour:
   armor: 93
   attack: 2
   experienceDrop: 0
+  speed: 85.046455
+  checkDelay: 0.01
   body: {fileID: 1699686827}
   enemySpeedMultiplier: 7
   health: 23
   isSearching: 1
-  speed: 85.046455
   visibleRange: 132.23523
-  checkDelay: 0.01
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4
@@ -1037,13 +1037,13 @@ MonoBehaviour:
   armor: 0
   attack: 0
   experienceDrop: 0
+  speed: 21.9
+  checkDelay: 0
   body: {fileID: 1776308542}
   enemySpeedMultiplier: 0
   health: 0
   isSearching: 1
-  speed: 21.9
   visibleRange: 100
-  checkDelay: 0
 --- !u!1 &1823169329
 GameObject:
   m_ObjectHideFlags: 0
