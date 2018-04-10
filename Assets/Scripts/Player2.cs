@@ -5,6 +5,7 @@ public class Player2 : MonoBehaviour
     private Vector2 _intendedMovement;
 
     [HideInInspector] public Goblin ControlledGoblin;
+    [HideInInspector] public Goblin.GoblinType GoblinType;
 
     private void Update()
     {

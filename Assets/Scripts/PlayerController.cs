@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography.X509Certificates;
+using NUnit.Framework.Constraints;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -14,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _chain;
 
-    [SerializeField] private GameMode _gameMode;
+    [SerializeField] public GameMode _gameMode;
 
     [SerializeField] public Gnox _gnox;
     [SerializeField] private GoblinUI _gnoxUI;
@@ -29,24 +31,25 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GoblinUI _krilkUI;
 
-    [SerializeField] private Player1 _player1;
-    [SerializeField] private Player2 _player2;
+    [SerializeField] public Player1 Player1;
+    [SerializeField] public Player2 Player2;
     [SerializeField] [Range(1, 10)] private float _speedMultiplier;
+    private bool _delay = true;
+    private bool _paused;
 
     private void Awake()
     {
-        _player1.ControlledGoblin = _krilk;
-        if (_gameMode == GameMode.MultiPlayer) _player2.ControlledGoblin = _gnox;
+        Player1.ControlledGoblin = _krilk;
+        if (_gameMode == GameMode.MultiPlayer) Player2.ControlledGoblin = _gnox;
         else _chain.SetActive(false);
 
         _krilk.HealthUI = _krilkUI.HealthManager;
         _gnox.HealthUI = _gnoxUI.HealthManager;
-        
+
         _krilk.AbilityManager = _krilkAbilityManager;
         _gnox.AbilityManager = _gnoxAbilityManager;
 
-        
-        
+
         _krilk.Items = _inv;
         _gnox.Items = _inv;
 
@@ -61,15 +64,15 @@ public class PlayerController : MonoBehaviour
         switch (_gameMode)
         {
             case GameMode.MultiPlayer:
-                _player1.ControlledGoblin = _krilk;
-                _player2.ControlledGoblin = _gnox;
+                Player1.ControlledGoblin = _krilk;
+                Player2.ControlledGoblin = _gnox;
                 _gnox.gameObject.SetActive(true);
                 _krilk.gameObject.SetActive(true);
                 _chain.SetActive(true);
                 break;
             case GameMode.SinglePlayer:
-                _player1.ControlledGoblin = _krilk;
-                _player2.ControlledGoblin = null;
+                Player1.ControlledGoblin = _krilk;
+                Player2.ControlledGoblin = null;
                 _gnox.gameObject.SetActive(false);
                 _krilk.gameObject.SetActive(true);
                 _chain.SetActive(false);
@@ -95,27 +98,47 @@ public class PlayerController : MonoBehaviour
         {
             case GameMode.SinglePlayer:
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position,
-                                                 _player1.ControlledGoblin.transform.position +
-                                                 (Vector3) _player1.ControlledGoblin.Rigid.velocity, 0.05f) +
+                                                 Player1.ControlledGoblin.transform.position +
+                                                 (Vector3) Player1.ControlledGoblin.Rigid.velocity, 0.05f) +
                                              3 * Vector3.back;
                 break;
             case GameMode.MultiPlayer:
-                _camera.transform.position = Vector3.Lerp(_camera.transform.position, (_player1.ControlledGoblin
+                _camera.transform.position = Vector3.Lerp(_camera.transform.position, (Player1.ControlledGoblin
                                                                                            .transform.position +
-                                                                                       _player2.ControlledGoblin
+                                                                                       Player2.ControlledGoblin
                                                                                            .transform.position) / 2 +
                                                                                       (Vector3) ((
-                                                                                                     _player1
+                                                                                                     Player1
                                                                                                          .ControlledGoblin
                                                                                                          .Rigid
                                                                                                          .velocity +
-                                                                                                     _player2
+                                                                                                     Player2
                                                                                                          .ControlledGoblin
                                                                                                          .Rigid
                                                                                                          .velocity) /
                                                                                                  2) + 3 * Vector3.back,
                     0.05f);
                 break;
+        }
+
+        if (Input.GetAxis("Cancel") > 0.5 && _delay)
+        {
+            _delay = false;
+            _paused = !_paused;
+            if (_paused)
+            {
+                Time.timeScale = 0;
+                _inv.ShowInventory(_paused);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                _inv.ShowInventory(_paused);
+            }
+        }
+        else if (Input.GetAxis("Cancel") < 0.5)
+        {
+            _delay = true;
         }
     }
 
@@ -125,22 +148,39 @@ public class PlayerController : MonoBehaviour
         {
             case GameMode.MultiPlayer:
                 //Switch Which goblins the players are referencing
-                var tempGobo = _player1.ControlledGoblin;
-                _player1.ControlledGoblin = _player2.ControlledGoblin;
-                _player2.ControlledGoblin = tempGobo;
+                var tempGobo = Player1.ControlledGoblin;
+                Player1.ControlledGoblin = Player2.ControlledGoblin;
+                Player2.ControlledGoblin = tempGobo;
+
+                if (Player1.ControlledGoblin == _krilk)
+                {
+                    Player1.GoblinType = Goblin.GoblinType.Krilk;
+                    Player2.GoblinType = Goblin.GoblinType.Gnox;
+                }
+                else
+                {
+                    Player1.GoblinType = Goblin.GoblinType.Gnox;
+                    Player2.GoblinType = Goblin.GoblinType.Krilk;
+                }
+
+
                 Debug.Log("Switched between Goblins");
                 break;
+
+
             case GameMode.SinglePlayer:
                 Goblin currentGoblin, newGoblin;
-                if (_player1.ControlledGoblin == _krilk)
+                if (Player1.ControlledGoblin == _krilk)
                 {
                     currentGoblin = _krilk;
                     newGoblin = _gnox;
+                    Player1.GoblinType = Goblin.GoblinType.Gnox;
                 }
                 else
                 {
                     currentGoblin = _gnox;
                     newGoblin = _krilk;
+                    Player1.GoblinType = Goblin.GoblinType.Krilk;
                 }
 
                 //Teleport other goblin to current goblin
@@ -148,7 +188,7 @@ public class PlayerController : MonoBehaviour
                 //enable new goblin
                 newGoblin.gameObject.SetActive(true);
                 //switch which goblin is referenced
-                _player1.ControlledGoblin = newGoblin;
+                Player1.ControlledGoblin = newGoblin;
                 //disable original goblin
                 currentGoblin.gameObject.SetActive(false);
                 break;

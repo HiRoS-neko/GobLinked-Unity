@@ -18,6 +18,7 @@ public class GlobalScript : MonoBehaviour
 
     public static Krilk Krilk;
     public static Gnox Gnox;
+
     
     
     private void Awake()
