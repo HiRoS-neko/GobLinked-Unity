@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        GetComponent<waitTrigger>().ActivateWait("swing", 3.1f);
+    }
     public void Start1PlayerGame()
     {
         GlobalScript.PlayerController.SetMode(PlayerController.GameMode.SinglePlayer);
