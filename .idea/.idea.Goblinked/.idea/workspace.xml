@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/LevelDisplay.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Assets/LevelDisplay.cs.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.cs.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Farmland.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Farmland.unity" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" />
-    </list>
+    <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,16 +52,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chest.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chest.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chest.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding>
                 <marker date="1523462743238" expanded="false" signature="6:78" ph="..." />
                 <marker date="1523462743238" expanded="true" signature="153:435" ph="{...}" />
                 <marker date="1523462743238" expanded="true" signature="256:433" ph="{...}" />
                 <marker date="1523462743238" expanded="true" signature="299:391" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyPathfinding.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPathfinding.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+              <folding>
+                <marker date="1523458980035" expanded="false" signature="6:44" ph="..." />
+                <marker date="1523458980035" expanded="true" signature="91:12880" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="120:1359" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="1414:2245" ph="[...]" />
+                <marker date="1523458980035" expanded="true" signature="4298:4537" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="4593:6510" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="4655:6452" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="6649:7977" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="6679:7971" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="7987:8191" ph="/// The handler for the coroutine to update targetable players. ... " />
+                <marker date="1523458980035" expanded="true" signature="8303:8566" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="8330:8560" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="8602:8682" ph="/// The behavior the slime enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="8773:9303" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="8877:9297" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="8957:9287" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="9022:9273" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="9309:9386" ph="/// Behaviour the rogue enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="9504:10229" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="9608:10223" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="9688:10213" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="9948:10199" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="10235:10313" ph="/// Behaviour the archer enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="10441:10462" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="10468:10547" ph="/// Behaviour the eyeball enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="10703:11233" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="10807:11227" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="10887:11217" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="10952:11203" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="11239:11318" ph="/// Behaviour the fighter enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="11449:11979" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="11553:11973" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="11633:11963" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="11698:11949" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="11985:12063" ph="/// Behaviour the farmer enemy will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="12185:12197" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="12203:12281" ph="/// Behaviour the farmer woman will take. ... " />
+                <marker date="1523458980035" expanded="true" signature="12452:12487" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="12493:12563" ph="/// Behaviour of the larg fighter ... " />
+                <marker date="1523458980035" expanded="true" signature="12605:12617" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="12623:12685" ph="/// behaviour of the rat. ... " />
+                <marker date="1523458980035" expanded="true" signature="12717:12729" ph="{...}" />
+                <marker date="1523458980035" expanded="true" signature="12737:12806" ph="/// Applies damage to the enemy. ... " />
+                <marker date="1523458980035" expanded="true" signature="12842:12877" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -116,6 +162,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Chest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPathfinding.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -202,12 +249,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523452574847</updated>
       <workItem from="1523452578029" duration="621000" />
-      <workItem from="1523460083542" duration="1189000" />
+      <workItem from="1523460083542" duration="1373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1810000" />
+    <option name="totallyTimeSpent" value="1994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -338,13 +385,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Chest.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <marker date="1523462743238" expanded="false" signature="6:78" ph="..." />
             <marker date="1523462743238" expanded="true" signature="153:435" ph="{...}" />
             <marker date="1523462743238" expanded="true" signature="256:433" ph="{...}" />
             <marker date="1523462743238" expanded="true" signature="299:391" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPathfinding.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+          <folding>
+            <marker date="1523458980035" expanded="false" signature="6:44" ph="..." />
+            <marker date="1523458980035" expanded="true" signature="91:12880" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="120:1359" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="1414:2245" ph="[...]" />
+            <marker date="1523458980035" expanded="true" signature="4298:4537" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="4593:6510" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="4655:6452" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="6649:7977" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="6679:7971" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="7987:8191" ph="/// The handler for the coroutine to update targetable players. ... " />
+            <marker date="1523458980035" expanded="true" signature="8303:8566" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="8330:8560" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="8602:8682" ph="/// The behavior the slime enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="8773:9303" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="8877:9297" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="8957:9287" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="9022:9273" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="9309:9386" ph="/// Behaviour the rogue enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="9504:10229" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="9608:10223" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="9688:10213" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="9948:10199" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="10235:10313" ph="/// Behaviour the archer enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="10441:10462" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="10468:10547" ph="/// Behaviour the eyeball enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="10703:11233" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="10807:11227" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="10887:11217" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="10952:11203" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="11239:11318" ph="/// Behaviour the fighter enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="11449:11979" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="11553:11973" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="11633:11963" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="11698:11949" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="11985:12063" ph="/// Behaviour the farmer enemy will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="12185:12197" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="12203:12281" ph="/// Behaviour the farmer woman will take. ... " />
+            <marker date="1523458980035" expanded="true" signature="12452:12487" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="12493:12563" ph="/// Behaviour of the larg fighter ... " />
+            <marker date="1523458980035" expanded="true" signature="12605:12617" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="12623:12685" ph="/// behaviour of the rat. ... " />
+            <marker date="1523458980035" expanded="true" signature="12717:12729" ph="{...}" />
+            <marker date="1523458980035" expanded="true" signature="12737:12806" ph="/// Applies damage to the enemy. ... " />
+            <marker date="1523458980035" expanded="true" signature="12842:12877" ph="{...}" />
           </folding>
         </state>
       </provider>
