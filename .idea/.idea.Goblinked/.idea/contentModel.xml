@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Administrator\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Goblinked.-832070692.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Administrator\Desktop\Goblinked" t="IncludeRecursive">
+    <e p="C:\Users\kg15nd\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Goblinked.-1150038831.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kg15nd\Desktop\Goblinked" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LevelDisplay.cs" t="Include" />
-        <e p="MainMenu.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -27,6 +25,7 @@
             <e p="Slam.cs" t="Include" />
             <e p="Smash.cs" t="Include" />
           </e>
+          <e p="Chest.cs" t="Include" />
           <e p="Consumable.cs" t="Include" />
           <e p="ConsumableBuff.cs" t="Include" />
           <e p="ConsumableRestore.cs" t="Include" />
@@ -52,7 +51,10 @@
           <e p="Item.cs" t="Include" />
           <e p="ItemObject.cs" t="Include" />
           <e p="Krilk.cs" t="Include" />
+          <e p="LevelChange.cs" t="Include" />
+          <e p="LevelDisplay.cs" t="Include" />
           <e p="LookAt2D.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
           <e p="Player1.cs" t="Include" />
           <e p="Player2.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
