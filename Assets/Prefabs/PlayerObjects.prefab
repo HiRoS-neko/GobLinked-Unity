@@ -5064,7 +5064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 20516024239879910}
   _chain: {fileID: 1087347165732772}
-  _gameMode: 0
+  _gameMode: 1
   _gnox: {fileID: 114864066532816090}
   _gnoxUI: {fileID: 114685697759606564}
   _inv: {fileID: 114887380593320920}

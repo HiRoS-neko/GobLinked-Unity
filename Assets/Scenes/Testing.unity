@@ -439,16 +439,6 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114408331647315982, guid: 3a4e0ad6f6b4534488657f7887b48f99,
-        type: 2}
-      propertyPath: m_VerticalFit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114408331647315982, guid: 3a4e0ad6f6b4534488657f7887b48f99,
-        type: 2}
-      propertyPath: m_HorizontalFit
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
   m_IsPrefabParent: 0
