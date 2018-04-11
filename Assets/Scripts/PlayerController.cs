@@ -120,8 +120,7 @@ public class PlayerController : MonoBehaviour
                     0.05f);
                 break;
         }
-
-        if (Input.GetAxis("Cancel") > 0.5 && _delay)
+        if (Input.GetAxisRaw("Cancel") > 0.5 && _delay)
         {
             _delay = false;
             _paused = !_paused;
@@ -136,7 +135,7 @@ public class PlayerController : MonoBehaviour
                 _inv.ShowInventory(_paused);
             }
         }
-        else if (Input.GetAxis("Cancel") < 0.5)
+        else if (Input.GetAxisRaw("Cancel") < 0.5)
         {
             _delay = true;
         }
