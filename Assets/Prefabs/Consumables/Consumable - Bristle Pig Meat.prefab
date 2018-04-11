@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114914934837503526}
   - component: {fileID: 61314924889122642}
   m_Layer: 10
-  m_Name: Consumable - Mystery Meat
+  m_Name: Consumable - Bristle Pig Meat
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoblinType: 2
-  Name: Mystery Meat
-  Description: The stench wafting from this purple goop smells strangely appetizing.
-    It best not to dwell on what it might be made of. Restores all Hearts when consumed.
-  RestoreAmount: 999999
+  Name: Bristle Pig Meat
+  Description: Made from the rare and elusive Bristle Pig, this meat is especially
+    tender and juicy. Restores 5 Hearts when consumed.
+  RestoreAmount: 5
 --- !u!212 &212230327480906840
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 92fbcbbca3c77e740a5ea9bfbf933623, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3900b5aa9cee06748a0292e8e18569cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

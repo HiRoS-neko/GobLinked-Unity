@@ -442,7 +442,7 @@ Prefab:
     - target: {fileID: 224660273266898544, guid: 3a4e0ad6f6b4534488657f7887b48f99,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000013411045
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 224660273266898544, guid: 3a4e0ad6f6b4534488657f7887b48f99,
         type: 2}
@@ -513,6 +513,75 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224486293615484344, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000004238502
+      objectReference: {fileID: 0}
+    - target: {fileID: 114791432495699088, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 04046cbdc5e6c354a9e3fdb52f319f11,
+        type: 3}
+    - target: {fileID: 114815542366292438, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 836e08f824a7a0b408b99a4eb1ee6dc5,
+        type: 3}
+    - target: {fileID: 114866855951390386, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff08486295d0cf8429c3245ede356c2b,
+        type: 3}
+    - target: {fileID: 114294627274827788, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b4ed2286177c2549a2653cd7679ca0c,
+        type: 3}
+    - target: {fileID: 1791129247207582, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_Name
+      value: Smack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958460923149264, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_Name
+      value: Smash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888561336467598, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960667221783286, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_Name
+      value: Charge
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435421197516218, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 748b0d035cd88274db03185658afbcdc,
+        type: 3}
+    - target: {fileID: 114813680185713908, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab5a211aaa5354348848c40983026354,
+        type: 3}
+    - target: {fileID: 114373683030494402, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e21f20190b0dd9443ad78f9045fc9646,
+        type: 3}
+    - target: {fileID: 114696987021487056, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f7c455fd0dee964bae92a9229ce243d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
   m_IsPrefabParent: 0
