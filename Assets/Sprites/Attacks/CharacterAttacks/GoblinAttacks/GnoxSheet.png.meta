@@ -1,19 +1,21 @@
 fileFormatVersion: 2
-guid: 2aded1701e11f994aaf658385ffead81
-timeCreated: 1523550183
+guid: 248fb54c8b38ca0499fbc151ea2e2d3c
+timeCreated: 1523564989
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KrillkAttackSheet1_0
-    21300002: KrillkAttackSheet1_1
-    21300004: KrillkAttackSheet1_2
-    21300006: KrillkAttackSheet1_3
-    21300008: KrillkAttackSheet1_4
-    21300010: KrillkAttackSheet1_5
-    21300012: KrillkAttackSheet1_6
-    21300014: KrillkAttackSheet1_7
-    21300016: KrillkAttackSheet1_8
-    21300018: KrillkAttackSheet1_9
+    21300000: GnoxSheet_0
+    21300002: GnoxSheet_1
+    21300004: GnoxSheet_2
+    21300006: GnoxSheet_3
+    21300008: GnoxSheet_4
+    21300010: GnoxSheet_5
+    21300012: GnoxSheet_6
+    21300014: GnoxSheet_7
+    21300016: GnoxSheet_8
+    21300018: GnoxSheet_9
+    21300020: GnoxSheet_10
+    21300022: GnoxSheet_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -57,7 +59,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -91,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KrillkAttackSheet1_0
+      name: GnoxSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,7 +107,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_1
+      name: GnoxSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -119,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_2
+      name: GnoxSheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -133,7 +135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_3
+      name: GnoxSheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -147,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_4
+      name: GnoxSheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -161,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_5
+      name: GnoxSheet_5
       rect:
         serializedVersion: 2
         x: 32
@@ -175,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_6
+      name: GnoxSheet_6
       rect:
         serializedVersion: 2
         x: 64
@@ -189,7 +191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_7
+      name: GnoxSheet_7
       rect:
         serializedVersion: 2
         x: 96
@@ -203,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_8
+      name: GnoxSheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -217,10 +219,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: KrillkAttackSheet1_9
+      name: GnoxSheet_9
       rect:
         serializedVersion: 2
         x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GnoxSheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
         y: 0
         width: 32
         height: 32
