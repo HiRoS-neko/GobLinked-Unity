@@ -53,6 +53,7 @@
           <e p="Krilk.cs" t="Include" />
           <e p="LevelChange.cs" t="Include" />
           <e p="LevelDisplay.cs" t="Include" />
+          <e p="LevelUp.cs" t="Include" />
           <e p="LookAt2D.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="Player1.cs" t="Include" />

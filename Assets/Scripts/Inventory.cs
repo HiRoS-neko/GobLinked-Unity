@@ -56,12 +56,12 @@ public class Inventory : MonoBehaviour
 
         _prevMove = move;
 
-        if (Input.GetAxis("Player1AttackStandard") > 0.5)
+        if (Input.GetAxis("SubmitPlayer1") > 0.5)
         {
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player1.GoblinType);
         }
         else if (GlobalScript.PlayerController._gameMode == PlayerController.GameMode.MultiPlayer &&
-                 Input.GetAxis("Player2AttackStandard") > 0.5)
+                 Input.GetAxis("SubmitPlayer2") > 0.5)
         {
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player2.GoblinType);
         }
