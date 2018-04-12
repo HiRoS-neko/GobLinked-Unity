@@ -18,6 +18,11 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private ItemObject _itemObject;
 
+    private ItemObject _equipEquipKrilk;
+    private ItemObject _equipWeapKrilk;
+    private ItemObject _equipEquipGnox;
+    private ItemObject _equipWeapGnox;
+
     [SerializeField] private GameObject _content;
     private bool _changed;
 
@@ -74,9 +79,19 @@ public class Inventory : MonoBehaviour
         {
             case Goblin.GoblinType.Krilk:
                 if (item is Weapon)
+                {
+                    if (_equipWeapKrilk != null) _equipWeapKrilk.SetEquip(false);
                     GlobalScript.Krilk.EquippedWeapon = (Weapon) item;
+                    _equipWeapKrilk = _itemObjects[index];
+                    _equipWeapKrilk.SetEquip(true);
+                }
                 else if (item is Accessory)
+                {
+                    if (_equipEquipKrilk != null) _equipEquipKrilk.SetEquip(false);
                     GlobalScript.Krilk.EquippedAccessory = (Accessory) item;
+                    _equipEquipKrilk = _itemObjects[index];
+                    _equipEquipKrilk.SetEquip(true);
+                }
                 else if (item is Consumable)
                 {
                     GlobalScript.Krilk.UseConsumable((Consumable) item);
@@ -88,9 +103,19 @@ public class Inventory : MonoBehaviour
                 break;
             case Goblin.GoblinType.Gnox:
                 if (item is Weapon)
+                {
+                    if (_equipWeapGnox != null) _equipWeapGnox.SetEquip(false);
                     GlobalScript.Gnox.EquippedWeapon = (Weapon) item;
+                    _equipWeapGnox = _itemObjects[index];
+                    _equipWeapGnox.SetEquip(true);
+                }
                 else if (item is Accessory)
+                {
+                    if (_equipEquipGnox != null) _equipEquipGnox.SetEquip(false);
                     GlobalScript.Gnox.EquippedAccessory = (Accessory) item;
+                    _equipEquipGnox = _itemObjects[index];
+                    _equipEquipGnox.SetEquip(true);
+                }
                 else if (item is Consumable)
                 {
                     GlobalScript.Gnox.UseConsumable((Consumable) item);
