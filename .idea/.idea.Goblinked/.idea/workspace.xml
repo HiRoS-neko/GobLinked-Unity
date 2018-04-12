@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="" />
+=======
+    <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemObject.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemObject.prefab" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemObject.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemObject.cs" />
+    </list>
+>>>>>>> 4dfecf4... Add stuff pls
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -535,12 +545,20 @@
       <updated>1523452574847</updated>
       <workItem from="1523452578029" duration="621000" />
       <workItem from="1523460083542" duration="1373000" />
+<<<<<<< HEAD
       <workItem from="1523547770707" duration="13404000" />
+=======
+      <workItem from="1523547770707" duration="13073000" />
+>>>>>>> 4dfecf4... Add stuff pls
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="15398000" />
+=======
+    <option name="totallyTimeSpent" value="15067000" />
+>>>>>>> 4dfecf4... Add stuff pls
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

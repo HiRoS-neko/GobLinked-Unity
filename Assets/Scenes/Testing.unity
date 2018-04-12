@@ -568,6 +568,7 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 224525204421887256, guid: 3a4e0ad6f6b4534488657f7887b48f99,
         type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -662,6 +663,8 @@ Prefab:
       propertyPath: m_Radius
       value: 0.24945608
       objectReference: {fileID: 0}
+=======
+>>>>>>> 4dfecf4... Add stuff pls
 =======
 >>>>>>> 4dfecf4... Add stuff pls
     m_RemovedComponents: []
