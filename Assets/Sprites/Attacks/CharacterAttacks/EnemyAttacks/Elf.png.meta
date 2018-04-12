@@ -1,13 +1,21 @@
 fileFormatVersion: 2
-guid: 092ec0fc24b2c684e8356ca5b3654ae8
-timeCreated: 1523550178
+guid: 5b450c4a9801e9149a3955e89cd22fbd
+timeCreated: 1523574775
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HumanVariantAttackAnim_0
-    21300002: HumanVariantAttackAnim_1
-    21300004: HumanVariantAttackAnim_2
-    21300006: HumanVariantAttackAnim_3
+    21300000: Elf_0
+    21300002: Elf_1
+    21300004: Elf_2
+    21300006: Elf_3
+    21300008: Elf_4
+    21300010: Elf_5
+    21300012: Elf_6
+    21300014: Elf_7
+    21300016: Elf_8
+    21300018: Elf_9
+    21300020: Elf_10
+    21300022: Elf_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -85,7 +93,119 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_0
+      name: Elf_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Elf_8
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_1
+      name: Elf_9
       rect:
         serializedVersion: 2
         x: 32
@@ -113,7 +233,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_2
+      name: Elf_10
       rect:
         serializedVersion: 2
         x: 64
@@ -127,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_3
+      name: Elf_11
       rect:
         serializedVersion: 2
         x: 96

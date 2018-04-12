@@ -1,13 +1,21 @@
 fileFormatVersion: 2
-guid: 092ec0fc24b2c684e8356ca5b3654ae8
-timeCreated: 1523550178
+guid: ee52c9e7393e23f4381e915c2eca42ff
+timeCreated: 1523574791
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HumanVariantAttackAnim_0
-    21300002: HumanVariantAttackAnim_1
-    21300004: HumanVariantAttackAnim_2
-    21300006: HumanVariantAttackAnim_3
+    21300000: Human_0
+    21300002: Human_1
+    21300004: Human_2
+    21300006: Human_3
+    21300008: Human_4
+    21300010: Human_5
+    21300012: Human_6
+    21300014: Human_7
+    21300016: Human_8
+    21300018: Human_9
+    21300020: Human_10
+    21300022: Human_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -85,7 +93,119 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_0
+      name: Human_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Human_8
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_1
+      name: Human_9
       rect:
         serializedVersion: 2
         x: 32
@@ -113,7 +233,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_2
+      name: Human_10
       rect:
         serializedVersion: 2
         x: 64
@@ -127,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_3
+      name: Human_11
       rect:
         serializedVersion: 2
         x: 96

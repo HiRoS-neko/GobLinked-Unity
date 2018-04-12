@@ -1,13 +1,21 @@
 fileFormatVersion: 2
-guid: 092ec0fc24b2c684e8356ca5b3654ae8
-timeCreated: 1523550178
+guid: 6e67bbd03af99114592fad0357623c08
+timeCreated: 1523574771
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HumanVariantAttackAnim_0
-    21300002: HumanVariantAttackAnim_1
-    21300004: HumanVariantAttackAnim_2
-    21300006: HumanVariantAttackAnim_3
+    21300000: DevilBoi_0
+    21300002: DevilBoi_1
+    21300004: DevilBoi_2
+    21300006: DevilBoi_3
+    21300008: DevilBoi_4
+    21300010: DevilBoi_5
+    21300012: DevilBoi_6
+    21300014: DevilBoi_7
+    21300016: DevilBoi_8
+    21300018: DevilBoi_9
+    21300020: DevilBoi_10
+    21300022: DevilBoi_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -85,7 +93,119 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_0
+      name: DevilBoi_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DevilBoi_8
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_1
+      name: DevilBoi_9
       rect:
         serializedVersion: 2
         x: 32
@@ -113,7 +233,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_2
+      name: DevilBoi_10
       rect:
         serializedVersion: 2
         x: 64
@@ -127,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HumanVariantAttackAnim_3
+      name: DevilBoi_11
       rect:
         serializedVersion: 2
         x: 96
