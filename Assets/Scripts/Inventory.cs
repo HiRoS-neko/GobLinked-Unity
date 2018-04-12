@@ -85,7 +85,7 @@ public class Inventory : MonoBehaviour
                     _equipWeapKrilk = _itemObjects[index];
                     _equipWeapKrilk.SetEquip(true);
                 }
-                else if (item is Accessory)
+                else if (item is Equipment)
                 {
                     if (_equipEquipKrilk != null) _equipEquipKrilk.SetEquip(false);
                     GlobalScript.Krilk.EquippedAccessory = (Accessory) item;
@@ -109,7 +109,7 @@ public class Inventory : MonoBehaviour
                     _equipWeapGnox = _itemObjects[index];
                     _equipWeapGnox.SetEquip(true);
                 }
-                else if (item is Accessory)
+                else if (item is Equipment)
                 {
                     if (_equipEquipGnox != null) _equipEquipGnox.SetEquip(false);
                     GlobalScript.Gnox.EquippedAccessory = (Accessory) item;
