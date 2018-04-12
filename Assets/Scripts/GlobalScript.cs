@@ -1,13 +1,14 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GlobalScript : MonoBehaviour
 {
-    public delegate void TheSceneChanged(Scene prevScene);
+    public delegate void TheSceneChanged(string prevScene);
 
-    public static Scene Level;
-    public static Scene PrevLevel;
+    public static string Level;
+    public static string PrevLevel;
 
 
     public static bool Active;
@@ -19,15 +20,16 @@ public class GlobalScript : MonoBehaviour
     public static Krilk Krilk;
     public static Gnox Gnox;
 
-    
-    
+
     private void Awake()
     {
         PlayerController = FindObjectOfType<PlayerController>();
         Krilk = PlayerController._krilk;
         Gnox = PlayerController._gnox;
-        Level = SceneManager.GetActiveScene();
-        if (Level.buildIndex == 0) //first scene in build index... should be zero
+        
+        
+        Level = SceneManager.GetActiveScene().name;
+        if (Level == "MainMenu") //first scene in build index... should be zero
         {
             for (var i = 0; i < gameObject.transform.childCount; i++)
                 gameObject.transform.GetChild(i).gameObject.SetActive(false);
@@ -35,16 +37,24 @@ public class GlobalScript : MonoBehaviour
             Active = false;
         }
 
+        
+        
+        SceneManager.activeSceneChanged += SceneManagerActiveSceneChanged;
+
         SceneManager.sceneLoaded += SceneManagerOnSceneLoaded;
     }
 
     private void SceneManagerOnSceneLoaded(Scene arg0, LoadSceneMode loadSceneMode)
     {
-        PrevLevel = Level;
-        Level = arg0;
         SceneChanged?.Invoke(PrevLevel);
+    }
 
-        if (!Active && Level.buildIndex != 0)
+    private void SceneManagerActiveSceneChanged(Scene current, Scene next)
+    {
+        PrevLevel = Level;
+        Level = next.name;
+
+        if (!Active && Level != "MainMenu")
         {
             for (var i = 0; i < gameObject.transform.childCount; i++)
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);

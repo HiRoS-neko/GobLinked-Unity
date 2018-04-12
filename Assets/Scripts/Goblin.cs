@@ -85,7 +85,7 @@ public class Goblin : MonoBehaviour
 
 
     //Rank in Abilities
-    public int RankStandard, RankRange, RankSupport, RankUltimate;
+    public int RankStandard = 1, RankRange = 1, RankSupport = 1, RankUltimate = 1;
 
     [HideInInspector] public Rigidbody2D Rigid;
 

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Goblin
   - Item
+  - Spawn
   layers:
   - Default
   - TransparentFX

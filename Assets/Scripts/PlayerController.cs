@@ -80,16 +80,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void GlobalScriptOnSceneChanged(Scene prevScene)
+    private void GlobalScriptOnSceneChanged(string prevScene)
     {
         //find object in scene with the name of the previous scene
-print(prevScene.name);        
-var spawn = GameObject.Find(prevScene.name);
-        //move both goblins to gameobject
-        if (spawn != null)
+        print(name);
+        var spawns = GameObject.FindGameObjectsWithTag("Spawn");
+
+        foreach (var spawn in spawns)
         {
-            _gnox.gameObject.transform.position = spawn.transform.position;
-            _krilk.gameObject.transform.position = spawn.transform.position;
+            if (spawn.name == prevScene)
+            {
+                _gnox.gameObject.transform.position = spawn.transform.position;
+                _krilk.gameObject.transform.position = spawn.transform.position;
+                break;
+            }
         }
     }
 
@@ -121,6 +125,7 @@ var spawn = GameObject.Find(prevScene.name);
                     0.05f);
                 break;
         }
+
         if (Input.GetAxisRaw("Cancel") > 0.5 && _delay)
         {
             _delay = false;
