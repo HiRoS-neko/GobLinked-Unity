@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ItemObject.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/ItemObject.prefab" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemObject.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemObject.cs" />
-    </list>
+    <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -408,7 +402,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attacks/Charge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPathfinding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attacks/Fireball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GoblinUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attacks/BackWave.cs" root0="FORCE_HIGHLIGHTING" />
@@ -542,12 +535,12 @@
       <updated>1523452574847</updated>
       <workItem from="1523452578029" duration="621000" />
       <workItem from="1523460083542" duration="1373000" />
-      <workItem from="1523547770707" duration="13073000" />
+      <workItem from="1523547770707" duration="13404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15067000" />
+    <option name="totallyTimeSpent" value="15398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
