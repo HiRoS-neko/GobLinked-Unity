@@ -105,6 +105,10 @@ public class Goblin : MonoBehaviour
     {
         Anim = GetComponent<Animator>();
         CurrentHealth = Health;
+        RankStandard = 1;
+        RankRange = 1;
+        RankSupport = 1;
+        RankUltimate = 1;
     }
 
 
@@ -148,6 +152,16 @@ public class Goblin : MonoBehaviour
         if (CooldownRange > 0) CooldownRange -= Time.deltaTime;
         if (CooldownSupport > 0) CooldownSupport -= Time.deltaTime;
         if (CooldownUltimate > 0) CooldownUltimate -= Time.deltaTime;
+
+        AbilityManager.SetCooldownAttackRange((int) CooldownRange);
+        AbilityManager.SetCooldownAttackStandard((int) CooldownStandard);
+        AbilityManager.SetCooldownAttackSupport((int) CooldownSupport);
+        AbilityManager.SetCooldownAttackUltimate((int) CooldownUltimate);
+
+        AbilityManager.SetRankStandard((int) RankStandard);
+        AbilityManager.SetRankRange((int) RankRange);
+        AbilityManager.SetRankSupport((int) RankSupport);
+        AbilityManager.SetRankUltimate((int) RankUltimate);
     }
 
     private void FixedUpdate()
@@ -167,12 +181,6 @@ public class Goblin : MonoBehaviour
 
         _lastHealth = Health;
         _lastCurrentHealth = CurrentHealth;
-
-
-        AbilityManager.SetCooldownAttackRange((int) CooldownRange);
-        AbilityManager.SetCooldownAttackStandard((int) CooldownStandard);
-        AbilityManager.SetCooldownAttackSupport((int) CooldownSupport);
-        AbilityManager.SetCooldownAttackUltimate((int) CooldownUltimate);
     }
 
 
