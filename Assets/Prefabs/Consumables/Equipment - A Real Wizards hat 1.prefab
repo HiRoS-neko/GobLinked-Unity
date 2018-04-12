@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4615458924093582}
   - component: {fileID: 212230327480906840}
   - component: {fileID: 61314924889122642}
-  - component: {fileID: 114196729994743538}
+  - component: {fileID: 114642842123920266}
   m_Layer: 10
   m_Name: Equipment - A Real Wizards hat 1
   m_TagString: Item
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &114196729994743538
+--- !u!114 &114642842123920266
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,14 +75,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196369752278288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d6b6748f914941a87b9a48ac5faaa4, type: 3}
+  m_Script: {fileID: 11500000, guid: a02f308bcd484b85843028e178c7e20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GoblinType: 1
-  Name: A Real Wizard's Hat
+  Name: A Real Wizard Hat
   Description: 'An ancient and powerful relic once worn by a famous wizard. Protects
     the head and ears from harmful thoughts. Increases Attack by 5, Armor by 2 and
     Speed by 1.  '
+  ArmorMod: 2
+  AttackMod: 5
+  HealthMod: 0
+  SpeedMod: 1
 --- !u!212 &212230327480906840
 SpriteRenderer:
   m_ObjectHideFlags: 1

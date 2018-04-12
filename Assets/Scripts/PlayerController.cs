@@ -83,7 +83,8 @@ public class PlayerController : MonoBehaviour
     private void GlobalScriptOnSceneChanged(Scene prevScene)
     {
         //find object in scene with the name of the previous scene
-        var spawn = GameObject.Find(prevScene.name);
+print(prevScene.name);        
+var spawn = GameObject.Find(prevScene.name);
         //move both goblins to gameobject
         if (spawn != null)
         {
