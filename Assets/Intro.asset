@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b36561fea708ef4f91443f3846c2d03, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  Lines:
+  - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: You think you can take on Gnox the Mystic you humie fools. You shall perish
+      in anguish, fools!
+  - Audio: {fileID: 8300000, guid: c28461a873ec9ca488fb885107c67226, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: Face my ultimate bloodline technique. Ahhhhhhhh!
+  - Audio: {fileID: 8300000, guid: 23fb96404dfa5ef4d8c51d615f87cad2, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: Boss look out!
+  - Audio: {fileID: 8300000, guid: da40cbb523dced4409de6b27f5d97de1, type: 3}
+    Context: 
+    Delay: 3
+    Line: 
+  - Audio: {fileID: 8300000, guid: 9245258a24250e74489f653132af8835, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: Krillk, you fool!
