@@ -39,10 +39,14 @@
           <e p="Editor" t="Include">
             <e p="PlayerControllerEditor.cs" t="Include" />
           </e>
-          <e p="EnemyPathfinding.cs" t="Include" />
+          <e p="Enemy Scripts" t="Include">
+            <e p="EnemyPathfinding.cs" t="Include" />
+            <e p="EnemySpawner.cs" t="Include" />
+          </e>
           <e p="Equipment.cs" t="Include" />
           <e p="GlobalScript.cs" t="Include" />
           <e p="Gnox.cs" t="Include" />
+          <e p="GnoxPanel.cs" t="Include" />
           <e p="Goblin.cs" t="Include" />
           <e p="GoblinUI.cs" t="Include" />
           <e p="HealthManager.cs" t="Include" />
@@ -51,6 +55,7 @@
           <e p="Item.cs" t="Include" />
           <e p="ItemObject.cs" t="Include" />
           <e p="Krilk.cs" t="Include" />
+          <e p="KrilkPanel.cs" t="Include" />
           <e p="LevelChange.cs" t="Include" />
           <e p="LevelDisplay.cs" t="Include" />
           <e p="LevelUp.cs" t="Include" />

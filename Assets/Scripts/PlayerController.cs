@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
         SpeedMultiplier = _speedMultiplier;
 
         GlobalScript.SceneChanged += GlobalScriptOnSceneChanged;
+
+        SetMode(_gameMode);
     }
 
     public void SetMode(GameMode gameMode)
@@ -64,13 +66,16 @@ public class PlayerController : MonoBehaviour
         {
             case GameMode.MultiPlayer:
                 Player1.ControlledGoblin = _krilk;
+                Player1.GoblinType = Goblin.GoblinType.Krilk;
                 Player2.ControlledGoblin = _gnox;
+                Player2.GoblinType = Goblin.GoblinType.Gnox;
                 _gnox.gameObject.SetActive(true);
                 _krilk.gameObject.SetActive(true);
                 _chain.SetActive(true);
                 break;
             case GameMode.SinglePlayer:
                 Player1.ControlledGoblin = _krilk;
+                Player1.GoblinType = Goblin.GoblinType.Krilk;
                 Player2.ControlledGoblin = null;
                 _gnox.gameObject.SetActive(false);
                 _krilk.gameObject.SetActive(true);
