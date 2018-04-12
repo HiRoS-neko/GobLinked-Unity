@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject titleGUI;
+
+    public GameObject settingsGUI; 
+
     private void Start()
     {
         GetComponent<waitTrigger>().ActivateWait("swing", 3.1f);
@@ -33,5 +37,13 @@ public class MainMenu : MonoBehaviour
 
     public void Settings()
     {
+        titleGUI.SetActive(false);
+        settingsGUI.SetActive(true);
+    }
+
+    public void Return()
+    {
+        titleGUI.SetActive(true);
+        settingsGUI.SetActive(false);
     }
 }
