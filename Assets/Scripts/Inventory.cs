@@ -56,43 +56,47 @@ public class Inventory : MonoBehaviour
 
         _prevMove = move;
 
-        if (Input.GetAxis("SubmitPlayer1") > 0.5)
+        if (Input.GetAxisRaw("SubmitPlayer1") > 0.5)
         {
-            EquipItem(Items[_selected], GlobalScript.PlayerController.Player1.GoblinType);
+            EquipItem(Items[_selected], GlobalScript.PlayerController.Player1.GoblinType, _selected);
         }
         else if (GlobalScript.PlayerController._gameMode == PlayerController.GameMode.MultiPlayer &&
-                 Input.GetAxis("SubmitPlayer2") > 0.5)
+                 Input.GetAxisRaw("SubmitPlayer2") > 0.5)
         {
-            EquipItem(Items[_selected], GlobalScript.PlayerController.Player2.GoblinType);
+            EquipItem(Items[_selected], GlobalScript.PlayerController.Player2.GoblinType, _selected);
         }
     }
 
-    public void EquipItem(Item item, Goblin.GoblinType goblinType)
+    public void EquipItem(Item item, Goblin.GoblinType goblinType, int index)
     {
         if (goblinType != item.GoblinType && item.GoblinType != Goblin.GoblinType.Both) return;
         switch (goblinType)
         {
             case Goblin.GoblinType.Krilk:
-                if (item.GetType() == typeof(Weapon))
-                    _krilkGoblin.EquippedWeapon = (Weapon) item;
-                else if (item.GetType() == typeof(Accessory))
-                    _krilkGoblin.EquippedAccessory = (Accessory) item;
-                else if (item.GetType() == typeof(Consumable))
+                if (item is Weapon)
+                    GlobalScript.Krilk.EquippedWeapon = (Weapon) item;
+                else if (item is Accessory)
+                    GlobalScript.Krilk.EquippedAccessory = (Accessory) item;
+                else if (item is Consumable)
                 {
-                    _krilkGoblin.UseConsumable((Consumable) item);
-                    Items.Remove(item);
+                    GlobalScript.Krilk.UseConsumable((Consumable) item);
+                    Items.RemoveAt(index);
+                    Destroy(_itemObjects[index]);
+                    _itemObjects.RemoveAt(index);
                 }
 
                 break;
             case Goblin.GoblinType.Gnox:
-                if (item.GetType() == typeof(Weapon))
-                    _gnoxGoblin.EquippedWeapon = (Weapon) item;
-                else if (item.GetType() == typeof(Accessory))
-                    _gnoxGoblin.EquippedAccessory = (Accessory) item;
-                else if (item.GetType() == typeof(Consumable))
+                if (item is Weapon)
+                    GlobalScript.Gnox.EquippedWeapon = (Weapon) item;
+                else if (item is Accessory)
+                    GlobalScript.Gnox.EquippedAccessory = (Accessory) item;
+                else if (item is Consumable)
                 {
-                    _gnoxGoblin.UseConsumable((Consumable) item);
-                    Items.Remove(item);
+                    GlobalScript.Gnox.UseConsumable((Consumable) item);
+                    Items.RemoveAt(index);
+                    Destroy(_itemObjects[index]);
+                    _itemObjects.RemoveAt(index);
                 }
 
                 break;

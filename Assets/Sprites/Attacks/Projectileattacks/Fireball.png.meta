@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: ac639465dd591954392e52e6a86714a9
-timeCreated: 1520874884
+guid: a82fe0ab69349e94c81e50480d597827
+timeCreated: 1523550150
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SlimeSheet_0
-    21300002: SlimeSheet_1
-    21300004: SlimeSheet_2
-    21300006: SlimeSheet_3
+    21300000: Fireball_0
+    21300002: Fireball_1
+    21300004: Fireball_2
+    21300006: Fireball_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -49,8 +49,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -84,13 +85,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlimeSheet_0
+      name: Fireball_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -98,13 +99,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SlimeSheet_1
+      name: Fireball_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 20
         y: 0
-        width: 32
-        height: 32
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,13 +113,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SlimeSheet_2
+      name: Fireball_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 40
         y: 0
-        width: 32
-        height: 32
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,13 +127,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SlimeSheet_3
+      name: Fireball_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 60
         y: 0
-        width: 32
-        height: 32
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
