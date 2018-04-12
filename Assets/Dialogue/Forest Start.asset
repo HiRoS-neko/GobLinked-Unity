@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b36561fea708ef4f91443f3846c2d03, type: 3}
+  m_Name: Forest Start
+  m_EditorClassIdentifier: 
+  Lines:
+  - Audio: {fileID: 8300000, guid: d84eea7f2b0df9647af27235b55a81e5, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: To think I, Gnox the Mystic, would end up in a situation like this.
+  - Audio: {fileID: 8300000, guid: 39b36deed261be847bbb673d31d1c21b, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: That was a close one, eh boss.
+  - Audio: {fileID: 8300000, guid: 9245258a24250e74489f653132af8835, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: Krillk, you fool! I had them on the ropes. One more moment and I could have
+      obliterated them.
+  - Audio: {fileID: 8300000, guid: a98af1924bf94ba4cb73ce938a252b8b, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: Uh, but boss. They had you outnumbered four to one and you were unarmed
+      and you were lying on the ground.
+  - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: Ah, Krillk. You couldn't hope to understand my genius stratagems. If you
+      hadn't interfered I would have destroyed them and saved the village! Now our
+      village is gone and we are stuck like this.
+  - Audio: {fileID: 8300000, guid: 39b36deed261be847bbb673d31d1c21b, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: It's not so bad. At least we survived.
+  - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: "Yes, thanks to my superior intelligence. Now we must avenge our village.
+      The humies were headed towards the farmland. Let\u2019s go!"
+  - Audio: {fileID: 8300000, guid: 3e41e8b04224a1343a4c1a26feeef0bc, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: Whatever you say, boss.

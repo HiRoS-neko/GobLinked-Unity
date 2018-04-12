@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b36561fea708ef4f91443f3846c2d03, type: 3}
+  m_Name: Leaving Forest
+  m_EditorClassIdentifier: 
+  Lines:
+  - Audio: {fileID: 0}
+    Context: Gnox
+    Delay: 3
+    Line: This road will take us to the farmlands. We are one step closer to revenge.
+  - Audio: {fileID: 0}
+    Context: Krilk
+    Delay: 3
+    Line: "We should be careful, boss. There\u2019s lots of humies in the farmlands."
+  - Audio: {fileID: 0}
+    Context: Gnox
+    Delay: 3
+    Line: Krilk, you fool! Humies are no match for my magic. Onwards, to Victory!

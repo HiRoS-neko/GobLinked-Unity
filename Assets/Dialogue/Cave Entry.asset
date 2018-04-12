@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b36561fea708ef4f91443f3846c2d03, type: 3}
+  m_Name: Cave Entry
+  m_EditorClassIdentifier: 
+  Lines:
+  - Audio: {fileID: 8300000, guid: 39b36deed261be847bbb673d31d1c21b, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: I can smell the stench of humies in here.
+  - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: "Right you are Krilk. Those blood-soaked monsters are hiding in here somewhere.
+      Let\u2019s find them and get justice for our village!"
+  - Audio: {fileID: 0}
+    Context: 
+    Delay: 3
+    Line: 
+  - Audio: {fileID: 8300000, guid: 44cfac9e28c5f914199772ffab02ee6a, type: 3}
+    Context: Gnox
+    Delay: 3
+    Line: "W-what was that? It\u2019s awfully dark in here\u2026 Krilk lead the way.
+      Follow your nose to the murderers."
+  - Audio: {fileID: 8300000, guid: 3e41e8b04224a1343a4c1a26feeef0bc, type: 3}
+    Context: Krillk
+    Delay: 3
+    Line: You got it boss.
