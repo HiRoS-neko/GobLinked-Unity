@@ -13,6 +13,7 @@ public class LevelDisplay : MonoBehaviour
 
     private void Update()
     {
-        _textMesh.text = Goblin.Level.ToString() + " - " + Goblin.Exp.ToString();
+        _textMesh.text = "Current Level : " + Goblin.Level.ToString() + "\n" +
+                         "Current Experience : " + Goblin.Exp.ToString();
     }
 }

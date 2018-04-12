@@ -34,7 +34,6 @@ public class Goblin : MonoBehaviour
             {
                 level++;
                 temp -= (int) (10 * (level - Mathf.Pow(level, 0.25f)));
-                Debug.Log((12000 - temp) + " - " + (level - 1));
             } while (temp > 0);
 
             level--;

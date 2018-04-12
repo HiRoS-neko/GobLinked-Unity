@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4929422e-105a-42c8-b509-ce1e8341d478" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelUp.cs.meta" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/contentModel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Goblinked/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalScript.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalScript.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerObjects.prefab" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Goblin.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Goblin.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+            <state relative-caret-position="431">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding>
                 <marker date="1523554160917" expanded="false" signature="6:141" ph="..." />
                 <marker date="1523554160917" expanded="true" signature="188:7463" ph="{...}" />
@@ -50,6 +44,21 @@
                 <marker date="1523554160917" expanded="true" signature="6179:6346" ph="{...}" />
                 <marker date="1523554160917" expanded="true" signature="6573:6757" ph="{...}" />
                 <marker date="1523554160917" expanded="true" signature="6778:6963" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LevelDisplay.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <marker date="1523554544883" expanded="false" signature="6:53" ph="..." />
+                <marker date="1523554544883" expanded="true" signature="96:422" ph="{...}" />
+                <marker date="1523554544883" expanded="true" signature="163:228" ph="{...}" />
+                <marker date="1523554544883" expanded="true" signature="255:420" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -180,48 +189,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Goblin.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Goblin.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Goblin.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="87" column="81" lean-forward="false" selection-start-line="87" selection-start-column="81" selection-end-line="87" selection-end-column="81" />
+            <state relative-caret-position="448">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
-                <marker date="1523549390413" expanded="false" signature="6:102" ph="..." />
-                <marker date="1523549390413" expanded="true" signature="196:6605" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="225:279" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="301:374" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="439:810" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="457:804" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="2763:2848" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="2876:4173" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="3299:3478" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="3561:3743" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="3756:3815" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="3825:3873" ph="/* if (Input.GetKey(&quot;z&quot;)) ... */" />
-                <marker date="1523549390413" expanded="true" signature="4205:5073" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5114:5259" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5129:5208" ph="/* TODO do armour calc and apply to health ... */" />
-                <marker date="1523549390413" expanded="true" signature="5316:5770" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5402:5615" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5696:5764" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5818:6145" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="5973:6139" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="6221:6390" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="6433:6445" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="6484:6496" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="6537:6549" ph="{...}" />
-                <marker date="1523549390413" expanded="true" signature="6591:6603" ph="{...}" />
+                <marker date="1523555027929" expanded="false" signature="6:102" ph="..." />
+                <marker date="1523555027929" expanded="true" signature="196:6540" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="225:279" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="301:374" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="439:745" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="457:739" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="2698:2783" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="2811:4108" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="3234:3413" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="3496:3678" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="3691:3750" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="3760:3808" ph="/* if (Input.GetKey(&quot;z&quot;)) ... */" />
+                <marker date="1523555027929" expanded="true" signature="4140:5008" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5049:5194" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5064:5143" ph="/* TODO do armour calc and apply to health ... */" />
+                <marker date="1523555027929" expanded="true" signature="5251:5705" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5337:5550" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5631:5699" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5753:6080" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="5908:6074" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="6156:6325" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="6368:6380" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="6419:6431" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="6472:6484" ph="{...}" />
+                <marker date="1523555027929" expanded="true" signature="6526:6538" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DialogueManager.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -238,6 +237,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GlobalScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gnox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyPathfinding.cs" root0="FORCE_HIGHLIGHTING" />
@@ -249,10 +249,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelChange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Goblin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GlobalScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Goblin.cs" />
       </list>
     </option>
   </component>
@@ -350,12 +351,12 @@
       <updated>1523452574847</updated>
       <workItem from="1523452578029" duration="621000" />
       <workItem from="1523460083542" duration="1373000" />
-      <workItem from="1523547770707" duration="3926000" />
+      <workItem from="1523547770707" duration="4815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5920000" />
+    <option name="totallyTimeSpent" value="6809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,6 +369,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -382,7 +384,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28598306" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28598306" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -400,34 +402,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
-          <line>86</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" initialLine="86">
-            <startOffsets>
-              <startOffset value="2515" />
-            </startOffsets>
-            <endOffsets>
-              <endOffset value="2539" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
-          <line>88</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" initialLine="88">
-            <startOffsets>
-              <startOffset value="2581" />
-            </startOffsets>
-            <endOffsets>
-              <endOffset value="2610" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
@@ -616,40 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Goblin.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="87" column="81" lean-forward="false" selection-start-line="87" selection-start-column="81" selection-end-line="87" selection-end-column="81" />
-          <folding>
-            <marker date="1523549390413" expanded="false" signature="6:102" ph="..." />
-            <marker date="1523549390413" expanded="true" signature="196:6605" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="225:279" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="301:374" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="439:810" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="457:804" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="2763:2848" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="2876:4173" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="3299:3478" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="3561:3743" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="3756:3815" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="3825:3873" ph="/* if (Input.GetKey(&quot;z&quot;)) ... */" />
-            <marker date="1523549390413" expanded="true" signature="4205:5073" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5114:5259" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5129:5208" ph="/* TODO do armour calc and apply to health ... */" />
-            <marker date="1523549390413" expanded="true" signature="5316:5770" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5402:5615" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5696:5764" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5818:6145" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="5973:6139" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="6221:6390" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="6433:6445" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="6484:6496" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="6537:6549" ph="{...}" />
-            <marker date="1523549390413" expanded="true" signature="6591:6603" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelUp.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -697,8 +637,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state relative-caret-position="431">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
           <folding>
             <marker date="1523554160917" expanded="false" signature="6:141" ph="..." />
             <marker date="1523554160917" expanded="true" signature="188:7463" ph="{...}" />
@@ -721,6 +661,53 @@
             <marker date="1523554160917" expanded="true" signature="6179:6346" ph="{...}" />
             <marker date="1523554160917" expanded="true" signature="6573:6757" ph="{...}" />
             <marker date="1523554160917" expanded="true" signature="6778:6963" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelDisplay.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <marker date="1523554544883" expanded="false" signature="6:53" ph="..." />
+            <marker date="1523554544883" expanded="true" signature="96:422" ph="{...}" />
+            <marker date="1523554544883" expanded="true" signature="163:228" ph="{...}" />
+            <marker date="1523554544883" expanded="true" signature="255:420" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Goblin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <marker date="1523555027929" expanded="false" signature="6:102" ph="..." />
+            <marker date="1523555027929" expanded="true" signature="196:6540" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="225:279" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="301:374" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="439:745" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="457:739" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="2698:2783" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="2811:4108" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="3234:3413" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="3496:3678" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="3691:3750" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="3760:3808" ph="/* if (Input.GetKey(&quot;z&quot;)) ... */" />
+            <marker date="1523555027929" expanded="true" signature="4140:5008" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5049:5194" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5064:5143" ph="/* TODO do armour calc and apply to health ... */" />
+            <marker date="1523555027929" expanded="true" signature="5251:5705" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5337:5550" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5631:5699" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5753:6080" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="5908:6074" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="6156:6325" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="6368:6380" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="6419:6431" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="6472:6484" ph="{...}" />
+            <marker date="1523555027929" expanded="true" signature="6526:6538" ph="{...}" />
           </folding>
         </state>
       </provider>
