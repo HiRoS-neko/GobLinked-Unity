@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
     private void GlobalScriptOnSceneChanged(string prevScene)
     {
         //find object in scene with the name of the previous scene
-        print(name);
         var spawns = GameObject.FindGameObjectsWithTag("Spawn");
 
         foreach (var spawn in spawns)

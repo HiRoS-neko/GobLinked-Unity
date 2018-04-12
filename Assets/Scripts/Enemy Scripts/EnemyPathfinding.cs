@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyPathfinding : MonoBehaviour
 {
+    
+    #region //This is the region for class variables
     public enum enemyTypes
     {
         Slime, //Slime behaviour-----------------------|Slimes wander haphazardly in the direction of the player, only doing damage on contact.
@@ -40,7 +42,7 @@ public class EnemyPathfinding : MonoBehaviour
     [Range(0, 100), Tooltip("The enemies default armour value.")]
     public int armor; //Enemy armor value
     
-    [Range(0, 5), Tooltip("The damage value of the enemy")]
+    [Range(0, 50), Tooltip("The damage value of the enemy")]
     public int attack; //Enemy default attack value
 
     [Tooltip("The amount of experience for the mob to reward.")]
@@ -68,13 +70,14 @@ public class EnemyPathfinding : MonoBehaviour
     
     [Tooltip("Whether or not to be actively searching for the player")]
     public bool isSearching = true; //Whether or not the enemy is currently looking for a player
-    
 
+    [Tooltip("The delay in seconds between the enemies attack damage being dealt.")]
+    public float attackCooldown; //Delay between attack calls
     
     [Tooltip("Range at which the enemy will detect goblins, in metres. Can be set randomly in right-click menu.")]
     public float visibleRange; //The range the enemy can see you out to
 
-
+    private float atkDel;
     
     [ContextMenu("Choose Random Values")]
     private void ChooseRandomValues() //Assigns random values to the enemies attributes. For testing.
@@ -89,11 +92,12 @@ public class EnemyPathfinding : MonoBehaviour
     
     
     
-    
+    #endregion 
     
 
     private void Start()
     {
+        atkDel = attackCooldown;
         switch (aiType) //Assigning the values by class
         {
             case enemyTypes.Slime: //Setting Slime values
@@ -216,8 +220,10 @@ public class EnemyPathfinding : MonoBehaviour
         {
             hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
 
-
-
+            if (atkDel >= 0)
+            {
+                atkDel -= Time.deltaTime;
+            }
 
 
             yield return new WaitForSeconds(waitTime); //Wait for next poll time
@@ -242,6 +248,7 @@ public class EnemyPathfinding : MonoBehaviour
                 if (hitObjects[i].tag == "Goblin")
                 {
                     body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed  * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                    break;
                 }
             }
         }
@@ -256,9 +263,10 @@ public class EnemyPathfinding : MonoBehaviour
         {
             if (isSearching) //Behaviour for beelining to the goblins
             {
-                if (hitObjects[i].tag == "Goblin" && (Vector3.Distance(body.transform.position, hitObjects[i].GetComponentInChildren<Rigidbody2D>().transform.position) > 10)) //Check if the goblins are outside near range but inside visible range
+                if (hitObjects[i].tag == "Goblin")
                 {
                     body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed  * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                    break;
                 }
             }
         }
@@ -269,9 +277,18 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void archerBehaviour()    //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
-        
+        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        {
+            if (isSearching) //Behaviour for beelining to the goblins
+            {
+                if (hitObjects[i].tag == "Goblin" && (Vector3.Distance(body.transform.position, hitObjects[i].GetComponentInChildren<Rigidbody2D>().transform.position) > 10)) //Check if the goblins are outside near range but inside visible range
+                {
+                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed  * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                }
+            }
+        }
     }
-
+    
     /// <summary>
     /// Behaviour the eyeball enemy will take.
     /// </summary>
@@ -342,6 +359,15 @@ public class EnemyPathfinding : MonoBehaviour
     public void TakeDamage(int dam)
     {
         health -= dam;
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Goblin" && atkDel <= 0)
+        {
+            other.gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
+            atkDel = attackCooldown;
+        }
     }
 
 }
