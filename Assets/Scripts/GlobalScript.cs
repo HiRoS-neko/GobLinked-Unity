@@ -17,6 +17,8 @@ public class GlobalScript : MonoBehaviour
     public static event TheSceneChanged SceneChanged;
 
 
+    public static bool Paused = false;
+
     public static Krilk Krilk;
     public static Gnox Gnox;
 
@@ -26,8 +28,8 @@ public class GlobalScript : MonoBehaviour
         PlayerController = FindObjectOfType<PlayerController>();
         Krilk = PlayerController._krilk;
         Gnox = PlayerController._gnox;
-        
-        
+
+
         Level = SceneManager.GetActiveScene().name;
         if (Level == "MainMenu") //first scene in build index... should be zero
         {
@@ -37,8 +39,7 @@ public class GlobalScript : MonoBehaviour
             Active = false;
         }
 
-        
-        
+
         SceneManager.activeSceneChanged += SceneManagerActiveSceneChanged;
 
         SceneManager.sceneLoaded += SceneManagerOnSceneLoaded;

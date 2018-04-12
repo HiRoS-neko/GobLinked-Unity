@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Player2 Player2;
     [SerializeField] [Range(1, 10)] private float _speedMultiplier;
     private bool _delay = true;
-    private bool _paused;
 
     private void Awake()
     {
@@ -90,8 +89,14 @@ public class PlayerController : MonoBehaviour
         {
             if (spawn.name == prevScene)
             {
-                _gnox.gameObject.transform.position = spawn.transform.position;
-                _krilk.gameObject.transform.position = spawn.transform.position;
+                _chain.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                                                       Vector3.forward * _chain.gameObject.transform.position.z;
+                _krilk.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                                                       Vector3.forward * _krilk.gameObject.transform.position.z;
+                _gnox.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                                                      Vector3.forward * _gnox.gameObject.transform.position.z;
+                _camera.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                                                        Vector3.forward * _camera.gameObject.transform.position.z;
                 break;
             }
         }
@@ -129,16 +134,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("Cancel") > 0.5 && _delay)
         {
             _delay = false;
-            _paused = !_paused;
-            if (_paused)
+            GlobalScript.Paused = !GlobalScript.Paused;
+            if (GlobalScript.Paused)
             {
                 Time.timeScale = 0;
-                _inv.ShowInventory(_paused);
+                _inv.ShowInventory(GlobalScript.Paused);
             }
             else
             {
                 Time.timeScale = 1;
-                _inv.ShowInventory(_paused);
+                _inv.ShowInventory(GlobalScript.Paused);
             }
         }
         else if (Input.GetAxisRaw("Cancel") < 0.5)
