@@ -23,7 +23,7 @@ public class LevelUp : MonoBehaviour
                 _p11 = true;
                 GlobalScript.PlayerController.Player1.ControlledGoblin.RankStandard++;
             }
-            else
+            else if (Input.GetAxisRaw("Player1AttackStandard") < 0.5)
             {
                 _p11 = false;
             }
@@ -33,7 +33,7 @@ public class LevelUp : MonoBehaviour
                 _p12 = true;
                 GlobalScript.PlayerController.Player1.ControlledGoblin.RankRange++;
             }
-            else
+            else if (Input.GetAxisRaw("Player1AttackRange") < 0.5)
             {
                 _p12 = false;
             }
@@ -43,7 +43,7 @@ public class LevelUp : MonoBehaviour
                 _p13 = true;
                 GlobalScript.PlayerController.Player1.ControlledGoblin.RankSupport++;
             }
-            else
+            else if (Input.GetAxisRaw("Player1AttackSupport") < 0.5)
             {
                 _p13 = false;
             }
@@ -53,15 +53,15 @@ public class LevelUp : MonoBehaviour
                 _p14 = true;
                 GlobalScript.PlayerController.Player1.ControlledGoblin.RankUltimate++;
             }
-            else
+            else if (Input.GetAxisRaw("Player1AttackUltimate") < 0.5)
             {
                 _p14 = false;
             }
         }
-
-        if ((GlobalScript.PlayerController.Player2.ControlledGoblin.RankStandard - 1) +
-            (GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1) +
+        
+        if ((GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankSupport - 1) +
+            (GlobalScript.PlayerController.Player2.ControlledGoblin.RankStandard - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankUltimate - 1) < Goblin.Level)
         {
             if (Input.GetAxisRaw("Player2AttackStandard") > 0.5 && !_p21)
@@ -69,7 +69,7 @@ public class LevelUp : MonoBehaviour
                 _p21 = true;
                 GlobalScript.PlayerController.Player2.ControlledGoblin.RankStandard++;
             }
-            else
+            else if (Input.GetAxisRaw("Player2AttackStandard") < 0.5)
             {
                 _p21 = false;
             }
@@ -79,7 +79,7 @@ public class LevelUp : MonoBehaviour
                 _p22 = true;
                 GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange++;
             }
-            else
+            else if (Input.GetAxisRaw("Player2AttackRange") < 0.5)
             {
                 _p22 = false;
             }
@@ -89,17 +89,17 @@ public class LevelUp : MonoBehaviour
                 _p23 = true;
                 GlobalScript.PlayerController.Player2.ControlledGoblin.RankSupport++;
             }
-            else
+            else if (Input.GetAxisRaw("Player2AttackSupport") < 0.5)
             {
                 _p23 = false;
             }
 
-            if (Input.GetAxisRaw("Player2AttackUltimate") > 0.5 && !_p23)
+            if (Input.GetAxisRaw("Player2AttackUltimate") > 0.5 && !_p24)
             {
                 _p24 = true;
                 GlobalScript.PlayerController.Player2.ControlledGoblin.RankUltimate++;
             }
-            else
+            else if (Input.GetAxisRaw("Player2AttackUltimate") < 0.5)
             {
                 _p24 = false;
             }
