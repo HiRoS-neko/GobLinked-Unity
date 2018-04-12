@@ -110,23 +110,22 @@ public class PlayerController : MonoBehaviour
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position,
                                                  Player1.ControlledGoblin.transform.position +
                                                  (Vector3) Player1.ControlledGoblin.Rigid.velocity, 0.05f) +
-                                             3 * Vector3.back;
+                                             10 * Vector3.back;
                 break;
             case GameMode.MultiPlayer:
                 _camera.transform.position = Vector3.Lerp(_camera.transform.position, (Player1.ControlledGoblin
                                                                                            .transform.position +
                                                                                        Player2.ControlledGoblin
                                                                                            .transform.position) / 2 +
-                                                                                      (Vector3) ((
-                                                                                                     Player1
-                                                                                                         .ControlledGoblin
-                                                                                                         .Rigid
-                                                                                                         .velocity +
-                                                                                                     Player2
-                                                                                                         .ControlledGoblin
-                                                                                                         .Rigid
-                                                                                                         .velocity) /
-                                                                                                 2) + 3 * Vector3.back,
+                                                                                      (Vector3) ((Player1
+                                                                                                      .ControlledGoblin
+                                                                                                      .Rigid
+                                                                                                      .velocity +
+                                                                                                  Player2
+                                                                                                      .ControlledGoblin
+                                                                                                      .Rigid
+                                                                                                      .velocity) /
+                                                                                                 2) + 10 * Vector3.back,
                     0.05f);
                 break;
         }
