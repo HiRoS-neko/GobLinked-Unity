@@ -15,10 +15,12 @@ public class EnemySpawner : MonoBehaviour
 
     private int check; //Check number for the weights
 
+    private GameObject enemy;
+
     private void Update()
     {
         currentTimer += Time.deltaTime;
-        if (currentTimer >= spawnTimer) //Checking if it is time to spawn
+        if (currentTimer >= spawnTimer && enemy == null) //Checking if it is time to spawn
         {
             check = Random.Range(0, 100); //Random chekc number
             for (int i = 0; i < enemiesToSpawn.Length; i++) //Checking every spawnable prefab
@@ -30,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
                 sumSofar += enemyWeights[i];
                 if (check <= sumSofar)
                 {
-                    Instantiate(enemiesToSpawn[i]);
+                    enemy = Instantiate(enemiesToSpawn[i], transform.position, Quaternion.identity);
                     currentTimer = 0;
                     break;
                 }
