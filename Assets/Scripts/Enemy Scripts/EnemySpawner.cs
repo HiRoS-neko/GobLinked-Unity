@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     
     [Tooltip("Time between respawns")] 
     public int spawnTimer;
+
+    private int sumSofar = 0;    //Sum for the random ranges
     
     private float currentTimer;    //Current time elapsed
     
@@ -22,9 +24,14 @@ public class EnemySpawner : MonoBehaviour
             check = Random.Range(0, 1);    //Random chekc number
             for (int i = 0; i < enemiesToSpawn.Length; i++)    //Checking every spawnable prefab
             {
-                if (check == 0)    //Checking if the digit falls inside the range of a prefab
+               // if (check == 0)    //Checking if the digit falls inside the range of a prefab
+               // {
+               //     Instantiate(enemiesToSpawn[i]);    
+               // }
+                sumSofar += enemyWeights[i];
+                if(check <= sumSofar)
                 {
-                    Instantiate(enemiesToSpawn[i]);    //
+                    //TODO FUCKING MAKE THIS SHIT WORK
                 }
             }
         }
