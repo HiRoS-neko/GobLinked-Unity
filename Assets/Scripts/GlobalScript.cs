@@ -9,7 +9,7 @@ public class GlobalScript : MonoBehaviour
     public static string PrevLevel;
 
 
-    public static bool Active;
+    public static bool Active, invincible;
 
     public static PlayerController PlayerController;
 
