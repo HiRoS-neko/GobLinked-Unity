@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class ItemObject : MonoBehaviour
 {
-    [SerializeField] private Image _sprite;
-    [SerializeField] private GameObject _glowyThing;
     [SerializeField] private GameObject _eqippyThing;
+    [SerializeField] private GameObject _glowyThing;
     [SerializeField] private TextMeshProUGUI _infoBox;
+    [SerializeField] private Image _sprite;
 
     public Item Item;
 

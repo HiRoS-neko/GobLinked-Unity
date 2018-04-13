@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelDisplay : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class LevelDisplay : MonoBehaviour
 
     private void Update()
     {
-        _textMesh.text = "Current Level : " + Goblin.Level.ToString() + "\n" +
-                         "Current Experience : " + Goblin.Exp.ToString();
+        _textMesh.text = "Current Level : " + Goblin.Level + "\n" +
+                         "Current Experience : " + Goblin.Exp;
     }
 }

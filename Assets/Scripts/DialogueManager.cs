@@ -12,9 +12,10 @@ public class DialogueManager : MonoBehaviour
         LineByLine
     }
 
+    private AudioSource _audioSource;
+
 
     private Collider2D _collider;
-    private AudioSource _audioSource;
     [SerializeField] private Dialogue _dialogue;
 
     [SerializeField] private Type _dialogueType;

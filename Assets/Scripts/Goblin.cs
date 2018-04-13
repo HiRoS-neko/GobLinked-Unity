@@ -1,7 +1,5 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
@@ -24,24 +22,6 @@ public class Goblin : MonoBehaviour
 
     public static int Exp = 12000;
 
-    public static int Level
-    {
-        get
-        {
-            var temp = Exp;
-            int level = 0;
-            do
-            {
-                level++;
-                temp -= (int) (10 * (level - Mathf.Pow(level, 0.25f)));
-            } while (temp > 0);
-
-            level--;
-
-            return level;
-        }
-    }
-
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
     private int _baseArmor;
 
@@ -58,9 +38,11 @@ public class Goblin : MonoBehaviour
 
     private int _lastHealth;
 
-    [HideInInspector] public int BlockHits;
+    [HideInInspector] public AbilityManager AbilityManager;
 
     [HideInInspector] public Animator Anim;
+
+    [HideInInspector] public int BlockHits;
 
 
     //Cooldowns
@@ -70,7 +52,6 @@ public class Goblin : MonoBehaviour
 
 
     public Vector2 Dir; // direction used for attacks
-    public Vector2 RightStick; // direction used for attacks
 
     public Accessory EquippedAccessory;
 
@@ -80,13 +61,30 @@ public class Goblin : MonoBehaviour
 
     public Inventory Items;
 
-    [HideInInspector] public AbilityManager AbilityManager;
-
 
     //Rank in Abilities
     public int RankStandard = 1, RankRange = 1, RankSupport = 1, RankUltimate = 1;
+    public Vector2 RightStick; // direction used for attacks
 
     [HideInInspector] public Rigidbody2D Rigid;
+
+    public static int Level
+    {
+        get
+        {
+            var temp = Exp;
+            var level = 0;
+            do
+            {
+                level++;
+                temp -= (int) (10 * (level - Mathf.Pow(level, 0.25f)));
+            } while (temp > 0);
+
+            level--;
+
+            return level;
+        }
+    }
 
     public int Speed => _baseSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.SpeedMod : 0);
@@ -158,10 +156,10 @@ public class Goblin : MonoBehaviour
         AbilityManager.SetCooldownAttackSupport((int) CooldownSupport);
         AbilityManager.SetCooldownAttackUltimate((int) CooldownUltimate);
 
-        AbilityManager.SetRankStandard((int) RankStandard);
-        AbilityManager.SetRankRange((int) RankRange);
-        AbilityManager.SetRankSupport((int) RankSupport);
-        AbilityManager.SetRankUltimate((int) RankUltimate);
+        AbilityManager.SetRankStandard(RankStandard);
+        AbilityManager.SetRankRange(RankRange);
+        AbilityManager.SetRankSupport(RankSupport);
+        AbilityManager.SetRankUltimate(RankUltimate);
     }
 
     private void FixedUpdate()

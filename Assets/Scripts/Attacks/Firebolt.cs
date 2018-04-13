@@ -1,24 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Firebolt : MonoBehaviour
 {
-    [SerializeField, Range(0, 5)] private float _velocity;
-    private Rigidbody2D _rgd;
     private Animator _anim;
 
-    private int _rank;
-
-    private Vector3 _pos;
+    private float _damage;
     private Vector2 _dir;
     private float _distance;
 
-    private float _damage;
+    private Vector3 _pos;
+
+    private int _rank;
+    private Rigidbody2D _rgd;
+    [SerializeField] [Range(0, 5)] private float _velocity;
 
     /// <summary>
-    /// Distance 1-2 (3) 3-4 (4) 5-6 (5)
+    ///     Distance 1-2 (3) 3-4 (4) 5-6 (5)
     /// </summary>
     private void Start()
     {
@@ -38,7 +36,7 @@ public class Firebolt : MonoBehaviour
 
         _rgd.velocity = _velocity * transform.right;
 
-        _damage = GlobalScript.Gnox.Attack * (1 + (_rank / 10));
+        _damage = GlobalScript.Gnox.Attack * (1 + _rank / 10);
     }
 
     private void FixedUpdate()
@@ -50,15 +48,12 @@ public class Firebolt : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
-        {
-            //TODO
-            //var temp = other.gameObject.GetComponent<>();
-        }
+            other.gameObject.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
 
         Explode();
     }
 
-    void Explode()
+    private void Explode()
     {
         _anim.SetTrigger("Explode");
         Destroy(gameObject, 0.2f);

@@ -5,17 +5,17 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     private float _damage;
+
+    private Vector2 _dir;
     private float _distance;
+
+    private Vector3 _pos;
     private int _range;
     private int _rank;
 
-    [SerializeField, Range(1, 5)] private float _velocity = 1;
-
-    private Vector2 _dir;
-
-    private Vector3 _pos;
-
     private Rigidbody2D _rgd;
+
+    [SerializeField] [Range(1, 5)] private float _velocity = 1;
 
     private void Start()
     {
@@ -39,18 +39,12 @@ public class Fireball : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if ((transform.position - _pos).magnitude > _distance)
-        {
-            Explode();
-        }
+        if ((transform.position - _pos).magnitude > _distance) Explode();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Explode();
-        }
+        if (other.gameObject.CompareTag("Enemy")) Explode();
     }
 
     private void Explode()
@@ -60,12 +54,8 @@ public class Fireball : MonoBehaviour
         var colliders = Physics2D.OverlapCircleAll(_rgd.position, _range).ToList();
 
         foreach (var coll in colliders)
-        {
             if (coll.gameObject.CompareTag("Enemy"))
-            {
-                //TODO give the enemy some damage
-            }
-        }
+                coll.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
 
         Destroy(this);
     }

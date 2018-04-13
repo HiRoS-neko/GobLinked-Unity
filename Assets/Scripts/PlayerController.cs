@@ -1,7 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using NUnit.Framework.Constraints;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,26 +12,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera _camera;
 
     [SerializeField] private GameObject _chain;
+    private bool _delay = true;
 
     [SerializeField] public GameMode _gameMode;
 
     [SerializeField] public Gnox _gnox;
+
+    [SerializeField] private AbilityManager _gnoxAbilityManager;
     [SerializeField] private GoblinUI _gnoxUI;
 
     [SerializeField] private Inventory _inv;
 
-    [SerializeField] private AbilityManager _gnoxAbilityManager;
-    [SerializeField] private AbilityManager _krilkAbilityManager;
-
 
     [SerializeField] public Krilk _krilk;
+    [SerializeField] private AbilityManager _krilkAbilityManager;
 
     [SerializeField] private GoblinUI _krilkUI;
+    [SerializeField] [Range(1, 10)] private float _speedMultiplier;
 
     [SerializeField] public Player1 Player1;
     [SerializeField] public Player2 Player2;
-    [SerializeField] [Range(1, 10)] private float _speedMultiplier;
-    private bool _delay = true;
 
     private void Awake()
     {
@@ -90,20 +87,18 @@ public class PlayerController : MonoBehaviour
         var spawns = GameObject.FindGameObjectsWithTag("Spawn");
 
         foreach (var spawn in spawns)
-        {
             if (spawn.name == prevScene)
             {
-                _chain.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                _chain.gameObject.transform.position = (Vector3) (Vector2) spawn.transform.position +
                                                        Vector3.forward * _chain.gameObject.transform.position.z;
-                _krilk.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                _krilk.gameObject.transform.position = (Vector3) (Vector2) spawn.transform.position +
                                                        Vector3.forward * _krilk.gameObject.transform.position.z;
-                _gnox.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                _gnox.gameObject.transform.position = (Vector3) (Vector2) spawn.transform.position +
                                                       Vector3.forward * _gnox.gameObject.transform.position.z;
-                _camera.gameObject.transform.position = (Vector3) ((Vector2) (spawn.transform.position)) +
+                _camera.gameObject.transform.position = (Vector3) (Vector2) spawn.transform.position +
                                                         Vector3.forward * _camera.gameObject.transform.position.z;
                 break;
             }
-        }
     }
 
     private void Update()

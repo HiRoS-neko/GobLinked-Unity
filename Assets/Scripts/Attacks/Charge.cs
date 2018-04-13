@@ -2,8 +2,8 @@
 
 public class Charge : MonoBehaviour
 {
-    private int _rank;
     private float _damage;
+    private int _rank;
 
     private void Start()
     {

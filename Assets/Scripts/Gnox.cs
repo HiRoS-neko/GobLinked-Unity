@@ -2,9 +2,9 @@
 
 public class Gnox : Goblin
 {
-    [SerializeField] private GameObject _firebolt;
     [SerializeField] private GameObject _backwave;
     [SerializeField] private GameObject _fireball;
+    [SerializeField] private GameObject _firebolt;
 
     private void Awake()
     {

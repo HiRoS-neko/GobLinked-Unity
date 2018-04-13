@@ -1,30 +1,28 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.Timeline;
 
 public class Inventory : MonoBehaviour
 {
+    private bool _changed;
     private int _columns, _rows, _spacing;
 
-    private Goblin _krilkGoblin, _gnoxGoblin;
-    public List<Item> Items;
+    [SerializeField] private GameObject _content;
+    private ItemObject _equipEquipGnox;
 
-    private List<ItemObject> _itemObjects;
-
-    private int _selected;
-    private float _prevMove;
+    private ItemObject _equipEquipKrilk;
+    private ItemObject _equipWeapGnox;
+    private ItemObject _equipWeapKrilk;
 
 
     [SerializeField] private ItemObject _itemObject;
 
-    private ItemObject _equipEquipKrilk;
-    private ItemObject _equipWeapKrilk;
-    private ItemObject _equipEquipGnox;
-    private ItemObject _equipWeapGnox;
+    private readonly List<ItemObject> _itemObjects;
 
-    [SerializeField] private GameObject _content;
-    private bool _changed;
+    private Goblin _krilkGoblin, _gnoxGoblin;
+    private float _prevMove;
+
+    private int _selected;
+    public List<Item> Items;
 
     public Inventory()
     {
@@ -44,7 +42,7 @@ public class Inventory : MonoBehaviour
             if (move < -0.5)
                 _selected += 1;
             else if (move > 0.5)
-                _selected += (_itemObjects.Count - 1);
+                _selected += _itemObjects.Count - 1;
 
             //make sure selected is within the number of items;
 
@@ -54,22 +52,15 @@ public class Inventory : MonoBehaviour
             _itemObjects[_selected].SetGlow(true);
         }
 
-        if (Mathf.Approximately(move, 0))
-        {
-            _changed = true;
-        }
+        if (Mathf.Approximately(move, 0)) _changed = true;
 
         _prevMove = move;
 
         if (Input.GetAxisRaw("SubmitPlayer1") > 0.5)
-        {
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player1.GoblinType, _selected);
-        }
         else if (GlobalScript.PlayerController._gameMode == PlayerController.GameMode.MultiPlayer &&
                  Input.GetAxisRaw("SubmitPlayer2") > 0.5)
-        {
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player2.GoblinType, _selected);
-        }
     }
 
     public void EquipItem(Item item, Goblin.GoblinType goblinType, int index)

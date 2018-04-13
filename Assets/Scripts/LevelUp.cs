@@ -2,18 +2,18 @@
 
 public class LevelUp : MonoBehaviour
 {
-    private bool _p11 = false,
-        _p12 = false,
-        _p13 = false,
-        _p14 = false,
-        _p21 = false,
-        _p22 = false,
-        _p23 = false,
-        _p24 = false;
+    private bool _p11,
+        _p12,
+        _p13,
+        _p14,
+        _p21,
+        _p22,
+        _p23,
+        _p24;
 
     private void Update()
     {
-        if ((GlobalScript.PlayerController.Player1.ControlledGoblin.RankRange - 1) +
+        if (GlobalScript.PlayerController.Player1.ControlledGoblin.RankRange - 1 +
             (GlobalScript.PlayerController.Player1.ControlledGoblin.RankSupport - 1) +
             (GlobalScript.PlayerController.Player1.ControlledGoblin.RankStandard - 1) +
             (GlobalScript.PlayerController.Player1.ControlledGoblin.RankUltimate - 1) < Goblin.Level)
@@ -58,8 +58,8 @@ public class LevelUp : MonoBehaviour
                 _p14 = false;
             }
         }
-        
-        if ((GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1) +
+
+        if (GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1 +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankSupport - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankStandard - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankUltimate - 1) < Goblin.Level)

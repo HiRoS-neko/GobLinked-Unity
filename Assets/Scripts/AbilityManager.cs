@@ -29,7 +29,7 @@ public class AbilityManager : MonoBehaviour
         if (num > 0) AttackUltimate.text = num.ToString();
         else AttackUltimate.text = "";
     }
-    
+
     public void SetRankStandard(int num)
     {
         RankStandard.text = num.ToString();

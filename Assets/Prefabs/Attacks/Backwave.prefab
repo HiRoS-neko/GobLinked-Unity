@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4987360959666734}
   - component: {fileID: 114224801440076958}
   - component: {fileID: 212343177275312464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Backwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

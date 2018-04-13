@@ -2,10 +2,9 @@
 
 public class Item : MonoBehaviour
 {
+    public string Description;
     public Goblin.GoblinType GoblinType;
     public string Name;
-
-    public string Description;
 
     private void OnTriggerStay2D(Collider2D other)
     {

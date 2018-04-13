@@ -1,17 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Slam : MonoBehaviour
 {
-    [SerializeField] private Collider2D _rank1, _rank2, _rank3;
-
     private float _damage;
 
     private int _rank;
+    [SerializeField] private Collider2D _rank1, _rank2, _rank3Plus;
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
         _rank = GlobalScript.Krilk.RankStandard;
 
@@ -25,12 +21,9 @@ public class Slam : MonoBehaviour
             case 4:
                 _rank2.enabled = true;
                 break;
-            case 5:
-            case 6:
-                _rank3.enabled = true;
+            default:
+                _rank3Plus.enabled = true;
                 break;
         }
     }
-
-    // Update is called once per frame
 }

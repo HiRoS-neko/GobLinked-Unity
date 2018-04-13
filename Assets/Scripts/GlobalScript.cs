@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GlobalScript : MonoBehaviour
@@ -14,13 +12,13 @@ public class GlobalScript : MonoBehaviour
     public static bool Active;
 
     public static PlayerController PlayerController;
-    public static event TheSceneChanged SceneChanged;
 
 
     public static bool Paused = false;
 
     public static Krilk Krilk;
     public static Gnox Gnox;
+    public static event TheSceneChanged SceneChanged;
 
 
     private void Awake()
