@@ -14,11 +14,14 @@ public class Chest : MonoBehaviour
     {
         if (!isTriggered)
         {
-            foreach (var item in _items) Instantiate(item, transform.position, Quaternion.identity);
-            source.Play();
-            animate.SetTrigger("open"); 
-            _items = new List<Item>();
-            isTriggered = true;
+            if (other.CompareTag("Goblin"))
+            {
+                foreach (var item in _items) Instantiate(item, transform.position, Quaternion.identity);
+                source.Play();
+                animate.SetTrigger("open");
+                _items = new List<Item>();
+                isTriggered = true;
+            }
         }
     }
 }

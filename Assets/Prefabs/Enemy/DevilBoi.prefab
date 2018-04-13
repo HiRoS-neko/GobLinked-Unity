@@ -114,7 +114,7 @@ MonoBehaviour:
   speed: 4
   checkDelay: 0.01
   body: {fileID: 50861422907732150}
-  enemySpeedMultiplier: 0
+  enemySpeedMultiplier: 7
   health: 28
   isSearching: 1
   attackCooldown: 0.5
