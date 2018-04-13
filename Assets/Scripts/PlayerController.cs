@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public Player1 Player1;
     [SerializeField] public Player2 Player2;
+    private bool _switch;
 
     private void Awake()
     {
@@ -103,6 +104,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Mathf.Abs(Input.GetAxisRaw("Switch")) > 0.5f && _switch)
+        {
+            SwitchPlayers();
+            _switch = false;
+        }
+        else if (Mathf.Abs(Input.GetAxisRaw("Switch")) < 0.5f)
+        {
+            _switch = true;
+        }
+
         switch (_gameMode)
         {
             case GameMode.SinglePlayer:
