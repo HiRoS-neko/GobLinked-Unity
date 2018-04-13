@@ -28,6 +28,7 @@
           <e p="Chest.cs" t="Include" />
           <e p="Consumable.cs" t="Include" />
           <e p="ConsumableBuff.cs" t="Include" />
+          <e p="ConsumableReset.cs" t="Include" />
           <e p="ConsumableRestore.cs" t="Include" />
           <e p="Dialogue.cs" t="Include" />
           <e p="DialogueBox.cs" t="Include" />
@@ -68,6 +69,7 @@
           <e p="waitTrigger.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
+        <e p="Shield.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
             <e p="Fonts" t="Include">

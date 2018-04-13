@@ -75,37 +75,70 @@ public class EnemyPathfinding : MonoBehaviour
         switch (aiType)
         {
             case enemyTypes.Slime: //Calling Slime bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 slimeBehaviour();
                 break;
 
             case enemyTypes.Rogue: //Calling Rogue bheaviour for fixedUpdate   
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 rogueBehaviour();
                 break;
 
             case enemyTypes.Archer: //Calling Archer bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 archerBehaviour();
                 break;
 
             case enemyTypes.Eyeball: //Calling Eyeball bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 eyeballBehaviour();
                 break;
 
             case enemyTypes.Fighter: //Calling Fighter bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 fighterBehaviour();
                 break;
 
             case enemyTypes.Farmer: //Calling Farmer bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 farmerBehaviour();
                 break;
 
             case enemyTypes.BiggerFighter: //Calling Bigger Fighter bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= Time.deltaTime;
+                }
                 biggerFighterBehaviour();
                 break;
 
             case enemyTypes.Rat: //Calling rat bheaviour for fixedUpdate
+                if (atkDel >= 0)
+                {
+                    atkDel -= 2*Time.deltaTime;
+                }
                 ratBehaviour();
                 break;
         }
+
     }
 
     /// <summary>
@@ -118,11 +151,7 @@ public class EnemyPathfinding : MonoBehaviour
     {
         while (true)
         {
-            hitObjects =
-                Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
-
-            if (atkDel >= 0) atkDel -= Time.deltaTime;
-
+            hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
 
             yield return new WaitForSeconds(waitTime); //Wait for next poll time
         }
@@ -134,22 +163,43 @@ public class EnemyPathfinding : MonoBehaviour
     private void slimeBehaviour() //The behaviour method for the Slime, including spit.
     {
         for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        {
             if (isSearching) //Behaviour for beelining to the goblins
+            {
                 if (hitObjects[i].tag == "Goblin")
                 {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
+                                    PlayerController.SpeedMultiplier /
+                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
                     if (Vector2.Distance(body.transform.position, hitObjects[i].transform.position) <= 10f)
                     {
-                        print("Eww, spit"); //Debg check
-                        float quatInput = Vector3.Angle(gameObject.transform.position, hitObjects[i].gameObject.transform.position);    //Getting the angle difference between the 
-                                                                                                                                        //gameObject of the slime and the gameobject
-                                                                                                                                        //of the goblin
-                        
-                        Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,quatInput));                                      //Setting the initial rotation of the spit
-                        GameObject projectileSpit = Instantiate(spitObject, gameObject.transform.position, rotation);                   //Instantiating the spit
-                        projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity = rotation.eulerAngles;                           //Making the spit actually shoot towards the player
+                        float quatInput = Vector3.Angle(gameObject.transform.position,
+                            hitObjects[i].gameObject.transform.position); //Getting the angle difference between the 
+                        //gameObject of the slime and the gameobject
+                        //of the goblin
+
+                        if (hitObjects[i].gameObject.tag == "Goblin" && atkDel <= 0)
+                        {
+                            print("Eww, spit + atkDel = " + atkDel + " attackCooldown = " +
+                                  attackCooldown); //Debg check
+                            
+                            Quaternion rotation =
+                                Quaternion.LookRotation(new Vector3(0, 0,
+                                    quatInput)); //Setting the initial rotation of the spit
+                            
+                            GameObject projectileSpit =
+                                Instantiate(spitObject, gameObject.transform.position,
+                                    rotation); //Instantiating the spit
+                            
+                            projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity =
+                                rotation.eulerAngles; //Making the spit actually shoot towards the player
+                            
+                            atkDel = attackCooldown;
+                        }
                     }
                 }
+            }
+        }
     }
 
     /// <summary>
@@ -167,9 +217,8 @@ public class EnemyPathfinding : MonoBehaviour
                                     PlayerController.SpeedMultiplier /
                                     enemySpeedMultiplier; //Moves the enemy towards the goalbeen
                 }
-                if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 2f)
+                if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 2f &&  atkDel <= 0)
                 {
-                    
                     try
                     {
                         //TODO Play the attack animation
@@ -183,7 +232,6 @@ public class EnemyPathfinding : MonoBehaviour
                 }
             }
         }
-
     }
 
     /// <summary>
@@ -286,8 +334,8 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void enemyDied()
     {
-        Instantiate(drop);
-        Destroy(gameObject);
+        //Instantiate(drop);
+        Destroy(this);
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -299,6 +347,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
+   
     #region //This is the region for class variables
 
     public enum enemyTypes
@@ -378,6 +427,7 @@ public class EnemyPathfinding : MonoBehaviour
     [Tooltip("Range at which the enemy will detect goblins, in metres. Can be set randomly in right-click menu.")]
     public float visibleRange; //The range the enemy can see you out to
 
+    [SerializeField]
     private float atkDel;
 
     [Tooltip("The audio clip for impact damage. Slimes, etc")]
