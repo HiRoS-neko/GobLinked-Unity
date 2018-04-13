@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Firebolt : MonoBehaviour
 {
     [SerializeField, Range(0, 5)] private float _velocity;
     private Rigidbody2D _rgd;
+    private Animator _anim;
 
     private int _rank;
 
@@ -21,12 +22,13 @@ public class Firebolt : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        _anim = GetComponent<Animator>();
         _rgd = GetComponent<Rigidbody2D>();
         //get level to run at
         _rank = GlobalScript.Gnox.RankStandard;
         _dir = GlobalScript.Gnox.Dir;
 
-        _distance = Mathf.FloorToInt(((float)_rank - 1) / 2) + 3;
+        _distance = Mathf.FloorToInt(((float) _rank - 1) / 2) + 3;
         //get current position
         _pos = transform.position;
 
@@ -42,7 +44,7 @@ public class Firebolt : MonoBehaviour
     private void FixedUpdate()
     {
         if ((transform.position - _pos).magnitude > _distance) //TODO add explosion when rank == 5 or 6
-            Destroy(gameObject);
+            Explode();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -53,6 +55,12 @@ public class Firebolt : MonoBehaviour
             //var temp = other.gameObject.GetComponent<>();
         }
 
-        Destroy(gameObject);
+        Explode();
+    }
+
+    void Explode()
+    {
+        _anim.SetTrigger("Explode");
+        Destroy(gameObject, 0.2f);
     }
 }

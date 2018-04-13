@@ -20,9 +20,10 @@ public class BackWave : MonoBehaviour
 
     private void Start()
     {
+        transform.localScale = Vector3.zero;
         _pos = transform.position;
         _range = GlobalScript.Gnox.RankRange < 4 ? 3 : 5;
-        _knock = 3 + Mathf.Floor((float)GlobalScript.Gnox.RankRange / 2);
+        _knock = 3 + Mathf.Floor((float) GlobalScript.Gnox.RankRange / 2);
         //get sphere of rigidbodys around the player
         _objects = Physics2D.OverlapCircleAll(GlobalScript.Gnox.Rigid.position, _range).ToList();
 
