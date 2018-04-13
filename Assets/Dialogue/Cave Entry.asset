@@ -21,10 +21,6 @@ MonoBehaviour:
     Delay: 3
     Line: "Right you are Krilk. Those blood-soaked monsters are hiding in here somewhere.
       Let\u2019s find them and get justice for our village!"
-  - Audio: {fileID: 0}
-    Context: 
-    Delay: 3
-    Line: 
   - Audio: {fileID: 8300000, guid: 44cfac9e28c5f914199772ffab02ee6a, type: 3}
     Context: Gnox
     Delay: 3
