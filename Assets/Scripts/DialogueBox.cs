@@ -1,13 +1,14 @@
 ﻿using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class DialogueBox : MonoBehaviour
 {
     public static TextMeshProUGUI TextBox;
 
+    [SerializeField] private TextMeshProUGUI _text;
+
     private void Start()
     {
-        TextBox = GetComponent<TextMeshProUGUI>();
+        TextBox = _text;
     }
 }

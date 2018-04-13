@@ -24,11 +24,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private string _tagTrigger;
 
-    public GameObject textBox;
-
     private void Start()
     {
-        
         _collider = GetComponent<Collider2D>();
         _audioSource = GetComponent<AudioSource>();
         if (_collider == null)
@@ -46,10 +43,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag(_tagTrigger))
         {
-            textBox = GameObject.Find("TextBox");
             Time.timeScale = 0;
-            DialogueBox.TextBox.gameObject.SetActive(true);
-            textBox.SetActive(true);
+            DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(true);
 
             StartCoroutine(DialogueCoroutineLineByLine(0));
 
@@ -135,8 +130,7 @@ public class DialogueManager : MonoBehaviour
 
             DialogueBox.TextBox.text = "";
 
-            DialogueBox.TextBox.gameObject.SetActive(false);
-            textBox.SetActive(false);
+            DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(false);
         }
 
         yield return null;
