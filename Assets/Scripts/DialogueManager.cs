@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         if (other.gameObject.CompareTag(_tagTrigger))
         {
             Time.timeScale = 0;
-            DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(true);
+            //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(true);
 
             StartCoroutine(DialogueCoroutineLineByLine(0));
 
@@ -130,7 +130,7 @@ public class DialogueManager : MonoBehaviour
 
             DialogueBox.TextBox.text = "";
 
-            DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(false);
+            //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(false);
         }
 
         yield return null;

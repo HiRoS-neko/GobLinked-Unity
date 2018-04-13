@@ -15741,6 +15741,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: f47d03805ebfd1f46b1219111e6071d1,
         type: 2}
+    - target: {fileID: 114117443727105282, guid: ab0656658797ad24880025048ebcad0b,
+        type: 2}
+      propertyPath: _dialogueType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0656658797ad24880025048ebcad0b, type: 2}
   m_IsPrefabParent: 0
@@ -20026,6 +20031,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 3bb68d82efec3864e952f2197112c60a,
         type: 2}
+    - target: {fileID: 114117443727105282, guid: ab0656658797ad24880025048ebcad0b,
+        type: 2}
+      propertyPath: _dialogueType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0656658797ad24880025048ebcad0b, type: 2}
   m_IsPrefabParent: 0
@@ -21825,7 +21835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1585824114
 Transform:
   m_ObjectHideFlags: 0
