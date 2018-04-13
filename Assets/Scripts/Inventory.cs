@@ -83,7 +83,7 @@ public class Inventory : MonoBehaviour
                 {
                     GlobalScript.Krilk.UseConsumable((Consumable) item);
                     Items.RemoveAt(index);
-                    Destroy(_itemObjects[index]);
+                    Destroy(_itemObjects[index].gameObject);
                     _itemObjects.RemoveAt(index);
                 }
 
@@ -107,7 +107,7 @@ public class Inventory : MonoBehaviour
                 {
                     GlobalScript.Gnox.UseConsumable((Consumable) item);
                     Items.RemoveAt(index);
-                    Destroy(_itemObjects[index]);
+                    Destroy(_itemObjects[index].gameObject);
                     _itemObjects.RemoveAt(index);
                 }
 
