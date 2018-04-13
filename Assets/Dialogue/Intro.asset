@@ -14,18 +14,18 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: You think you can take Gnox the Mystic you humie fools. You shall perish
       in anguish!
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Face my ultimate bloodline technique. Ahhhhhhhh!
   - Audio: {fileID: 0}
     Context: Krilk
-    Delay: 3
+    Delay: 2
     Line: Boss look out!
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Krillk you fool.

@@ -14,34 +14,34 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Ah ha! We have finally found you! You shall pay for your crimes!
   - Audio: {fileID: 0}
     Context: Samuel
-    Delay: 3
+    Delay: 2
     Line: Who are these two?
   - Audio: {fileID: 0}
     Context: Riacari
-    Delay: 3
+    Delay: 2
     Line: I think they were in the goblin village we raided.
   - Audio: {fileID: 0}
     Context: Venom
-    Delay: 3
+    Delay: 2
     Line: 'Yhea, the small one was screaming about his ultimate technique or something. '
   - Audio: {fileID: 0}
     Context: Renin
-    Delay: 3
+    Delay: 2
     Line: Looks like they managed to chain themselves together somehow.
   - Audio: {fileID: 8300000, guid: dbb5024590ea64740a3cbfd3a0f0084d, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: You fools! I am Gnox the Mystic and this is my slave Krilk the Rock! We
       are here to avenge the death of our village!
   - Audio: {fileID: 8300000, guid: a98af1924bf94ba4cb73ce938a252b8b, type: 3}
     Context: Krillk
-    Delay: 3
+    Delay: 2
     Line: "Boss? What\u2019s a slave?"
   - Audio: {fileID: 8300000, guid: 9245258a24250e74489f653132af8835, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Silence Krilk! Humies, quake in fear of your doom. At arms!

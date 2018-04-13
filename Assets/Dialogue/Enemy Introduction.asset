@@ -14,19 +14,19 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 0}
     Context: Krilk
-    Delay: 3
+    Delay: 2
     Line: Boss, look out. There's something over there. It looks like a flying eyeball.
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Krilk, you fool! That is a Floatsee. A minor inconvenience to someone like
       myself.
   - Audio: {fileID: 0}
     Context: Krilk
-    Delay: 3
+    Delay: 2
     Line: Wow, you sure are strong boss. Oh, look its coming this way.
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Ah, r-really! Quick Krilk, destroy the creature. It is far to weak for me
       to dirty my hands with.

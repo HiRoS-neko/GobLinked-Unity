@@ -14,15 +14,15 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: If I remember correctly there is a cave to the east of here that the humies
       use as a hideout.
   - Audio: {fileID: 8300000, guid: a98af1924bf94ba4cb73ce938a252b8b, type: 3}
     Context: Krillk
-    Delay: 3
+    Delay: 2
     Line: "We shouldn\u2019t hang around here to long, boss. There\u2019s lots of
       humies about. "
   - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: Ha! Let the humies come. They shall taste my flames.

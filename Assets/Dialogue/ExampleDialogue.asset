@@ -14,9 +14,9 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 0}
     Context: 'Krilk:'
-    Delay: 3
+    Delay: 2
     Line: Hello
   - Audio: {fileID: 0}
     Context: 'Gnox:'
-    Delay: 3
+    Delay: 2
     Line: Hello

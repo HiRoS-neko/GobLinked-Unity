@@ -160,7 +160,7 @@ Prefab:
         type: 2}
       propertyPath: _dialogue
       value: 
-      objectReference: {fileID: 11400000, guid: c7e59b59465d8c046aaf8ec357245025,
+      objectReference: {fileID: 11400000, guid: 661dd45ce3db56143943288c2b14c598,
         type: 2}
     - target: {fileID: 114117443727105282, guid: ab0656658797ad24880025048ebcad0b,
         type: 2}

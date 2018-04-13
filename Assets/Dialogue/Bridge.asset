@@ -14,10 +14,10 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 8300000, guid: 3e41e8b04224a1343a4c1a26feeef0bc, type: 3}
     Context: Krillk
-    Delay: 3
+    Delay: 2
     Line: I think this leads to the big humie village. We should avoid it.
   - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
     Context: Gnox
-    Delay: 3
+    Delay: 2
     Line: "If we had more time I would burn it to cinders! But let\u2019s save that
       for another day."
