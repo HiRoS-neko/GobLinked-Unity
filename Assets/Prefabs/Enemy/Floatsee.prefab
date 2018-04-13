@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95839553205165588}
   m_Layer: 0
   m_Name: Floatsee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   speed: 4
   checkDelay: 0.01
   body: {fileID: 50300929313362440}
-  enemySpeedMultiplier: 0
+  enemySpeedMultiplier: 7
   health: 8
   isSearching: 1
   attackCooldown: 1

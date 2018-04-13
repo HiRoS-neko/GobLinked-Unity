@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95870893832765268}
   m_Layer: 0
   m_Name: Rat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,13 +108,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiType: 8
-  armor: 2
+  armor: 0
   attack: 7
   experienceDrop: 2
   speed: 3
   checkDelay: 0.01
   body: {fileID: 50877639202045360}
-  enemySpeedMultiplier: 0
+  enemySpeedMultiplier: 7
   health: 3
   isSearching: 1
   attackCooldown: 1

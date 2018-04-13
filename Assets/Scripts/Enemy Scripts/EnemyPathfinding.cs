@@ -1,5 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +10,9 @@ public class EnemyPathfinding : MonoBehaviour
 {
     private Animator _anim;
     private int _dir;
+
+
+    private Goblin goblin;
 
     private void Start()
     {
@@ -187,7 +192,17 @@ public class EnemyPathfinding : MonoBehaviour
         while (true)
         {
             hitObjects =
-                Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
+                Physics2D.OverlapCircleAll(transform.position, visibleRange)
+                    .ToList(); //Check for any goblins within range
+
+            foreach (var hitObject in hitObjects)
+            {
+                if (hitObject.CompareTag("Goblin"))
+                {
+                    goblin = hitObject.GetComponent<Goblin>();
+                    break;
+                }
+            }
 
             yield return new WaitForSeconds(waitTime); //Wait for next poll time
         }
@@ -198,41 +213,35 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void slimeBehaviour() //The behaviour method for the Slime, including spit.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                            PlayerController.SpeedMultiplier /
+                            enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+            if (Vector2.Distance(body.transform.position, goblin.transform.position) <= 10f)
             {
-                if (hitObjects[i].tag == "Goblin")
+                float quatInput = Vector3.Angle(gameObject.transform.position,
+                    goblin.gameObject.transform.position); //Getting the angle difference between the 
+                //gameObject of the slime and the gameobject
+                //of the goblin
+
+                if (goblin.gameObject.CompareTag("Goblin") && atkDel <= 0)
                 {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
-                    if (Vector2.Distance(body.transform.position, hitObjects[i].transform.position) <= 10f)
-                    {
-                        float quatInput = Vector3.Angle(gameObject.transform.position,
-                            hitObjects[i].gameObject.transform.position); //Getting the angle difference between the 
-                        //gameObject of the slime and the gameobject
-                        //of the goblin
+                    print("Eww, spit + atkDel = " + atkDel + " attackCooldown = " +
+                          attackCooldown); //Debg check
 
-                        if (hitObjects[i].gameObject.tag == "Goblin" && atkDel <= 0)
-                        {
-                            print("Eww, spit + atkDel = " + atkDel + " attackCooldown = " +
-                                  attackCooldown); //Debg check
+                    Quaternion rotation =
+                        Quaternion.LookRotation(new Vector3(0, 0,
+                            quatInput)); //Setting the initial rotation of the spit
 
-                            Quaternion rotation =
-                                Quaternion.LookRotation(new Vector3(0, 0,
-                                    quatInput)); //Setting the initial rotation of the spit
+                    GameObject projectileSpit =
+                        Instantiate(spitObject, gameObject.transform.position,
+                            rotation); //Instantiating the spit
 
-                            GameObject projectileSpit =
-                                Instantiate(spitObject, gameObject.transform.position,
-                                    rotation); //Instantiating the spit
+                    projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity =
+                        rotation.eulerAngles; //Making the spit actually shoot towards the player
 
-                            projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity =
-                                rotation.eulerAngles; //Making the spit actually shoot towards the player
-
-                            atkDel = attackCooldown;
-                        }
-                    }
+                    atkDel = attackCooldown;
                 }
             }
         }
@@ -243,24 +252,18 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void rogueBehaviour() //The behaviour method for Rogues. Includes attempts to stay behind the Goblins.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                            PlayerController.SpeedMultiplier /
+                            enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+
+            if (Vector3.Distance(gameObject.transform.position, goblin.transform.position) < 2f &&
+                atkDel <= 0)
             {
-                if (hitObjects[i].tag == "Goblin")
-                {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                _anim.SetTrigger("Attack");
 
-                    if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 2f &&
-                        atkDel <= 0)
-                    {
-                        _anim.SetTrigger("Attack");
-
-                        hitObjects[i].gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
-                    }
-                }
+                goblin.gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
             }
         }
     }
@@ -271,16 +274,15 @@ public class EnemyPathfinding : MonoBehaviour
     private void
         archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
-            if (isSearching) //Behaviour for beelining to the goblins
-            {
-                if ((hitObjects[i].tag == "Goblin") &&
-                    (Vector2.Distance(body.transform.position, hitObjects[i].transform.position) >= 5f)
-                ) //Check if the goblins are outside near range but inside visible range
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
-            }
+        if (isSearching) //Behaviour for beelining to the goblins
+        {
+            if ((goblin.CompareTag("Goblin")) &&
+                (Vector2.Distance(body.transform.position, goblin.transform.position) >= 5f)
+            ) //Check if the goblins are outside near range but inside visible range
+                body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                                PlayerController.SpeedMultiplier /
+                                enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+        }
     }
 
     /// <summary>
@@ -289,12 +291,11 @@ public class EnemyPathfinding : MonoBehaviour
     private void
         eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
-            if (isSearching) //Behaviour for beelining to the goblins
-                if (hitObjects[i].tag == "Goblin")
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+        if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = Vector2.ClampMagnitude(
+                ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                PlayerController.SpeedMultiplier / enemySpeedMultiplier,
+                10); //Moves the enemy towards the goalbeen
     }
 
     /// <summary>
@@ -303,23 +304,17 @@ public class EnemyPathfinding : MonoBehaviour
     private void
         fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                            PlayerController.SpeedMultiplier /
+                            enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+            if (Vector3.Distance(gameObject.transform.position, goblin.transform.position) < 2f &&
+                atkDel <= 0)
             {
-                if (hitObjects[i].tag == "Goblin")
-                {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
-                    if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 2f &&
-                        atkDel <= 0)
-                    {
-                        _anim.SetTrigger("Attack");
+                _anim.SetTrigger("Attack");
 
-                        hitObjects[i].gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
-                    }
-                }
+                goblin.TakeDamage(attack);
             }
         }
     }
@@ -329,24 +324,18 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void farmerBehaviour() //The behaviour for the peasant humans. Gets in melee and uses hit and run tactics.
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                            PlayerController.SpeedMultiplier /
+                            enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+
+            if (Vector3.Distance(gameObject.transform.position, goblin.transform.position) < 2f &&
+                atkDel <= 0)
             {
-                if (hitObjects[i].tag == "Goblin")
-                {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                _anim.SetTrigger("Attack");
 
-                    if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 2f &&
-                        atkDel <= 0)
-                    {
-                        _anim.SetTrigger("Attack");
-
-                        hitObjects[i].gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
-                    }
-                }
+                goblin.TakeDamage(attack);
             }
         }
     }
@@ -356,24 +345,18 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void biggerFighterBehaviour()
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                            PlayerController.SpeedMultiplier /
+                            enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+
+            if (Vector3.Distance(gameObject.transform.position, goblin.transform.position) < 4f &&
+                atkDel <= 0)
             {
-                if (hitObjects[i].tag == "Goblin")
-                {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                _anim.SetTrigger("Attack");
 
-                    if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 4f &&
-                        atkDel <= 0)
-                    {
-                        _anim.SetTrigger("Attack");
-
-                        hitObjects[i].gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
-                    }
-                }
+                goblin.TakeDamage(attack);
             }
         }
     } //DONE
@@ -383,24 +366,19 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void ratBehaviour()
     {
-        for (var i = 0; i < hitObjects.Length; i++) //Searches through the array of found objects
+        if (isSearching) //Behaviour for beelining to the goblins
         {
-            if (isSearching) //Behaviour for beelining to the goblins
+            body.velocity = Vector2.ClampMagnitude(
+                ((Vector2) goblin.transform.position - body.position).normalized * speed *
+                PlayerController.SpeedMultiplier /
+                enemySpeedMultiplier, 10f); //Moves the enemy towards the goalbeen
+
+            if (Vector3.Distance(gameObject.transform.position, goblin.transform.position) < 1f &&
+                atkDel <= 0)
             {
-                if (hitObjects[i].tag == "Goblin")
-                {
-                    body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed *
-                                    PlayerController.SpeedMultiplier /
-                                    enemySpeedMultiplier; //Moves the enemy towards the goalbeen
+                _anim.SetTrigger("Attack");
 
-                    if (Vector3.Distance(gameObject.transform.position, hitObjects[i].transform.position) < 1f &&
-                        atkDel <= 0)
-                    {
-                        _anim.SetTrigger("Attack");
-
-                        hitObjects[i].gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
-                    }
-                }
+                goblin.TakeDamage(attack);
             }
         }
     } //DONE
@@ -410,7 +388,8 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     public void TakeDamage(int dam)
     {
-        health -= Math.Max(dam - armor, 1);
+        print("Took " + dam);
+        health -= Mathf.Max(dam - armor, 1);
         if (health <= 0)
         {
             enemyDied();
@@ -422,13 +401,14 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void enemyDied()
     {
-        Instantiate(drop);
-        Destroy(gameObject);
+        if (drop != null) Instantiate(drop);
+        Goblin.Exp += experienceDrop;
+        Destroy(gameObject, 0.1f);
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Goblin" && atkDel <= 0)
+        if (other.gameObject.CompareTag("Goblin") && atkDel <= 0)
         {
             _anim.SetTrigger("Attack");
             other.gameObject.GetComponentInChildren<Goblin>().TakeDamage(attack);
@@ -499,13 +479,13 @@ public class EnemyPathfinding : MonoBehaviour
     [Range(1, 10)]
     [SerializeField]
     [Tooltip("The speed multiplier for enemies. Since the player controller script is MEGA AUTISM")]
-    private int enemySpeedMultiplier; //Changes the speel multiplier for the enemy. I highly recommend 5-8.
+    private int enemySpeedMultiplier = 7; //Changes the speel multiplier for the enemy. I highly recommend 5-8.
 
     private IEnumerator goHitArray; //The coroutine to look for enemies
 
     public int health; //Enemies maximum hp
 
-    private Collider2D[] hitObjects; //The array of objects hit by the enemy circle cast
+    private List<Collider2D> hitObjects; //The array of objects hit by the enemy circle cast
 
     [Tooltip("Whether or not to be actively searching for the player")]
     public bool isSearching = true; //Whether or not the enemy is currently looking for a player

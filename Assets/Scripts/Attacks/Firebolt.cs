@@ -55,7 +55,6 @@ public class Firebolt : MonoBehaviour
 
     private void Explode()
     {
-        _anim.SetTrigger("Explode");
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject);
     }
 }

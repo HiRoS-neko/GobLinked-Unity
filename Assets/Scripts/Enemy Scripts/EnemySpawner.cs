@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Instantiate(enemiesToSpawn[i]);
                     currentTimer = 0;
+                    break;
                 }
             }
         }
