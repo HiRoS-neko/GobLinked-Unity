@@ -112,13 +112,13 @@ MonoBehaviour:
   attack: 5
   experienceDrop: 5
   speed: 3
-  checkDelay: 0
+  checkDelay: 0.01
   body: {fileID: 50232110853411430}
   enemySpeedMultiplier: 0
   health: 10
   isSearching: 1
   attackCooldown: 1
-  visibleRange: 5
+  visibleRange: 5000
   atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
