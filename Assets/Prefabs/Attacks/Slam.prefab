@@ -147,9 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2454435de2e9b24591327812a435c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstRank: {fileID: 0}
-  _secondRank: {fileID: 0}
-  _thirdRankPlus: {fileID: 0}
+  _firstRank: {fileID: 60552872690658298}
+  _secondRank: {fileID: 60964936134873692}
+  _thirdRankPlus: {fileID: 60334184624693446}
 --- !u!212 &212915887097243142
 SpriteRenderer:
   m_ObjectHideFlags: 1

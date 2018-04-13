@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 if (check <= sumSofar)
                 {
                     Instantiate(enemiesToSpawn[i]);
+                    currentTimer = 0;
                 }
             }
         }
