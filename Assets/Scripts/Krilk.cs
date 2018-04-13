@@ -19,6 +19,8 @@ public class Krilk : Goblin
 
         CooldownStandard = 0.2f;
 
+        Anim.SetTrigger("Slam");
+        
         Instantiate(_slam, transform.position, Quaternion.identity);
         base.AttackStandard();
     }
@@ -30,6 +32,8 @@ public class Krilk : Goblin
 
         CooldownRange = 14 - 1 * RankRange;
 
+        Anim.SetTrigger("Smash");
+        
         Instantiate(_smash, transform.position, Quaternion.identity);
         base.AttackRange();
     }
@@ -53,6 +57,8 @@ public class Krilk : Goblin
 
         CooldownUltimate = 120 - 15 * RankUltimate;
 
+        Anim.SetTrigger("Charge");
+        
         Instantiate(_charge, transform.position, Quaternion.identity);
         base.AttackUltimate();
     }
