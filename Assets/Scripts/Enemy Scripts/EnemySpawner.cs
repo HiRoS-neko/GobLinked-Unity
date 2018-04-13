@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 sumSofar += enemyWeights[i];
                 if(check <= sumSofar)
                 {
-                    //TODO FUCKING MAKE THIS SHIT WORK
+                    Instantiate(enemiesToSpawn[i]);
                 }
             }
         }
