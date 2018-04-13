@@ -51,5 +51,7 @@ public class Smash : MonoBehaviour
         _secondRank.enabled = false;
         _thirdRankPlus.enabled = false;
         
+        Destroy(gameObject, 0.2f);
+        
     }
 }
