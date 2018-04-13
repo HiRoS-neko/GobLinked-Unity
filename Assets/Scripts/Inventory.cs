@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
 
     private int _selected;
     public List<Item> Items;
+    private bool _toggle;
 
     public Inventory()
     {
@@ -52,11 +53,16 @@ public class Inventory : MonoBehaviour
 
         _prevMove = move;
 
-        if (Input.GetAxisRaw("SubmitPlayer1") > 0.5)
+        if (Mathf.Abs(Input.GetAxisRaw("SubmitPlayer1")) > 0.5 && _toggle)
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player1.GoblinType, _selected);
         else if (GlobalScript.PlayerController._gameMode == PlayerController.GameMode.MultiPlayer &&
-                 Input.GetAxisRaw("SubmitPlayer2") > 0.5)
+                 Mathf.Abs(Input.GetAxisRaw("SubmitPlayer2")) > 0.5 && _toggle)
             EquipItem(Items[_selected], GlobalScript.PlayerController.Player2.GoblinType, _selected);
+        else if (Mathf.Abs(Input.GetAxisRaw("SubmitPlayer1")) < 0.5 &&
+                 Mathf.Abs(Input.GetAxisRaw("SubmitPlayer2")) < 0.5)
+        {
+            _toggle = true;
+        }
     }
 
     public void EquipItem(Item item, Goblin.GoblinType goblinType, int index)
