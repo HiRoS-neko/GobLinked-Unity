@@ -423,7 +423,7 @@ public class EnemyPathfinding : MonoBehaviour
     private void enemyDied()
     {
         Instantiate(drop);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D other)
