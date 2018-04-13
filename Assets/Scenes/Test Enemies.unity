@@ -305,7 +305,7 @@ Prefab:
     - target: {fileID: 114372430508596234, guid: 3a4e0ad6f6b4534488657f7887b48f99,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114383873433327008, guid: 3a4e0ad6f6b4534488657f7887b48f99,
         type: 2}
@@ -436,6 +436,16 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114372430508596234, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_margin.y
+      value: -298.09747
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509561422379192, guid: 3a4e0ad6f6b4534488657f7887b48f99,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
@@ -612,7 +622,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699686821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.54, y: 0.6, z: 0}
+  m_LocalPosition: {x: -8.04, y: -4.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -654,10 +664,12 @@ MonoBehaviour:
   enemySpeedMultiplier: 7
   health: 23
   isSearching: 1
-  attackCooldown: 10
+  attackCooldown: 20
   visibleRange: 132.23523
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
+  spitObject: {fileID: 1196369752278288, guid: 0a651a2fba0bbb04abcced925df78944, type: 2}
+  drop: {fileID: 1196369752278288, guid: 8e20158c2ed3a7640a83716a350a814c, type: 2}
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4

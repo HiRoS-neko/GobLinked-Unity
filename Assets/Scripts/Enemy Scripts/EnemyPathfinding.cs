@@ -106,6 +106,10 @@ public class EnemyPathfinding : MonoBehaviour
                 ratBehaviour();
                 break;
         }
+        if (atkDel >= 0)
+        {
+            atkDel -= Time.deltaTime;
+        }
     }
 
     /// <summary>
@@ -118,11 +122,7 @@ public class EnemyPathfinding : MonoBehaviour
     {
         while (true)
         {
-            hitObjects =
-                Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
-
-            if (atkDel >= 0) atkDel -= Time.deltaTime;
-
+            hitObjects = Physics2D.OverlapCircleAll(transform.position, visibleRange); //Check for any goblins within range
 
             yield return new WaitForSeconds(waitTime); //Wait for next poll time
         }
@@ -140,14 +140,19 @@ public class EnemyPathfinding : MonoBehaviour
                     body.velocity = ((Vector2) hitObjects[i].transform.position - body.position).normalized * speed * PlayerController.SpeedMultiplier / enemySpeedMultiplier; //Moves the enemy towards the goalbeen
                     if (Vector2.Distance(body.transform.position, hitObjects[i].transform.position) <= 10f)
                     {
-                        print("Eww, spit"); //Debg check
-                        float quatInput = Vector3.Angle(gameObject.transform.position, hitObjects[i].gameObject.transform.position);    //Getting the angle difference between the 
-                                                                                                                                        //gameObject of the slime and the gameobject
-                                                                                                                                        //of the goblin
-                        
-                        Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,quatInput));                                      //Setting the initial rotation of the spit
-                        GameObject projectileSpit = Instantiate(spitObject, gameObject.transform.position, rotation);                   //Instantiating the spit
-                        projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity = rotation.eulerAngles;                           //Making the spit actually shoot towards the player
+                        float quatInput = Vector3.Angle(gameObject.transform.position, hitObjects[i].gameObject.transform.position); //Getting the angle difference between the 
+                                                                                                                                     //gameObject of the slime and the gameobject
+                                                                                                                                     //of the goblin
+
+                        if (hitObjects[i].gameObject.tag == "Goblin" && atkDel <= 0)
+                        {
+                            print("Eww, spit + atkDel = " + atkDel + " attackCooldown = " + attackCooldown); //Debg check
+                            Quaternion rotation = Quaternion.LookRotation(new Vector3(0, 0, quatInput)); //Setting the initial rotation of the spit
+                            GameObject projectileSpit = Instantiate(spitObject, gameObject.transform.position, rotation); //Instantiating the spit
+                            projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity = rotation.eulerAngles; //Making the spit actually shoot towards the player
+
+                            atkDel = attackCooldown;
+                        }
                     }
                 }
     }
@@ -183,7 +188,6 @@ public class EnemyPathfinding : MonoBehaviour
                 }
             }
         }
-
     }
 
     /// <summary>
@@ -286,8 +290,8 @@ public class EnemyPathfinding : MonoBehaviour
     /// </summary>
     private void enemyDied()
     {
-        Instantiate(drop);
-        Destroy(gameObject);
+        //Instantiate(drop);
+        Destroy(this);
     }
 
     private void OnCollisionStay2D(Collision2D other)
