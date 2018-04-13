@@ -17,6 +17,10 @@ public class Slam : MonoBehaviour
         contactFilter.NoFilter();
         int num;
 
+        var dir = GlobalScript.Krilk.Dir;
+        var rotZ = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+
         switch (_rank)
         {
             case 1:
