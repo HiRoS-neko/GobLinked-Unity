@@ -184,7 +184,6 @@ public class EnemyPathfinding : MonoBehaviour
                       hitObjects[i].name);
                 print((Vector2.Distance(body.transform.position, hitObjects[i].transform.position) >= 5f) +
                       " targetting " + hitObjects[i].name);
-
                 if ((hitObjects[i].tag == "Goblin") &
                     (Vector2.Distance(body.transform.position, hitObjects[i].transform.position) >= 5f)
                 ) //Check if the goblins are outside near range but inside visible range
