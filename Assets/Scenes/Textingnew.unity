@@ -236,9 +236,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 212262542845145554, guid: 279b64284ce432347aa73bf8d9ee7e8f,
+    - target: {fileID: 60736717328749470, guid: 279b64284ce432347aa73bf8d9ee7e8f,
         type: 2}
-      propertyPath: m_FlipX
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60065445943517010, guid: 279b64284ce432347aa73bf8d9ee7e8f,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -260,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371f3d741af547a49a1e6f09d20ac60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
 --- !u!1001 &2100124433
 Prefab:
   m_ObjectHideFlags: 0
@@ -478,6 +484,10 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926309471383602, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}

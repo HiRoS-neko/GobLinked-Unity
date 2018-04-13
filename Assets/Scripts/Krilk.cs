@@ -41,7 +41,7 @@ public class Krilk : Goblin
 
         CooldownSupport = 30 - 2 * RankSupport;
 
-        BlockHits += RankSupport;
+        BlockHits = RankSupport;
 
         base.AttackSupport();
     }

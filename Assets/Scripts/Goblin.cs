@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
@@ -20,7 +21,7 @@ public class Goblin : MonoBehaviour
         Attack
     }
 
-    public static int Exp = 12000;
+    public static int Exp = 0;
 
     [SerializeField] [Tooltip("Base Armor of the Goblin")]
     private int _baseArmor;
@@ -51,6 +52,8 @@ public class Goblin : MonoBehaviour
     public int CurrentHealth;
 
 
+    private int _tempHealth, _tempArmor, _tempAttack, _tempSpeed;
+
     public Vector2 Dir; // direction used for attacks
 
     public Accessory EquippedAccessory;
@@ -61,6 +64,7 @@ public class Goblin : MonoBehaviour
 
     public Inventory Items;
 
+    [SerializeField] private GameObject _shield;
 
     //Rank in Abilities
     public int RankStandard = 1, RankRange = 1, RankSupport = 1, RankUltimate = 1;
@@ -86,17 +90,17 @@ public class Goblin : MonoBehaviour
         }
     }
 
-    public int Speed => _baseSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
+    public int Speed => _baseSpeed + _tempSpeed + (EquippedAccessory != null ? EquippedAccessory.SpeedMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.SpeedMod : 0);
 
-    public int Health => _baseHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
+    public int Health => _baseHealth + _tempHealth + (EquippedAccessory != null ? EquippedAccessory.HealthMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.HealthMod : 0);
 
-    public int Armor => _baseArmor + (BlockHits > 0 ? 50 : 0) +
+    public int Armor => _baseArmor + _tempArmor + (BlockHits > 0 ? 50 : 0) +
                         (EquippedAccessory != null ? EquippedAccessory.ArmorMod : 0) +
                         (EquippedWeapon != null ? EquippedWeapon.ArmorMod : 0);
 
-    public int Attack => _baseAttack + (EquippedAccessory != null ? EquippedAccessory.AttackMod : 0) +
+    public int Attack => _baseAttack + _tempAttack + (EquippedAccessory != null ? EquippedAccessory.AttackMod : 0) +
                          (EquippedWeapon != null ? EquippedWeapon.AttackMod : 0);
 
     private void Start()
@@ -164,6 +168,16 @@ public class Goblin : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (BlockHits > 0 && _shield.activeSelf == false)
+        {
+            _shield.SetActive(true);
+        }
+        else if (BlockHits <= 0 && _shield.activeSelf)
+        {
+            _shield.SetActive(false);
+        }
+
+
         //Make sure the health is set proportional when items are changed
         if (_lastHealth < Health)
             CurrentHealth += Health - _lastHealth;
@@ -184,14 +198,12 @@ public class Goblin : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        //TODO do armour calc and apply to health
-        //HealthUI.SetHealth(Health);
         if (GlobalScript.invincible == false)
         {
-            CurrentHealth -= Math.Max((damage - Armor),1);
+            CurrentHealth -= Math.Max((damage - Armor), 1);
         }
 
-        throw new NotImplementedException();
+        if (BlockHits > 0) BlockHits -= 1;
     }
 
 
@@ -205,18 +217,23 @@ public class Goblin : MonoBehaviour
             temp.transform.position = Vector3.zero;
             temp.gameObject.SetActive(false);
         }
-        //or its an enemy
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            //TODO are we doing contact damage?
-        }
     }
 
     public void UseConsumable(Consumable item)
     {
-        if (item.GetType() == typeof(ConsumableRestore)) throw new NotImplementedException();
-
-        if (item.GetType() == typeof(ConsumableBuff))
+        if (item is ConsumableReset)
+        {
+            CooldownRange = 0;
+            CooldownStandard = 0;
+            CooldownSupport = 0;
+            CooldownUltimate = 0;
+        }
+        else if (item is ConsumableRestore)
+        {
+            var temp = (ConsumableRestore) item;
+            CurrentHealth += temp.RestoreAmount;
+        }
+        else if (item is ConsumableBuff)
         {
             var consumable = (ConsumableBuff) item;
             StartCoroutine(AddStat(consumable.Duration, consumable.Buff, consumable.Amount));
@@ -226,10 +243,40 @@ public class Goblin : MonoBehaviour
 
     public IEnumerator AddStat(float duration, Stat statType, int amount)
     {
-        //add amount to stat
-        throw new NotImplementedException();
+        switch (statType)
+        {
+            case Stat.Armor:
+                _tempArmor += amount;
+                break;
+            case Stat.Attack:
+                _tempAttack += amount;
+                break;
+            case Stat.Health:
+                _tempHealth += amount;
+                break;
+            case Stat.Speed:
+                _tempSpeed += amount;
+                break;
+        }
+
         yield return new WaitForSeconds(duration);
         //remove amount to stat
+
+        switch (statType)
+        {
+            case Stat.Armor:
+                _tempArmor -= amount;
+                break;
+            case Stat.Attack:
+                _tempAttack -= amount;
+                break;
+            case Stat.Health:
+                _tempHealth -= amount;
+                break;
+            case Stat.Speed:
+                _tempSpeed -= amount;
+                break;
+        }
     }
 
 

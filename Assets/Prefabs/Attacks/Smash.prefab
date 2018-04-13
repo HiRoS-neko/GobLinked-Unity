@@ -60,7 +60,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.0075608874, y: 0.49770966}
     oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
@@ -69,14 +69,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.28125, y: 0.28125}
-      - {x: -0.3125, y: 0.25}
-      - {x: -0.3125, y: -0.25}
-      - {x: -0.28125, y: -0.28125}
-      - {x: -0.21875, y: -0.28125}
-      - {x: -0.0625, y: -0.21875}
-      - {x: -0.0625, y: 0.125}
-      - {x: -0.125, y: 0.28125}
+    - - {x: 0.025191545, y: 0.21082997}
+      - {x: 0.09858155, y: 0.21476674}
+      - {x: 0.160995, y: 0.17659235}
+      - {x: 0.18977737, y: 0.124712706}
+      - {x: 0.19723535, y: 0.07506585}
+      - {x: 0.19247961, y: -0.111917734}
+      - {x: 0.12674761, y: -0.20772481}
+      - {x: -0.0070414543, y: -0.22532845}
+      - {x: 0.023972511, y: -0.14328814}
+      - {x: 0.0070416927, y: 0.1513927}
 --- !u!60 &60689858319136892
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -89,10 +91,10 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.3, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.0075608874, y: 0.49770966}
     oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
@@ -101,13 +103,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.28125, y: 0.28125}
-      - {x: -0.3125, y: 0.25}
-      - {x: -0.3125, y: -0.25}
-      - {x: -0.28125, y: -0.28125}
-      - {x: -0.21875, y: -0.28125}
-      - {x: -0.0625, y: -0.21875}
-      - {x: -0.0625, y: 0.125}
+    - - {x: -0.26989824, y: 0.21767879}
+      - {x: -0.3102296, y: 0.08653116}
+      - {x: -0.30795938, y: -0.088801384}
+      - {x: -0.27897936, y: -0.21313763}
+      - {x: -0.059821665, y: -0.3357401}
+      - {x: 0.10550994, y: -0.36178517}
+      - {x: 0.11913246, y: 0.13181138}
+      - {x: 0.10431069, y: 0.35163283}
+      - {x: -0.125, y: 0.28125}
       - {x: -0.125, y: 0.28125}
 --- !u!60 &60736717328749470
 PolygonCollider2D:
@@ -115,16 +119,16 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021255255916698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.31, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.0075608874, y: 0.49770966}
     oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
@@ -133,14 +137,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.28125, y: 0.28125}
-      - {x: -0.3125, y: 0.25}
-      - {x: -0.3125, y: -0.25}
+    - - {x: -0.27899796, y: 0.2789979}
+      - {x: -0.31475216, y: 0.22747946}
+      - {x: -0.3079961, y: -0.20946264}
       - {x: -0.28125, y: -0.28125}
-      - {x: -0.21875, y: -0.28125}
-      - {x: -0.0625, y: -0.21875}
-      - {x: -0.0625, y: 0.125}
-      - {x: -0.125, y: 0.28125}
+      - {x: 0.2023868, y: -0.44790292}
+      - {x: 0.6649179, y: -0.36738658}
+      - {x: 0.84057945, y: 0.059690237}
+      - {x: 0.6046702, y: 0.44790316}
+      - {x: 0.22407073, y: 0.48393607}
 --- !u!95 &95301439116459492
 Animator:
   serializedVersion: 3
