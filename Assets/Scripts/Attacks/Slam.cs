@@ -5,25 +5,46 @@ public class Slam : MonoBehaviour
     private float _damage;
 
     private int _rank;
-    [SerializeField] private Collider2D _rank1, _rank2, _rank3Plus;
+    [SerializeField] private Collider2D _firstRank, _secondRank, _thirdRankPlus;
 
     private void Start()
     {
         _rank = GlobalScript.Krilk.RankStandard;
+        _damage = (GlobalScript.Krilk.Attack) * (1.2f) + ((float) _rank / 10);
+
+        Collider2D[] results = new Collider2D[10];
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.NoFilter();
+        int num;
 
         switch (_rank)
         {
             case 1:
             case 2:
-                _rank1.enabled = true;
+                _firstRank.enabled = true;
+                num = Physics2D.OverlapCollider(_firstRank, contactFilter, results);
                 break;
             case 3:
             case 4:
-                _rank2.enabled = true;
+                _secondRank.enabled = true;
+                num = Physics2D.OverlapCollider(_secondRank, contactFilter, results);
                 break;
             default:
-                _rank3Plus.enabled = true;
+                _thirdRankPlus.enabled = true;
+                num = Physics2D.OverlapCollider(_thirdRankPlus, contactFilter, results);
                 break;
         }
+
+        for (int i = 0; i < num; i++)
+        {
+            if (results[i].CompareTag("Enemy"))
+            {
+                var enemy = results[i].GetComponent<EnemyPathfinding>();
+                enemy.TakeDamage((int) _damage);
+            }
+        }
+
+
+        Destroy(gameObject, 0.2f);
     }
 }
