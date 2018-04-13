@@ -21,58 +21,58 @@ public class EnemyPathfinding : MonoBehaviour
         switch (aiType) //Assigning the values by class
         {
             case enemyTypes.Slime: //Setting Slime values
-                speed = 1;
+                speed = 3;
                 health = 15;
                 armor = 0;
-                attack = 2;
+                attack = 5;
                 break;
 
             case enemyTypes.Rogue: //Settign Rogue values    
-                speed = 3;
-                health = 20;
-                armor = 4;
-                attack = 4;
+                speed = 4;
+                health = 28;
+                armor = 3;
+                attack = 10;
                 break;
 
             case enemyTypes.Archer: //Setting Archer values
                 speed = 3;
-                health = 20;
-                armor = 4;
-                attack = 4;
+                health = 25;
+                armor = 3;
+                attack = 5;
                 break;
 
             case enemyTypes.Eyeball: //Setting Eyeball values 
-                speed = 3;
+                speed = 4;
                 health = 5;
-                armor = 2;
-                attack = 2;
-                break;
-
-            case enemyTypes.Fighter: //Setting Fighter values
-                speed = 3;
-                health = 20;
-                armor = 4;
-                attack = 4;
-                break;
-
-            case enemyTypes.Farmer: //Setting Farmer values
-                speed = 2;
-                health = 12;
-                armor = 2;
+                armor = 1;
                 attack = 3;
                 break;
 
+            case enemyTypes.Fighter: //Setting Fighter values
+                speed = 2;
+                health = 25;
+                armor = 10;
+                attack = 5;
+                break;
+            case enemyTypes.FarmerWoman:
+            case enemyTypes.Farmer: //Setting Farmer values
+                speed = 2;
+                health = 8;
+                armor = 2;
+                attack = 5;
+                break;
+
             case enemyTypes.BiggerFighter: //Setting Bigger Fighter values
-                speed = 0;
-                health = 0;
-                armor = 0;
-                attack = 0;
+                speed = 2;
+                health = 50;
+                armor = 5;
+                attack = 8;
                 break;
 
             case enemyTypes.Rat: //Setting Rat values
                 speed = 4;
-                health = 10;
-                armor = 3;
+                health = 3;
+                armor = 0;
                 attack = 2;
                 break;
         }
