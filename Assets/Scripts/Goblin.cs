@@ -56,7 +56,7 @@ public class Goblin : MonoBehaviour
 
     public Vector2 Dir; // direction used for attacks
 
-    public Accessory EquippedAccessory;
+    public Equipment EquippedAccessory;
 
     public Weapon EquippedWeapon;
 

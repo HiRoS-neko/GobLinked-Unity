@@ -38,15 +38,11 @@ public class Inventory : MonoBehaviour
             //turn off old outline
             _selected = _selected % _itemObjects.Count;
             _itemObjects[_selected].SetGlow(false);
-
             if (move < -0.5)
                 _selected += 1;
             else if (move > 0.5)
                 _selected += _itemObjects.Count - 1;
-
             //make sure selected is within the number of items;
-
-
             //turn on new outline
             _selected = _selected % _itemObjects.Count;
             _itemObjects[_selected].SetGlow(true);
@@ -79,7 +75,7 @@ public class Inventory : MonoBehaviour
                 else if (item is Equipment)
                 {
                     if (_equipEquipKrilk != null) _equipEquipKrilk.SetEquip(false);
-                    GlobalScript.Krilk.EquippedAccessory = (Accessory) item;
+                    GlobalScript.Krilk.EquippedAccessory = (Equipment) item;
                     _equipEquipKrilk = _itemObjects[index];
                     _equipEquipKrilk.SetEquip(true);
                 }
@@ -103,7 +99,7 @@ public class Inventory : MonoBehaviour
                 else if (item is Equipment)
                 {
                     if (_equipEquipGnox != null) _equipEquipGnox.SetEquip(false);
-                    GlobalScript.Gnox.EquippedAccessory = (Accessory) item;
+                    GlobalScript.Gnox.EquippedAccessory = (Equipment) item;
                     _equipEquipGnox = _itemObjects[index];
                     _equipEquipGnox.SetEquip(true);
                 }
