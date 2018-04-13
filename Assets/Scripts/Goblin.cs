@@ -184,14 +184,10 @@ public class Goblin : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        //TODO do armour calc and apply to health
-        //HealthUI.SetHealth(Health);
         if (GlobalScript.invincible == false)
         {
             CurrentHealth -= Math.Max((damage - Armor),1);
         }
-
-        throw new NotImplementedException();
     }
 
 
