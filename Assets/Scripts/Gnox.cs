@@ -27,6 +27,8 @@ public class Gnox : Goblin
         if (CooldownStandard > 0)
             return;
 
+
+        Anim.SetTrigger("Firebolt");
         CooldownStandard = 0.2f;
 
         Instantiate(_firebolt, transform.position, Quaternion.identity);
@@ -49,6 +51,7 @@ public class Gnox : Goblin
 
         if (CooldownRange > 0)
             return;
+        Anim.SetTrigger("Shockwave");
 
         CooldownRange = 10 - 0.5f * RankRange;
         Instantiate(_backwave, transform.position, Quaternion.identity);
@@ -70,6 +73,7 @@ public class Gnox : Goblin
         if (CooldownSupport > 0)
             return;
 
+        Anim.SetTrigger("Heal");
         CooldownSupport = 20 - 1 * RankSupport;
 
         GlobalScript.Gnox.CurrentHealth += RankSupport;
@@ -96,6 +100,7 @@ public class Gnox : Goblin
 
         if (CooldownUltimate > 0)
             return;
+        Anim.SetTrigger("Fireball");
 
         CooldownUltimate = 120 - 10 * RankUltimate;
 
