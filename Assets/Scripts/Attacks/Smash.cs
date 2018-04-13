@@ -15,25 +15,41 @@ public class Smash : MonoBehaviour
         _secondRank.enabled = false;
         _thirdRankPlus.enabled = false;
 
+        Collider2D[] results = new Collider2D[10];
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.NoFilter();
+        int num;
+        
         switch (_rank)
         {
             case 1:
             case 2:
                 _firstRank.enabled = true;
+                num = Physics2D.OverlapCollider(_firstRank, contactFilter, results);
                 break;
             case 3:
             case 4:
                 _secondRank.enabled = true;
+                num = Physics2D.OverlapCollider(_secondRank, contactFilter, results);
                 break;
             default:
                 _thirdRankPlus.enabled = true;
+                num = Physics2D.OverlapCollider(_thirdRankPlus, contactFilter, results);
                 break;
         }
-    }
 
+        for (int i = 0; i < num; i++)
+        {
+            if (results[i].CompareTag("Enemy"))
+            {
+                var enemy = results[i].GetComponent<EnemyPathfinding>();
+                enemy.TakeDamage((int)_damage);
+            }
+        }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy")) other.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
+        _firstRank.enabled = false;
+        _secondRank.enabled = false;
+        _thirdRankPlus.enabled = false;
+        
     }
 }

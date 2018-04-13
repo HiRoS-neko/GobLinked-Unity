@@ -44,10 +44,12 @@ public class DialogueManager : MonoBehaviour
         if (other.gameObject.CompareTag(_tagTrigger))
         {
             Time.timeScale = 0;
+            DialogueBox.TextBox.gameObject.SetActive(true);
 
             StartCoroutine(DialogueCoroutineLineByLine(0));
 
             _collider.enabled = false;
+            DialogueBox.TextBox.gameObject.SetActive(false);
         }
     }
 
