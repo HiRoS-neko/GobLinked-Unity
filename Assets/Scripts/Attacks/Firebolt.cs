@@ -49,7 +49,6 @@ public class Firebolt : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
             other.gameObject.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
-
         Explode();
     }
 
