@@ -26,7 +26,7 @@ public class Firebolt : MonoBehaviour
         _rank = GlobalScript.Gnox.RankStandard;
         _dir = GlobalScript.Gnox.Dir;
 
-        _distance = Mathf.FloorToInt(((float) _rank - 1) / 2) + 3;
+        _distance = Mathf.FloorToInt(((float) _rank - 1)) + 3;
         //get current position
         _pos = transform.position;
 
@@ -36,7 +36,7 @@ public class Firebolt : MonoBehaviour
 
         _rgd.velocity = _velocity * transform.right;
 
-        _damage = GlobalScript.Gnox.Attack * (1 + (float)(_rank) / 10);
+        _damage = GlobalScript.Gnox.Attack * (1 + (float)(_rank) / 5);
     }
 
     private void FixedUpdate()
