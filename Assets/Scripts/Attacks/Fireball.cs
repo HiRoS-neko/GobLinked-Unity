@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(Animator))]
 public class Fireball : MonoBehaviour
 {
     private float _damage;
@@ -14,12 +14,14 @@ public class Fireball : MonoBehaviour
     private int _rank;
 
     private Rigidbody2D _rgd;
+    private Animator _anim;
 
     [SerializeField] [Range(1, 5)] private float _velocity = 1;
 
     private void Start()
     {
         _rgd = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
 
         _distance = 10;
 
@@ -49,6 +51,7 @@ public class Fireball : MonoBehaviour
 
     private void Explode()
     {
+        _anim.SetTrigger("Explode");
         _rgd.velocity = Vector2.zero;
 
         var colliders = Physics2D.OverlapCircleAll(_rgd.position, _range).ToList();
@@ -57,6 +60,6 @@ public class Fireball : MonoBehaviour
             if (coll.gameObject.CompareTag("Enemy"))
                 coll.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
 
-        Destroy(this);
+        Destroy(gameObject, 0.2f);
     }
 }

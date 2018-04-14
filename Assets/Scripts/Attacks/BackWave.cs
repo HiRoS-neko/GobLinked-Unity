@@ -47,6 +47,8 @@ public class BackWave : MonoBehaviour
 
                 obj.GetComponent<EnemyPathfinding>().TakeDamage((int) _damage);
             }
+            else if (!obj.CompareTag("Enemy"))
+                remove.Add(obj);
 
         foreach (var rem in remove) _objects.Remove(rem);
 

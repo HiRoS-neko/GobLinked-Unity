@@ -110,7 +110,7 @@ MonoBehaviour:
   aiType: 5
   armor: 2
   attack: 5
-  experienceDrop: 10
+  experienceDrop: 35
   speed: 2
   checkDelay: 0.01
   body: {fileID: 50867587392180704, guid: 2e7f9cf62a51c6347ab1ef0f5c3eeb65, type: 2}
@@ -118,7 +118,7 @@ MonoBehaviour:
   health: 8
   isSearching: 1
   attackCooldown: 1
-  visibleRange: 5000
+  visibleRange: 200
   atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}

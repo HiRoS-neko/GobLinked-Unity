@@ -179,7 +179,6 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-
     private IEnumerator checkHitArray(float waitTime) //Updates the array of objects hit by the enemy checkzone
     {
         while (true)
@@ -211,7 +210,6 @@ public class EnemyPathfinding : MonoBehaviour
                             enemySpeedMultiplier; //Moves the enemy towards the goalbeen
             if (Vector2.Distance(body.transform.position, goblin.transform.position) <= 10f)
             {
-
                 if (goblin.gameObject.CompareTag("Goblin") && atkDel <= 0)
                 {
                     Vector2 facing = new Vector2();
@@ -243,23 +241,18 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    private void
-        archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
+    private void archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
         if (isSearching) //Behaviour for beelining to the goblins
         {
-            if ((goblin.CompareTag("Goblin")) &&
-                (Vector2.Distance(body.transform.position, goblin.transform.position) >= 5f)
-            ) //Check if the goblins are outside near range but inside visible range
+            if ((goblin.CompareTag("Goblin")) && (Vector2.Distance(body.transform.position, goblin.transform.position) >= 5f)) //Check if the goblins are outside near range but inside visible range
                 body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
                                 PlayerController.SpeedMultiplier /
                                 enemySpeedMultiplier; //Moves the enemy towards the goalbeen
         }
     }
 
-
-    private void
-        eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
+    private void eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
     {
         if (isSearching) //Behaviour for beelining to the goblins
             body.velocity = Vector2.ClampMagnitude(
@@ -268,8 +261,7 @@ public class EnemyPathfinding : MonoBehaviour
                 10); //Moves the enemy towards the goalbeen
     }
 
-    private void
-        fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
+    private void fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
     {
         if (isSearching) //Behaviour for beelining to the goblins
         {
@@ -282,6 +274,7 @@ public class EnemyPathfinding : MonoBehaviour
                 _anim.SetTrigger("Attack");
 
                 goblin.TakeDamage(attack);
+                atkDel = attackCooldown;
             }
         }
     }
