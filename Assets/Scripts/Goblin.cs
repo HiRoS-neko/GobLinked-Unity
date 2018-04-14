@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D), typeof(Animator))]
 public class Goblin : MonoBehaviour
@@ -201,6 +202,11 @@ public class Goblin : MonoBehaviour
         if (GlobalScript.invincible == false)
         {
             CurrentHealth -= Math.Max((damage - Armor), 1);
+        }
+
+        if (this is Gnox && CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
 
         if (BlockHits > 0) BlockHits -= 1;

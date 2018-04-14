@@ -351,7 +351,13 @@ public class EnemyPathfinding : MonoBehaviour
 
     private void enemyDied()
     {
-        if (drop != null) Instantiate(drop);
+        if (drop != null)
+        {
+            if(Random.Range(0,100) >= targetDropChance)
+            {
+                Instantiate(drop);
+            }
+        }
         Goblin.Exp += experienceDrop;
         Destroy(gameObject, 0.1f);
     }
@@ -459,6 +465,9 @@ public class EnemyPathfinding : MonoBehaviour
     [Tooltip("The item this nemy will drop. Can be nothing")]
     public GameObject drop;
 
+    [Tooltip("Chance of the drop actually dropping. Straight Percentage.")]
+    public int targetDropChance;
+    
     [ContextMenu("Choose Random Values")]
     private void ChooseRandomValues() //Assigns random values to the enemies attributes. For testing.
     {
