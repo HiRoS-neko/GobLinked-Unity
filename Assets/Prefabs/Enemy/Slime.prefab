@@ -109,8 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiType: 0
   armor: 0
-  attack: 5
-  experienceDrop: 5
+  attack: 2
+  experienceDrop: 10
   speed: 3
   checkDelay: 0.01
   body: {fileID: 50232110853411430}
@@ -118,7 +118,7 @@ MonoBehaviour:
   health: 10
   isSearching: 1
   attackCooldown: 1
-  visibleRange: 5000
+  visibleRange: 200
   atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
