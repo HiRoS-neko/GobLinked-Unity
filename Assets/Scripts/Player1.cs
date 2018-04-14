@@ -16,13 +16,13 @@ public class Player1 : MonoBehaviour
 
         if (!GlobalScript.Paused)
         {
-            if (Input.GetButtonDown("Player1AttackStandard"))
+            if (Input.GetAxis("Player1AttackStandard") > 0.5)
                 ControlledGoblin.AttackStandard();
-            if (Input.GetButtonDown("Player1AttackRange"))
+            if (Input.GetAxis("Player1AttackRange") > 0.5)
                 ControlledGoblin.AttackRange();
-            if (Input.GetButtonDown("Player1AttackSupport"))
+            if (Input.GetAxis("Player1AttackSupport") > 0.5)
                 ControlledGoblin.AttackSupport();
-            if (Input.GetButtonDown("Player1AttackUltimate"))
+            if (Input.GetAxis("Player1AttackUltimate") > 0.5)
                 ControlledGoblin.AttackUltimate();
         }
 
