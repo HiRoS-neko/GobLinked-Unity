@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
             _collider.enabled = false;
             Time.timeScale = 0;
             //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(true);
-
+            _stop = false;
             StartCoroutine(DialogueCoroutineLineByLine(0));
         }
     }
@@ -60,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         {
             //wait for delay
             yield return new WaitForSecondsRealtime(_dialogue.Lines[line].Delay);
+            _stop = false;
             StartCoroutine(DialogueCoroutineLineByLine(line + 1));
         }
         else
@@ -85,6 +86,7 @@ public class DialogueManager : MonoBehaviour
         {
             //wait for delay
             yield return new WaitForSecondsRealtime(_dialogue.Lines[line].Delay);
+            _stop = false;
             StartCoroutine(DialogueCoroutineLineByLine(line + 1));
         }
         else
