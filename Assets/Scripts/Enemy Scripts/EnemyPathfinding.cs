@@ -274,6 +274,7 @@ public class EnemyPathfinding : MonoBehaviour
                 _anim.SetTrigger("Attack");
 
                 goblin.TakeDamage(attack);
+                atkDel = attackCooldown;
             }
         }
     }
