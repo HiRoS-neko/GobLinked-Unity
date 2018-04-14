@@ -14,13 +14,13 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: This road will take us to the farmlands. We are one step closer to revenge.
   - Audio: {fileID: 0}
     Context: Krilk
-    Delay: 2
+    Delay: 1.5
     Line: "We should be careful, boss. There\u2019s lots of humies in the farmlands."
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: Krilk, you fool! Humies are no match for my magic. Onwards, to Victory!

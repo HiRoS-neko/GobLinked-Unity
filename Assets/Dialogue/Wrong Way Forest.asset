@@ -14,9 +14,9 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 0}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: Krilk, you fool! This is the wrong way. Turn back, now!
   - Audio: {fileID: 0}
     Context: Krilk
-    Delay: 2
+    Delay: 1.5
     Line: Oh, sorry boss.

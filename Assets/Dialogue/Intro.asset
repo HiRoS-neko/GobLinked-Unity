@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: 
   Lines:
-  - Audio: {fileID: 0}
+  - Audio: {fileID: 8300000, guid: dbb5024590ea64740a3cbfd3a0f0084d, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: You think you can take Gnox the Mystic you humie fools. You shall perish
       in anguish!
-  - Audio: {fileID: 0}
+  - Audio: {fileID: 8300000, guid: c28461a873ec9ca488fb885107c67226, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: Face my ultimate bloodline technique. Ahhhhhhhh!
-  - Audio: {fileID: 0}
+  - Audio: {fileID: 8300000, guid: 4550abd7fc860464294503f2aa51ce77, type: 3}
     Context: Krilk
-    Delay: 2
+    Delay: 1.5
     Line: Boss look out!
-  - Audio: {fileID: 0}
+  - Audio: {fileID: 8300000, guid: 9245258a24250e74489f653132af8835, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: Krillk you fool.

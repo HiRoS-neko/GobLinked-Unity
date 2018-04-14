@@ -14,9 +14,9 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 8300000, guid: 9245258a24250e74489f653132af8835, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: Krilk you fool! The cave is the other way.
   - Audio: {fileID: 8300000, guid: 3e41e8b04224a1343a4c1a26feeef0bc, type: 3}
     Context: Krillk
-    Delay: 2
+    Delay: 1.5
     Line: Uh, sorry boss.

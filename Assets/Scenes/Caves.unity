@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 1075334397434192, guid: 51410203a1062494088aca81242b4c0e, type: 2}
   - {fileID: 1638203006478484, guid: ddf325700cce90f43bf595da668d63d0, type: 2}
   enemyWeights: 
-  spawnTimer: 0
+  spawnTimer: 12
 --- !u!4 &220707605
 Transform:
   m_ObjectHideFlags: 0
@@ -15633,7 +15633,7 @@ MonoBehaviour:
   - {fileID: 1075334397434192, guid: 51410203a1062494088aca81242b4c0e, type: 2}
   - {fileID: 1638203006478484, guid: ddf325700cce90f43bf595da668d63d0, type: 2}
   enemyWeights: 
-  spawnTimer: 0
+  spawnTimer: 15
 --- !u!4 &328392593
 Transform:
   m_ObjectHideFlags: 0
@@ -15745,6 +15745,11 @@ Prefab:
         type: 2}
       propertyPath: _dialogueType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114117443727105282, guid: ab0656658797ad24880025048ebcad0b,
+        type: 2}
+      propertyPath: _spacingDelay
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0656658797ad24880025048ebcad0b, type: 2}
@@ -20036,6 +20041,11 @@ Prefab:
       propertyPath: _dialogueType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114117443727105282, guid: ab0656658797ad24880025048ebcad0b,
+        type: 2}
+      propertyPath: _spacingDelay
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab0656658797ad24880025048ebcad0b, type: 2}
   m_IsPrefabParent: 0
@@ -21614,7 +21624,7 @@ MonoBehaviour:
   - {fileID: 1134661523617170, guid: c7998d2d65dc3e54d9d0f384f6dd4a84, type: 2}
   - {fileID: 1720370164435020, guid: bcea6cf3b4b7b244d85ff445b83973c7, type: 2}
   enemyWeights: 3200000032000000
-  spawnTimer: 8
+  spawnTimer: 12
 --- !u!4 &1480917443
 Transform:
   m_ObjectHideFlags: 0
@@ -21835,7 +21845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1585824114
 Transform:
   m_ObjectHideFlags: 0
@@ -38612,7 +38622,7 @@ MonoBehaviour:
   - {fileID: 1134661523617170, guid: c7998d2d65dc3e54d9d0f384f6dd4a84, type: 2}
   - {fileID: 1720370164435020, guid: bcea6cf3b4b7b244d85ff445b83973c7, type: 2}
   enemyWeights: 3200000032000000
-  spawnTimer: 8
+  spawnTimer: 12
 --- !u!4 &1843466946
 Transform:
   m_ObjectHideFlags: 0
@@ -38657,7 +38667,7 @@ MonoBehaviour:
   - {fileID: 1134661523617170, guid: c7998d2d65dc3e54d9d0f384f6dd4a84, type: 2}
   - {fileID: 1720370164435020, guid: bcea6cf3b4b7b244d85ff445b83973c7, type: 2}
   enemyWeights: 3200000032000000
-  spawnTimer: 8
+  spawnTimer: 12
 --- !u!4 &1866652467
 Transform:
   m_ObjectHideFlags: 0

@@ -14,19 +14,19 @@ MonoBehaviour:
   Lines:
   - Audio: {fileID: 8300000, guid: 39b36deed261be847bbb673d31d1c21b, type: 3}
     Context: Krillk
-    Delay: 2
+    Delay: 1.5
     Line: I can smell the stench of humies in here.
   - Audio: {fileID: 8300000, guid: d704eff7b76e9a441ab8378c8c3c24cd, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: "Right you are Krilk. Those blood-soaked monsters are hiding in here somewhere.
       Let\u2019s find them and get justice for our village!"
   - Audio: {fileID: 8300000, guid: 44cfac9e28c5f914199772ffab02ee6a, type: 3}
     Context: Gnox
-    Delay: 2
+    Delay: 1.5
     Line: "W-what was that? It\u2019s awfully dark in here\u2026 Krilk lead the way.
       Follow your nose to the murderers."
   - Audio: {fileID: 8300000, guid: 3e41e8b04224a1343a4c1a26feeef0bc, type: 3}
     Context: Krillk
-    Delay: 2
+    Delay: 1.5
     Line: You got it boss.
