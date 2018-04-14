@@ -10,9 +10,9 @@ public class KrilkPanel : MonoBehaviour
 
     private void Update()
     {
-        _attack.text = GlobalScript.Krilk.Attack.ToString();
-        _armor.text = GlobalScript.Krilk.Armor.ToString();
-        _health.text = GlobalScript.Krilk.Health.ToString();
-        _speed.text = GlobalScript.Krilk.Speed.ToString();
+        _attack.text = GlobalScript.Krilk.GetAttack().ToString();
+        _armor.text = GlobalScript.Krilk.GetArmor().ToString();
+        _health.text = GlobalScript.Krilk.GetHealth().ToString();
+        _speed.text = GlobalScript.Krilk.GetSpeed().ToString();
     }
 }

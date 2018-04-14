@@ -79,7 +79,8 @@ public class EnemyPathfinding : MonoBehaviour
         StartCoroutine(checkHitArray(checkDelay));
     }
 
-    private void FixedUpdate() //Just used to decide what ai behaviour is being calles. Open potential for enemies that change behaviours
+    private void
+        FixedUpdate() //Just used to decide what ai behaviour is being calles. Open potential for enemies that change behaviours
     {
         var temp = body.velocity.normalized;
 
@@ -103,80 +104,81 @@ public class EnemyPathfinding : MonoBehaviour
         }
 
 
-        switch (aiType)
-        {
-            case enemyTypes.Slime: //Calling Slime bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+        if (goblin != null)
+            switch (aiType)
+            {
+                case enemyTypes.Slime: //Calling Slime bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                slimeBehaviour();
-                break;
+                    slimeBehaviour();
+                    break;
 
-            case enemyTypes.Rogue: //Calling Rogue bheaviour for fixedUpdate   
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.Rogue: //Calling Rogue bheaviour for fixedUpdate   
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                rogueBehaviour();
-                break;
+                    rogueBehaviour();
+                    break;
 
-            case enemyTypes.Archer: //Calling Archer bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.Archer: //Calling Archer bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                archerBehaviour();
-                break;
+                    archerBehaviour();
+                    break;
 
-            case enemyTypes.Eyeball: //Calling Eyeball bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.Eyeball: //Calling Eyeball bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                eyeballBehaviour();
-                break;
+                    eyeballBehaviour();
+                    break;
 
-            case enemyTypes.Fighter: //Calling Fighter bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.Fighter: //Calling Fighter bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                fighterBehaviour();
-                break;
+                    fighterBehaviour();
+                    break;
 
-            case enemyTypes.Farmer: //Calling Farmer bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.Farmer: //Calling Farmer bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                farmerBehaviour();
-                break;
+                    farmerBehaviour();
+                    break;
 
-            case enemyTypes.BiggerFighter: //Calling Bigger Fighter bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= Time.deltaTime;
-                }
+                case enemyTypes.BiggerFighter: //Calling Bigger Fighter bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= Time.deltaTime;
+                    }
 
-                biggerFighterBehaviour();
-                break;
+                    biggerFighterBehaviour();
+                    break;
 
-            case enemyTypes.Rat: //Calling rat bheaviour for fixedUpdate
-                if (atkDel >= 0)
-                {
-                    atkDel -= 2 * Time.deltaTime;
-                }
+                case enemyTypes.Rat: //Calling rat bheaviour for fixedUpdate
+                    if (atkDel >= 0)
+                    {
+                        atkDel -= 2 * Time.deltaTime;
+                    }
 
-                ratBehaviour();
-                break;
-        }
+                    ratBehaviour();
+                    break;
+            }
     }
 
     private IEnumerator checkHitArray(float waitTime) //Updates the array of objects hit by the enemy checkzone
@@ -213,8 +215,8 @@ public class EnemyPathfinding : MonoBehaviour
                 if (goblin.gameObject.CompareTag("Goblin") && atkDel <= 0)
                 {
                     Vector2 facing = new Vector2();
-                    facing = ((Vector2)goblin.transform.position - body.position).normalized;
-                    
+                    facing = ((Vector2) goblin.transform.position - body.position).normalized;
+
                     GameObject spit = Instantiate(spitObject);
                     spit.gameObject.GetComponentInChildren<Rigidbody2D>().velocity = facing;
                     atkDel = attackCooldown;
@@ -241,18 +243,22 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    private void archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
+    private void
+        archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
         if (isSearching) //Behaviour for beelining to the goblins
         {
-            if ((goblin.CompareTag("Goblin")) && (Vector2.Distance(body.transform.position, goblin.transform.position) >= 5f)) //Check if the goblins are outside near range but inside visible range
+            if ((goblin.CompareTag("Goblin")) &&
+                (Vector2.Distance(body.transform.position, goblin.transform.position) >= 5f)
+            ) //Check if the goblins are outside near range but inside visible range
                 body.velocity = ((Vector2) goblin.transform.position - body.position).normalized * speed *
                                 PlayerController.SpeedMultiplier /
                                 enemySpeedMultiplier; //Moves the enemy towards the goalbeen
         }
     }
 
-    private void eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
+    private void
+        eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
     {
         if (isSearching) //Behaviour for beelining to the goblins
             body.velocity = Vector2.ClampMagnitude(
@@ -261,7 +267,8 @@ public class EnemyPathfinding : MonoBehaviour
                 10); //Moves the enemy towards the goalbeen
     }
 
-    private void fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
+    private void
+        fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
     {
         if (isSearching) //Behaviour for beelining to the goblins
         {
@@ -353,11 +360,12 @@ public class EnemyPathfinding : MonoBehaviour
     {
         if (drop != null)
         {
-            if(Random.Range(0,100) >= targetDropChance)
+            if (Random.Range(0, 100) >= targetDropChance)
             {
-                Instantiate(drop);
+                Instantiate(drop, transform.position, Quaternion.identity);
             }
         }
+
         Goblin.Exp += experienceDrop;
         Destroy(gameObject, 0.1f);
     }
@@ -467,7 +475,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     [Tooltip("Chance of the drop actually dropping. Straight Percentage.")]
     public int targetDropChance;
-    
+
     [ContextMenu("Choose Random Values")]
     private void ChooseRandomValues() //Assigns random values to the enemies attributes. For testing.
     {

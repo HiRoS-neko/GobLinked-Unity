@@ -10,7 +10,7 @@ public class Slam : MonoBehaviour
     private void Start()
     {
         _rank = GlobalScript.Krilk.RankStandard;
-        _damage = (GlobalScript.Krilk.Attack) * (1.2f) + ((float) _rank / 10);
+        _damage = (GlobalScript.Krilk.GetAttack()) * (1.2f) + ((float) _rank / 10);
 
         Collider2D[] results = new Collider2D[10];
         ContactFilter2D contactFilter = new ContactFilter2D();

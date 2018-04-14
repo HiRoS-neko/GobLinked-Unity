@@ -10,9 +10,9 @@ public class GnoxPanel : MonoBehaviour
 
     private void Update()
     {
-        _attack.text = GlobalScript.Gnox.Attack.ToString();
-        _armor.text = GlobalScript.Gnox.Armor.ToString();
-        _health.text = GlobalScript.Gnox.Health.ToString();
-        _speed.text = GlobalScript.Gnox.Speed.ToString();
+        _attack.text = GlobalScript.Gnox.GetAttack().ToString();
+        _armor.text = GlobalScript.Gnox.GetArmor().ToString();
+        _health.text = GlobalScript.Gnox.GetHealth().ToString();
+        _speed.text = GlobalScript.Gnox.GetSpeed().ToString();
     }
 }

@@ -98,8 +98,35 @@ public class PlayerController : MonoBehaviour
                                                       Vector3.forward * _gnox.gameObject.transform.position.z;
                 _camera.gameObject.transform.position = (Vector3) (Vector2) spawn.transform.position +
                                                         Vector3.forward * _camera.gameObject.transform.position.z;
+
+                for(int i = 0; i < _chain.transform.childCount; i ++)
+                {
+                    _chain.transform.GetChild(i).transform.position = (Vector3) (Vector2) spawn.transform.position +
+                                                                      Vector3.forward * _camera.gameObject.transform.position.z;
+                }
                 break;
             }
+    }
+
+    public void ChangeLocation(Vector3 nextPlace)
+    {
+        //find object in scene with the name of the previous scene
+        var spawns = GameObject.FindGameObjectsWithTag("Spawn");
+        _chain.gameObject.transform.position = (Vector3) (Vector2) nextPlace +
+                                               Vector3.forward * _chain.gameObject.transform.position.z;
+        _krilk.gameObject.transform.position = (Vector3) (Vector2) nextPlace +
+                                               Vector3.forward * _krilk.gameObject.transform.position.z;
+        _gnox.gameObject.transform.position = (Vector3) (Vector2) nextPlace +
+                                              Vector3.forward * _gnox.gameObject.transform.position.z;
+        _camera.gameObject.transform.position = (Vector3) (Vector2) nextPlace +
+                                                Vector3.forward * _camera.gameObject.transform.position.z;
+
+        for (int i = 0; i < _chain.transform.childCount; i++)
+        {
+            _chain.transform.GetChild(i).transform.position = (Vector3) (Vector2) nextPlace +
+                                                              Vector3.forward * _chain.transform.GetChild(i)
+                                                                  .transform.position.z;
+        }
     }
 
     private void Update()

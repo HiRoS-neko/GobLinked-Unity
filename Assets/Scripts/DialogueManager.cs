@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float _spacingDelay;
 
     [SerializeField] private string _tagTrigger;
+    private bool _stop;
 
     private void Start()
     {
@@ -42,12 +43,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag(_tagTrigger))
         {
+            _collider.enabled = false;
             Time.timeScale = 0;
             //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(true);
 
             StartCoroutine(DialogueCoroutineLineByLine(0));
-
-            _collider.enabled = false;
         }
     }
 
@@ -96,40 +96,44 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DialogueCoroutineLineByLine(int line)
     {
-        //clear dialogue
-
-        if (line < _dialogue.Lines.Count)
+        if (!_stop)
         {
-            DialogueBox.TextBox.text = "";
-            // add context string
-            if (_dialogue.Lines[line].Audio != null)
-                _audioSource.PlayOneShot(_dialogue.Lines[line].Audio);
-            DialogueBox.TextBox.text += _dialogue.Lines[line].Context + "\n";
+            _stop = true;
+            //clear dialogue
 
-            switch (_dialogueType)
+            if (line < _dialogue.Lines.Count)
             {
-                case Type.LetterByLetter:
-                    StartCoroutine(DialogueCoroutineLetterByLetter(0, line));
-                    break;
-                case Type.WordByWord:
-                    StartCoroutine(DialogueCoroutineWordByWord(0, line));
-                    break;
-                case Type.LineByLine:
-                    DialogueBox.TextBox.text += _dialogue.Lines[line].Line;
-                    //wait for delay
-                    yield return new WaitForSecondsRealtime(_dialogue.Lines[line].Delay);
-                    line += 1;
-                    StartCoroutine(DialogueCoroutineLineByLine(line));
-                    break;
+                DialogueBox.TextBox.text = "";
+                // add context string
+                if (_dialogue.Lines[line].Audio != null)
+                    _audioSource.PlayOneShot(_dialogue.Lines[line].Audio);
+                DialogueBox.TextBox.text += _dialogue.Lines[line].Context + "\n";
+
+                switch (_dialogueType)
+                {
+                    case Type.LetterByLetter:
+                        StartCoroutine(DialogueCoroutineLetterByLetter(0, line));
+                        break;
+                    case Type.WordByWord:
+                        StartCoroutine(DialogueCoroutineWordByWord(0, line));
+                        break;
+                    case Type.LineByLine:
+                        DialogueBox.TextBox.text += _dialogue.Lines[line].Line;
+                        //wait for delay
+                        yield return new WaitForSecondsRealtime(_dialogue.Lines[line].Delay);
+                        line += 1;
+                        StartCoroutine(DialogueCoroutineLineByLine(line));
+                        break;
+                }
             }
-        }
-        else
-        {
-            Time.timeScale = 1;
+            else
+            {
+                Time.timeScale = 1;
 
-            DialogueBox.TextBox.text = "";
+                DialogueBox.TextBox.text = "";
 
-            //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(false);
+                //DialogueBox.TextBox.gameObject.transform.parent.gameObject.SetActive(false);
+            }
         }
 
         yield return null;

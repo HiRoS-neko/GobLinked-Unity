@@ -10,7 +10,6 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private GameObject _content;
     private ItemObject _equipEquipGnox;
-
     private ItemObject _equipEquipKrilk;
     private ItemObject _equipWeapGnox;
     private ItemObject _equipWeapKrilk;
@@ -53,7 +52,7 @@ public class Inventory : MonoBehaviour
                     }
                     else
                     {
-                        GlobalScript.Gnox.EquippedWeapon = weapon;
+                        GlobalScript.Krilk.EquippedWeapon = weapon;
                     }
                 }
                 else if (i is Equipment)
@@ -65,7 +64,7 @@ public class Inventory : MonoBehaviour
                     }
                     else
                     {
-                        GlobalScript.Gnox.EquippedAccessory = equipment;
+                        GlobalScript.Krilk.EquippedAccessory = equipment;
                     }
                 }
             }
@@ -77,8 +76,9 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         var move = Input.GetAxisRaw("Vertical");
-        if (!Mathf.Approximately(move, _prevMove) && _changed && _itemObjects.Count > 0)
+        if (Mathf.Abs(move) > 0.5f && _changed && _itemObjects.Count > 0)
         {
+            _changed = false;
             //turn off old outline
             _selected = _selected % _itemObjects.Count;
             _itemObjects[_selected].Glow = false;
@@ -92,9 +92,7 @@ public class Inventory : MonoBehaviour
             _itemObjects[_selected].Glow = true;
         }
 
-        if (Mathf.Approximately(move, 0)) _changed = true;
-
-        _prevMove = move;
+        if (Mathf.Abs(move) > 0.5f) _changed = true;
 
         if (Mathf.Abs(Input.GetAxisRaw("SubmitPlayer1")) > 0.5 && _toggle)
         {
@@ -123,6 +121,7 @@ public class Inventory : MonoBehaviour
                 if (item is Weapon)
                 {
                     if (_equipWeapKrilk != null) _equipWeapKrilk.Equip = false;
+                    GlobalScript.Krilk.EquippedWeapon = null;
                     GlobalScript.Krilk.EquippedWeapon = (Weapon) item;
                     _equipWeapKrilk = _itemObjects[index];
                     _equipWeapKrilk.Equip = true;
@@ -130,6 +129,7 @@ public class Inventory : MonoBehaviour
                 else if (item is Equipment)
                 {
                     if (_equipEquipKrilk != null) _equipEquipKrilk.Equip = false;
+                    GlobalScript.Krilk.EquippedAccessory = null;
                     GlobalScript.Krilk.EquippedAccessory = (Equipment) item;
                     _equipEquipKrilk = _itemObjects[index];
                     _equipEquipKrilk.Equip = true;
@@ -147,6 +147,7 @@ public class Inventory : MonoBehaviour
                 if (item is Weapon)
                 {
                     if (_equipWeapGnox != null) _equipWeapGnox.Equip = false;
+                    GlobalScript.Gnox.EquippedWeapon = null;
                     GlobalScript.Gnox.EquippedWeapon = (Weapon) item;
                     _equipWeapGnox = _itemObjects[index];
                     _equipWeapGnox.Equip = true;
@@ -154,6 +155,7 @@ public class Inventory : MonoBehaviour
                 else if (item is Equipment)
                 {
                     if (_equipEquipGnox != null) _equipEquipGnox.Equip = false;
+                    GlobalScript.Gnox.EquippedAccessory = null;
                     GlobalScript.Gnox.EquippedAccessory = (Equipment) item;
                     _equipEquipGnox = _itemObjects[index];
                     _equipEquipGnox.Equip = true;

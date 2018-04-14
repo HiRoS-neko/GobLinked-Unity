@@ -25,7 +25,7 @@ public class BackWave : MonoBehaviour
         //get sphere of rigidbodys around the player
         _objects = Physics2D.OverlapCircleAll(GlobalScript.Gnox.Rigid.position, _range).ToList();
 
-        _damage = GlobalScript.Gnox.Attack * (0.25f + GlobalScript.Gnox.RankRange);
+        _damage = GlobalScript.Gnox.GetAttack() * (0.25f + GlobalScript.Gnox.RankRange);
     }
 
     private void Update()

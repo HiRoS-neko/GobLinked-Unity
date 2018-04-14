@@ -16,13 +16,13 @@ public class Player1 : MonoBehaviour
 
         if (!GlobalScript.Paused)
         {
-            if (Input.GetAxis("Player1AttackStandard") > 0.5)
+            if (Input.GetAxis("Player1AttackStandard") > 0.2)
                 ControlledGoblin.AttackStandard();
-            if (Input.GetAxis("Player1AttackRange") > 0.5)
+            if (Input.GetAxis("Player1AttackRange") > 0.2)
                 ControlledGoblin.AttackRange();
-            if (Input.GetAxis("Player1AttackSupport") > 0.5)
+            if (Input.GetAxis("Player1AttackSupport") > 0.2)
                 ControlledGoblin.AttackSupport();
-            if (Input.GetAxis("Player1AttackUltimate") > 0.5)
+            if (Input.GetAxis("Player1AttackUltimate") > 0.2)
                 ControlledGoblin.AttackUltimate();
         }
 
@@ -33,6 +33,6 @@ public class Player1 : MonoBehaviour
     private void FixedUpdate()
     {
         ControlledGoblin.Rigid.velocity =
-            _intendedMovement.normalized * ControlledGoblin.Speed * PlayerController.SpeedMultiplier;
+            _intendedMovement.normalized * ControlledGoblin.GetSpeed() * PlayerController.SpeedMultiplier;
     }
 }

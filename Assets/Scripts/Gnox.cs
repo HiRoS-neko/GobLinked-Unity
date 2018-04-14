@@ -12,6 +12,7 @@ public class Gnox : Goblin
         Rigid = GetComponent<Rigidbody2D>();
     }
 
+    
     public override void AttackStandard()
     {
         // Fire Bolt

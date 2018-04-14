@@ -26,7 +26,7 @@ public class Fireball : MonoBehaviour
         _distance = 10;
 
         _rank = GlobalScript.Gnox.RankUltimate;
-        _damage = (GlobalScript.Gnox.Attack + 1) * (1.1f * ((float) _rank / 5));
+        _damage = (GlobalScript.Gnox.GetAttack() + 1) * (1.1f * ((float) _rank / 5));
         _range = Mathf.FloorToInt(((float) _rank - 1) / 2) + 3;
 
         _dir = GlobalScript.Gnox.Dir;

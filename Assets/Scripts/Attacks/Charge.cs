@@ -24,7 +24,7 @@ public class Charge : MonoBehaviour
         _rank = GlobalScript.Krilk.RankUltimate;
 
         _coll.radius = Mathf.Sqrt(_rank) * 0.5f;
-        _damage = (GlobalScript.Krilk.Attack + 2) * _rank;
+        _damage = (GlobalScript.Krilk.GetAttack() + 2) * _rank;
 
         _direction = GlobalScript.Krilk.Dir == Vector2.zero ? Vector2.right : GlobalScript.Krilk.Dir;
         _pos = _rgd.position;

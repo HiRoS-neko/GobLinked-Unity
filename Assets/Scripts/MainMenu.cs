@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject cheats1;
     public GameObject cheats2;
     private bool cheat = false;
-        
+
 
     private void Start()
     {
@@ -52,6 +52,8 @@ public class MainMenu : MonoBehaviour
             cheats1.SetActive(true);
             cheat = false;
         }
+
+        GlobalScript.invincible = cheat;
     }
 
     public void Return()

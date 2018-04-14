@@ -36,6 +36,6 @@ public class Player2 : MonoBehaviour
     {
         if (ControlledGoblin != null)
             ControlledGoblin.Rigid.velocity =
-                _intendedMovement.normalized * ControlledGoblin.Speed * PlayerController.SpeedMultiplier;
+                _intendedMovement.normalized * ControlledGoblin.GetSpeed() * PlayerController.SpeedMultiplier;
     }
 }

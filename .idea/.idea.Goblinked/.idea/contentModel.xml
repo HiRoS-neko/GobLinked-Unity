@@ -25,6 +25,7 @@
             <e p="Slam.cs" t="Include" />
             <e p="Smash.cs" t="Include" />
           </e>
+          <e p="CheckDead.cs" t="Include" />
           <e p="Chest.cs" t="Include" />
           <e p="Consumable.cs" t="Include" />
           <e p="ConsumableBuff.cs" t="Include" />

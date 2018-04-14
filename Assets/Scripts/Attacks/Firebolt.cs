@@ -36,7 +36,7 @@ public class Firebolt : MonoBehaviour
 
         _rgd.velocity = _velocity * transform.right;
 
-        _damage = GlobalScript.Gnox.Attack * (1 + (float)(_rank) / 5);
+        _damage = GlobalScript.Gnox.GetAttack() * (1 + (float)(_rank) / 5);
     }
 
     private void FixedUpdate()

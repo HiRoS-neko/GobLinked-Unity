@@ -9,7 +9,7 @@ public class Smash : MonoBehaviour
     private void Start()
     {
         _rank = GlobalScript.Krilk.RankRange;
-        _damage = (GlobalScript.Krilk.Attack + 0.5f) * _rank;
+        _damage = (GlobalScript.Krilk.GetAttack() + 0.5f) * _rank;
 
         _firstRank.enabled = false;
         _secondRank.enabled = false;
