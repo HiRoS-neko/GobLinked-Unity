@@ -118,12 +118,13 @@ MonoBehaviour:
   health: 10
   isSearching: 1
   attackCooldown: 1
-  visibleRange: 10
+  visibleRange: 4
   atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
-  spitObject: {fileID: 0}
+  spitObject: {fileID: 1196369752278288, guid: 44d8be4c21a4782408bc5e191180c58e, type: 2}
   drop: {fileID: 0}
+  targetDropChance: 35
 --- !u!212 &212793320550895152
 SpriteRenderer:
   m_ObjectHideFlags: 1

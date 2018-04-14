@@ -22,14 +22,14 @@ public class EnemyPathfinding : MonoBehaviour
         {
             case enemyTypes.Slime: //Setting Slime values
                 speed = 3;
-                health = 10;
+                health = 5;
                 armor = 0;
                 attack = 2;
                 break;
 
             case enemyTypes.Rogue: //Settign Rogue values    
                 speed = 4;
-                health = 10;
+                health = 20;
                 armor = 3;
                 attack = 10;
                 break;
@@ -45,7 +45,7 @@ public class EnemyPathfinding : MonoBehaviour
                 speed = 4;
                 health = 5;
                 armor = 1;
-                attack = 3;
+                attack = 1;
                 break;
 
             case enemyTypes.Fighter: //Setting Fighter values
@@ -58,14 +58,14 @@ public class EnemyPathfinding : MonoBehaviour
                 speed = 2;
                 health = 8;
                 armor = 2;
-                attack = 3;
+                attack = 2;
                 break;
 
             case enemyTypes.BiggerFighter: //Setting Bigger Fighter values
                 speed = 2;
-                health = 15;
+                health = 30;
                 armor = 5;
-                attack = 8;
+                attack = 4;
                 break;
 
             case enemyTypes.Rat: //Setting Rat values
