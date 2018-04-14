@@ -59,7 +59,8 @@ public class LevelUp : MonoBehaviour
             }
         }
 
-        if (GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1 +
+        if (GlobalScript.PlayerController._gameMode == PlayerController.GameMode.MultiPlayer &&
+            GlobalScript.PlayerController.Player2.ControlledGoblin.RankRange - 1 +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankSupport - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankStandard - 1) +
             (GlobalScript.PlayerController.Player2.ControlledGoblin.RankUltimate - 1) < Goblin.Level)
