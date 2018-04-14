@@ -122,8 +122,8 @@ MonoBehaviour:
   atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
-  spitObject: {fileID: 1196369752278288, guid: b964710b18bb5ca428113c55e4773560, type: 2}
-  drop: {fileID: 0}
+  spitObject: {fileID: 0}
+  drop: {fileID: 1196369752278288, guid: b964710b18bb5ca428113c55e4773560, type: 2}
   targetDropChance: 25
 --- !u!212 &212530200362393852
 SpriteRenderer:
