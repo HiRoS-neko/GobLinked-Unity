@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
@@ -78,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         {
             current += _dialogue.Lines[line].Line[letter];
             letter++;
-        } while (!(current.Last() == ' ' || _dialogue.Lines[line].Line.Length == letter));
+        } while (!(current[current.Length - 1] == ' ' || _dialogue.Lines[line].Line.Length >= letter));
 
         DialogueBox.TextBox.text += current;
 
