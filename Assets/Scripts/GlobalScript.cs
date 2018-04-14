@@ -61,4 +61,9 @@ public class GlobalScript : MonoBehaviour
             Active = true;
         }
     }
+
+    private void Update()
+    {
+        Debug.Log(Input.GetAxis("Player1AttackUltimate"));
+    }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -16,19 +18,60 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private ItemObject _itemObject;
 
-    private readonly List<ItemObject> _itemObjects;
+    private List<ItemObject> _itemObjects = new List<ItemObject>();
 
     private Goblin _krilkGoblin, _gnoxGoblin;
     private float _prevMove;
 
     private int _selected;
-    public List<Item> Items;
+    public List<Item> Items = new List<Item>();
     private bool _toggle;
 
-    public Inventory()
+    private void Awake()
     {
-        if (Items == null) Items = new List<Item>();
-        _itemObjects = new List<ItemObject>();
+        GlobalScript.SceneChanged += GlobalScriptOnSceneChanged;
+    }
+
+    private void GlobalScriptOnSceneChanged(string prevScene)
+    {
+        _selected = 0;
+        //reinit inventory?
+        _itemObjects = _content.GetComponentsInChildren<ItemObject>().ToList();
+        Items = new List<Item>();
+        foreach (var item in _itemObjects)
+        {
+            Items.Add(item.Item);
+            if (item.Equip)
+            {
+                var i = item.Item;
+                if (i is Weapon)
+                {
+                    var weapon = (Weapon) i;
+                    if (i.GoblinType == Goblin.GoblinType.Gnox)
+                    {
+                        GlobalScript.Gnox.EquippedWeapon = weapon;
+                    }
+                    else
+                    {
+                        GlobalScript.Gnox.EquippedWeapon = weapon;
+                    }
+                }
+                else if (i is Equipment)
+                {
+                    var equipment = (Equipment) i;
+                    if (i.GoblinType == Goblin.GoblinType.Gnox)
+                    {
+                        GlobalScript.Gnox.EquippedAccessory = equipment;
+                    }
+                    else
+                    {
+                        GlobalScript.Gnox.EquippedAccessory = equipment;
+                    }
+                }
+            }
+
+            item.Glow = false;
+        }
     }
 
     private void Update()
@@ -38,7 +81,7 @@ public class Inventory : MonoBehaviour
         {
             //turn off old outline
             _selected = _selected % _itemObjects.Count;
-            _itemObjects[_selected].SetGlow(false);
+            _itemObjects[_selected].Glow = false;
             if (move < -0.5)
                 _selected += 1;
             else if (move > 0.5)
@@ -46,7 +89,7 @@ public class Inventory : MonoBehaviour
             //make sure selected is within the number of items;
             //turn on new outline
             _selected = _selected % _itemObjects.Count;
-            _itemObjects[_selected].SetGlow(true);
+            _itemObjects[_selected].Glow = true;
         }
 
         if (Mathf.Approximately(move, 0)) _changed = true;
@@ -79,17 +122,17 @@ public class Inventory : MonoBehaviour
             case Goblin.GoblinType.Krilk:
                 if (item is Weapon)
                 {
-                    if (_equipWeapKrilk != null) _equipWeapKrilk.SetEquip(false);
+                    if (_equipWeapKrilk != null) _equipWeapKrilk.Equip = false;
                     GlobalScript.Krilk.EquippedWeapon = (Weapon) item;
                     _equipWeapKrilk = _itemObjects[index];
-                    _equipWeapKrilk.SetEquip(true);
+                    _equipWeapKrilk.Equip = true;
                 }
                 else if (item is Equipment)
                 {
-                    if (_equipEquipKrilk != null) _equipEquipKrilk.SetEquip(false);
+                    if (_equipEquipKrilk != null) _equipEquipKrilk.Equip = false;
                     GlobalScript.Krilk.EquippedAccessory = (Equipment) item;
                     _equipEquipKrilk = _itemObjects[index];
-                    _equipEquipKrilk.SetEquip(true);
+                    _equipEquipKrilk.Equip = true;
                 }
                 else if (item is Consumable)
                 {
@@ -103,17 +146,17 @@ public class Inventory : MonoBehaviour
             case Goblin.GoblinType.Gnox:
                 if (item is Weapon)
                 {
-                    if (_equipWeapGnox != null) _equipWeapGnox.SetEquip(false);
+                    if (_equipWeapGnox != null) _equipWeapGnox.Equip = false;
                     GlobalScript.Gnox.EquippedWeapon = (Weapon) item;
                     _equipWeapGnox = _itemObjects[index];
-                    _equipWeapGnox.SetEquip(true);
+                    _equipWeapGnox.Equip = true;
                 }
                 else if (item is Equipment)
                 {
-                    if (_equipEquipGnox != null) _equipEquipGnox.SetEquip(false);
+                    if (_equipEquipGnox != null) _equipEquipGnox.Equip = false;
                     GlobalScript.Gnox.EquippedAccessory = (Equipment) item;
                     _equipEquipGnox = _itemObjects[index];
-                    _equipEquipGnox.SetEquip(true);
+                    _equipEquipGnox.Equip = true;
                 }
                 else if (item is Consumable)
                 {

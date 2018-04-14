@@ -18,13 +18,15 @@ public class ItemObject : MonoBehaviour
         transform.localScale = Vector3.one;
     }
 
-    public void SetGlow(bool glow)
+    public bool Glow
     {
-        _glowyThing.SetActive(glow);
+        get { return _glowyThing.activeSelf; }
+        set { _glowyThing.SetActive(value); }
     }
 
-    public void SetEquip(bool b)
+    public bool Equip
     {
-        _eqippyThing.SetActive(b);
+        get { return _eqippyThing.activeSelf; }
+        set { _eqippyThing.SetActive(value); }
     }
 }
