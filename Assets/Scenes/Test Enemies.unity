@@ -447,6 +447,38 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4738215413887906, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738215413887906, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379882743843966, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379882743843966, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437245990926492, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437245990926492, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675805354904234, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675805354904234, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a4e0ad6f6b4534488657f7887b48f99, type: 2}
   m_IsPrefabParent: 0
@@ -622,7 +654,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699686821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.04, y: -4.16, z: 0}
+  m_LocalPosition: {x: 5.23, y: -26.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -665,11 +697,12 @@ MonoBehaviour:
   health: 23
   isSearching: 1
   attackCooldown: 20
-  visibleRange: 132.23523
+  visibleRange: 130
+  atkDel: 0
   impact: {fileID: 0}
   weaponAttack: {fileID: 0}
-  spitObject: {fileID: 1196369752278288, guid: 0a651a2fba0bbb04abcced925df78944, type: 2}
-  drop: {fileID: 1196369752278288, guid: 8e20158c2ed3a7640a83716a350a814c, type: 2}
+  spitObject: {fileID: 1548490186673004, guid: 1d3642cf16bf4a144ab305fb49a4b44c, type: 2}
+  drop: {fileID: 0}
 --- !u!50 &1699686827
 Rigidbody2D:
   serializedVersion: 4

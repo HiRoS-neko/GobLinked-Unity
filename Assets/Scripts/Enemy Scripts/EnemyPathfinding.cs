@@ -80,8 +80,7 @@ public class EnemyPathfinding : MonoBehaviour
         StartCoroutine(checkHitArray(checkDelay));
     }
 
-    private void
-        FixedUpdate() //Just used to decide what ai behaviour is being calles. Open potential for enemies that change behaviours
+    private void FixedUpdate() //Just used to decide what ai behaviour is being calles. Open potential for enemies that change behaviours
     {
         var temp = body.velocity.normalized;
 
@@ -181,12 +180,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     The handler for the coroutine to update targetable players.
-    /// </summary>
-    /// <param name="waitTime"></param>
-    /// waitTime is the time between scans.
-    /// <returns></returns>
+
     private IEnumerator checkHitArray(float waitTime) //Updates the array of objects hit by the enemy checkzone
     {
         while (true)
@@ -208,9 +202,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     The behavior the slime enemy will take.
-    /// </summary>
+
     private void slimeBehaviour() //The behaviour method for the Slime, including spit.
     {
         if (isSearching) //Behaviour for beelining to the goblins
@@ -220,36 +212,20 @@ public class EnemyPathfinding : MonoBehaviour
                             enemySpeedMultiplier; //Moves the enemy towards the goalbeen
             if (Vector2.Distance(body.transform.position, goblin.transform.position) <= 10f)
             {
-                float quatInput = Vector3.Angle(gameObject.transform.position,
-                    goblin.gameObject.transform.position); //Getting the angle difference between the 
-                //gameObject of the slime and the gameobject
-                //of the goblin
 
                 if (goblin.gameObject.CompareTag("Goblin") && atkDel <= 0)
                 {
-                    print("Eww, spit + atkDel = " + atkDel + " attackCooldown = " +
-                          attackCooldown); //Debg check
-
-                    Quaternion rotation =
-                        Quaternion.LookRotation(new Vector3(0, 0,
-                            quatInput)); //Setting the initial rotation of the spit
-
-                    GameObject projectileSpit =
-                        Instantiate(spitObject, gameObject.transform.position,
-                            rotation); //Instantiating the spit
-
-                    projectileSpit.GetComponentInChildren<Rigidbody2D>().velocity =
-                        rotation.eulerAngles; //Making the spit actually shoot towards the player
-
+                    Vector2 facing = new Vector2();
+                    facing = ((Vector2)goblin.transform.position - body.position).normalized;
+                    
+                    GameObject spit = Instantiate(spitObject);
+                    spit.gameObject.GetComponentInChildren<Rigidbody2D>().velocity = facing;
                     atkDel = attackCooldown;
                 }
             }
         }
     }
 
-    /// <summary>
-    ///     Behaviour the rogue enemy will take.
-    /// </summary>
     private void rogueBehaviour() //The behaviour method for Rogues. Includes attempts to stay behind the Goblins.
     {
         if (isSearching) //Behaviour for beelining to the goblins
@@ -268,9 +244,6 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     Behaviour the archer enemy will take.
-    /// </summary>
     private void
         archerBehaviour() //The behaviour method for Archers. Includes shooting their bow and maintaining distance.
     {
@@ -285,9 +258,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     Behaviour the eyeball enemy will take.
-    /// </summary>
+
     private void
         eyeballBehaviour() //The behaviour method for the Eyeballs. Includes charging at the Goblins to slam, then running away to do it again.
     {
@@ -298,9 +269,6 @@ public class EnemyPathfinding : MonoBehaviour
                 10); //Moves the enemy towards the goalbeen
     }
 
-    /// <summary>
-    ///     Behaviour the fighter enemy will take.
-    /// </summary>
     private void
         fighterBehaviour() //The basic Adventurer class. Gets in to melee with the Goblins and attacks with his sword.
     {
@@ -319,9 +287,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     Behaviour the farmer enemy will take.
-    /// </summary>
+
     private void farmerBehaviour() //The behaviour for the peasant humans. Gets in melee and uses hit and run tactics.
     {
         if (isSearching) //Behaviour for beelining to the goblins
@@ -340,9 +306,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     Behaviour of the larg fighter
-    /// </summary>
+
     private void biggerFighterBehaviour()
     {
         if (isSearching) //Behaviour for beelining to the goblins
@@ -361,9 +325,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     } //DONE
 
-    /// <summary>
-    ///     behaviour of the rat.
-    /// </summary>
+
     private void ratBehaviour()
     {
         if (isSearching) //Behaviour for beelining to the goblins
@@ -383,9 +345,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     } //DONE
 
-    /// <summary>
-    ///     Applies damage to the enemy.
-    /// </summary>
+
     public void TakeDamage(int dam)
     {
         print("Took " + dam);
@@ -396,9 +356,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///     Handles the enemies health dropping to 0 or less
-    /// </summary>
+
     private void enemyDied()
     {
         if (drop != null) Instantiate(drop);
